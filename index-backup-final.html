@@ -105,7 +105,6 @@
         html {
             font-size: 16px;
             scroll-behavior: smooth;
-            scroll-padding-top: 80px;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -213,179 +212,6 @@
 
         .section {
             padding: 60px 0;
-            scroll-margin-top: 80px;
-        }
-
-        .hero {
-            scroll-margin-top: 0;
-        }
-
-        /* Touch-Friendly Mobile Optimizations */
-        @media (max-width: 768px) {
-            /* Ensure all clickable elements are touch-friendly (min 44px) */
-            .btn,
-            .faq-question,
-            .hamburger,
-            .floating-call-btn {
-                min-height: 44px;
-                min-width: 44px;
-            }
-
-            /* Better touch targets */
-            .contact-item a {
-                padding: 8px 4px;
-                display: inline-block;
-            }
-
-            .nav-menu a {
-                min-height: 44px;
-                display: flex;
-                align-items: center;
-            }
-
-            /* Prevent zoom on form inputs */
-            input,
-            select,
-            textarea {
-                font-size: 16px;
-            }
-
-            /* Better scrolling */
-            body {
-                -webkit-overflow-scrolling: touch;
-            }
-
-            /* Remove hover effects on touch devices */
-            .service-card:hover,
-            .process-step:hover {
-                transform: none;
-            }
-        }
-
-        /* Hamburger Menu */
-        .hamburger-menu {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1001;
-        }
-
-        .hamburger {
-            width: 40px;
-            height: 30px;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            background: rgba(44, 62, 80, 0.9);
-            padding: 8px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .hamburger:hover {
-            background: rgba(44, 62, 80, 1);
-            transform: scale(1.05);
-        }
-
-        .hamburger span {
-            width: 100%;
-            height: 3px;
-            background: white;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 6px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(8px, -8px);
-        }
-
-        .nav-menu {
-            position: fixed;
-            top: 0;
-            left: -300px;
-            width: 280px;
-            height: 100vh;
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            transition: left 0.3s ease;
-            padding-top: 80px;
-            box-shadow: 2px 0 10px rgba(0,0,0,0.3);
-            overflow-y: auto;
-        }
-
-        .nav-menu.active {
-            left: 0;
-        }
-
-        .nav-menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .nav-menu li {
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .nav-menu a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            padding: 20px 30px;
-            font-weight: 500;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-menu a:hover {
-            background: rgba(255,255,255,0.1);
-            padding-left: 40px;
-            color: #3498db;
-        }
-
-        .nav-menu a::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 4px;
-            background: #3498db;
-            transform: scaleY(0);
-            transition: transform 0.3s ease;
-        }
-
-        .nav-menu a:hover::before {
-            transform: scaleY(1);
-        }
-
-        /* Overlay */
-        .menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 999;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .menu-overlay.active {
-            opacity: 1;
-            visibility: visible;
         }
 
         /* Header */
@@ -942,12 +768,11 @@
 
         .faq-item {
             background: white;
-            padding: 0;
+            padding: 30px;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid #e9ecef;
-            overflow: hidden;
         }
 
         .faq-item:hover {
@@ -955,49 +780,18 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.12);
         }
 
-        .faq-question {
-            padding: 30px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 0;
+        .faq-item h3 {
             font-size: 1.3rem;
             color: #2c3e50;
+            margin-bottom: 15px;
             font-weight: 600;
             line-height: 1.4;
-            transition: background-color 0.3s ease;
         }
 
-        .faq-question:hover {
-            background-color: #f8f9fa;
-        }
-
-        .faq-toggle {
-            font-size: 1.5rem;
-            color: #3498db;
-            transition: transform 0.3s ease;
-            font-weight: bold;
-        }
-
-        .faq-item.collapsed .faq-toggle {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            padding: 0 30px 30px 30px;
+        .faq-item p {
             color: #666;
             line-height: 1.7;
             font-size: 1rem;
-            transition: all 0.3s ease;
-            max-height: 0;
-            overflow: hidden;
-            padding: 0 30px;
-        }
-
-        .faq-item:not(.collapsed) .faq-answer {
-            max-height: 200px;
-            padding: 0 30px 30px 30px;
         }
 
         /* Hours Section */
@@ -1151,28 +945,6 @@
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            .hamburger-menu {
-                top: 15px;
-                left: 15px;
-            }
-
-            .hamburger {
-                width: 35px;
-                height: 26px;
-                padding: 6px;
-            }
-
-            .nav-menu {
-                width: 250px;
-                left: -250px;
-                padding-top: 70px;
-            }
-
-            .nav-menu a {
-                padding: 18px 25px;
-                font-size: 15px;
-            }
-
             .floating-call-btn {
                 bottom: 20px;
                 right: 20px;
@@ -1233,83 +1005,7 @@
             }
 
             .container {
-                padding: 0 20px;
-            }
-
-            .section {
-                padding: 50px 0;
-            }
-
-            /* Enhanced Mobile Text Sizing */
-            .hero-content h1 {
-                font-size: 2.4rem;
-                line-height: 1.2;
-                margin-bottom: 15px;
-            }
-
-            .hero-content h2 {
-                font-size: 1.1rem;
-                line-height: 1.4;
-                margin-bottom: 25px;
-            }
-
-            .about-text h2,
-            .services h2,
-            .process h2,
-            .reviews h2,
-            .faq h2,
-            .hours h2 {
-                font-size: 2.2rem;
-                line-height: 1.2;
-                margin-bottom: 20px;
-                text-align: center;
-            }
-
-            .about-text p {
-                font-size: 16px;
-                line-height: 1.6;
-                margin-bottom: 15px;
-            }
-
-            .service-card h3 {
-                font-size: 1.4rem;
-                line-height: 1.3;
-                margin-bottom: 12px;
-            }
-
-            .service-card p {
-                font-size: 15px;
-                line-height: 1.5;
-            }
-
-            .process-step h3 {
-                font-size: 1.3rem;
-                line-height: 1.3;
-                margin-bottom: 12px;
-            }
-
-            .process-step p {
-                font-size: 15px;
-                line-height: 1.5;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 300px;
-                padding: 15px 20px;
-                font-size: 16px;
-                margin: 0 auto;
-                display: block;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-
-            .contact-item {
-                font-size: 13px;
+                padding: 0 15px;
             }
 
             .header-content {
@@ -1385,15 +1081,7 @@
             }
 
             .faq-item {
-                padding: 0;
-            }
-
-            .faq-question {
                 padding: 25px 20px;
-            }
-
-            .faq-answer {
-                padding: 0 20px 25px 20px;
             }
 
             .footer-content {
@@ -1425,32 +1113,6 @@
         }
 
         @media (max-width: 480px) {
-            .hamburger-menu {
-                top: 10px;
-                left: 10px;
-            }
-
-            .hamburger {
-                width: 32px;
-                height: 24px;
-                padding: 5px;
-            }
-
-            .hamburger span {
-                height: 2px;
-            }
-
-            .nav-menu {
-                width: 220px;
-                left: -220px;
-                padding-top: 60px;
-            }
-
-            .nav-menu a {
-                padding: 15px 20px;
-                font-size: 14px;
-            }
-
             .floating-call-btn {
                 width: 55px;
                 height: 55px;
@@ -1473,251 +1135,34 @@
                 right: 58px;
             }
 
-            /* Enhanced Small Screen Text & Layout */
-            body {
-                font-size: 15px;
-                line-height: 1.5;
-            }
-
-            .container {
-                padding: 0 15px;
-                max-width: 100%;
-            }
-
-            .section {
-                padding: 40px 0;
-            }
-
-            /* Header Small Screen */
-            .header {
-                padding: 10px 0;
-            }
-
             .company-name h1 {
-                font-size: 1.4rem;
-                line-height: 1.2;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                gap: 8px;
-                align-items: center;
-            }
-
-            .contact-item {
-                font-size: 12px;
-                text-align: center;
-                width: 100%;
-            }
-
-            /* Hero Small Screen */
-            .hero {
-                padding: 50px 0;
-            }
-
-            .hero-content h1 {
-                font-size: 1.8rem;
-                line-height: 1.2;
-                margin-bottom: 12px;
-            }
-
-            .hero-content h2 {
-                font-size: 1rem;
-                line-height: 1.4;
-                margin-bottom: 20px;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 260px;
-                padding: 14px 18px;
-                font-size: 15px;
-            }
-
-            /* About Small Screen */
-            .about-text h2,
-            .services h2,
-            .process h2,
-            .reviews h2,
-            .faq h2,
-            .hours h2 {
-                font-size: 1.6rem;
-                line-height: 1.2;
-                margin-bottom: 18px;
-                text-align: center;
-            }
-
-            .about-text p,
-            .service-card p,
-            .process-step p {
-                font-size: 14px;
-                line-height: 1.5;
-                margin-bottom: 12px;
+                font-size: 1.3rem;
             }
 
             .about-image img {
-                min-width: 250px;
+                min-width: 280px;
                 max-width: 95%;
-                border-radius: 18px;
-            }
-
-            /* Service Cards Small Screen */
-            .service-card {
-                padding: 20px 15px;
-                margin-bottom: 15px;
-            }
-
-            .service-card h3 {
-                font-size: 1.2rem;
-                line-height: 1.3;
-                margin-bottom: 10px;
-            }
-
-            /* Process Steps Small Screen */
-            .process-step {
-                padding: 20px 15px;
-            }
-
-            .process-step h3 {
-                font-size: 1.1rem;
-                line-height: 1.3;
-                margin-bottom: 10px;
-            }
-
-            /* Reviews Small Screen */
-            .review-card {
-                padding: 20px 15px;
-                margin: 0 5px;
-            }
-
-            .review-content {
-                font-size: 14px;
-                line-height: 1.4;
-            }
-
-            .review-author {
-                font-size: 13px;
-            }
-
-            /* FAQ Small Screen */
-            .faq-question {
-                padding: 18px 15px;
-                font-size: 15px;
-                line-height: 1.3;
-            }
-
-            .faq-answer {
-                padding: 0 15px 18px 15px;
-                font-size: 14px;
-                line-height: 1.4;
-            }
-
-            /* Hours/Contact Small Screen */
-            .hours-content h3 {
-                font-size: 1.2rem;
-                line-height: 1.3;
-                margin-bottom: 12px;
-            }
-
-            .hours-content p {
-                font-size: 15px;
-                line-height: 1.4;
-            }
-
-            /* Footer Small Screen */
-            .footer-content {
-                padding: 20px 0;
-            }
-
-            .footer-section h4 {
-                font-size: 1.1rem;
-                margin-bottom: 12px;
-            }
-
-            .footer-section ul li {
-                font-size: 13px;
-                line-height: 1.3;
-                margin-bottom: 6px;
-            }
-
-            /* Expertise Highlights Small Screen */
-            .highlight-item {
-                padding: 15px 12px;
-            }
-
-            .highlight-item h4 {
-                font-size: 1rem;
-                line-height: 1.2;
-                margin-bottom: 8px;
-            }
-
-            .highlight-item p {
-                font-size: 13px;
-                line-height: 1.3;
-            }
-        }
-
-        /* Very Small Screens */
-        @media (max-width: 320px) {
-            .container {
-                padding: 0 12px;
-            }
-
-            .section {
-                padding: 35px 0;
+                border-radius: 20px;
+                transform: scale(1.02);
             }
 
             .hero-content h1 {
-                font-size: 1.6rem;
-                line-height: 1.1;
-            }
-
-            .hero-content h2 {
-                font-size: 0.9rem;
-                line-height: 1.3;
+                font-size: 2rem;
             }
 
             .about-text h2,
             .services h2,
-            .process h2,
-            .reviews h2,
-            .faq h2,
-            .hours h2 {
-                font-size: 1.4rem;
-                line-height: 1.1;
+            .process h2 {
+                font-size: 2rem;
             }
 
-            .company-name h1 {
-                font-size: 1.2rem;
-            }
-
-            .contact-item {
-                font-size: 11px;
+            .service-card {
+                padding: 30px 20px;
             }
 
             .btn {
-                max-width: 240px;
-                padding: 12px 16px;
+                padding: 12px 24px;
                 font-size: 14px;
-            }
-
-            .service-card,
-            .process-step {
-                padding: 18px 12px;
-            }
-
-            .about-image img {
-                min-width: 220px;
-            }
-
-            .nav-menu {
-                width: 200px;
-                left: -200px;
-            }
-
-            .hamburger {
-                width: 28px;
-                height: 20px;
             }
         }
 
@@ -1771,11 +1216,11 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero">
+    <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Commercial Kitchen Equipment Repair</h1>
-                <h2>BUNN • TurboChef • Schaerer • Fast Service</h2>
+                <h1>Seattle's Trusted Commercial Kitchen Equipment Repair Service</h1>
+                <h2>BUNN Coffee Machines • TurboChef Ovens • Schaerer Espresso • Fast Service Available</h2>
                 <div class="cta-buttons">
                     <a href="#services" class="btn btn-primary">Our Repair Services</a>
                     <a href="tel:425-547-0200" class="btn btn-secondary">Call for Service</a>
@@ -1785,25 +1230,25 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about section">
+    <section class="about section">
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
                     <h2>Professional Kitchen Equipment Repair</h2>
-                    <p>Seattle's commercial kitchen equipment repair specialist with 18+ years of experience. We service BUNN coffee machines, TurboChef ovens, Schaerer espresso machines, and SureShot dairy systems with fast, professional repairs.</p>
-                    <p>Serving coffee shops, restaurants, and commercial kitchens across Seattle, Bellevue, Tacoma, and King County with reliable equipment maintenance and emergency repairs.</p>
+                    <p>FixIt Expresso is Seattle's leading commercial kitchen equipment repair specialist with 18+ years of dedicated experience. We service BUNN coffee machines, TurboChef speed ovens, Schaerer espresso machines, and SureShot dairy systems. Our certified technicians provide rapid diagnosis and fast repairs to minimize your kitchen downtime.</p>
+                    <p>From coffee shops to restaurants and commercial kitchens across Seattle, Bellevue, Tacoma, and surrounding areas, we're the trusted choice for equipment maintenance, parts replacement, and emergency repairs. We specialize in keeping your business running smoothly with professional, reliable service.</p>
                     <div class="expertise-highlights">
                         <div class="highlight-item">
-                            <strong>✓ Certified Technicians</strong>
+                            <strong>✓ Certified Equipment Technicians</strong>
                         </div>
                         <div class="highlight-item">
-                            <strong>✓ Fast Service</strong>
+                            <strong>✓ Fast Service Available</strong>
                         </div>
                         <div class="highlight-item">
-                            <strong>✓ Genuine Parts</strong>
+                            <strong>✓ Genuine Parts Inventory</strong>
                         </div>
                         <div class="highlight-item">
-                            <strong>✓ 18+ Years Experience</strong>
+                            <strong>✓ 18+ Years Seattle Experience</strong>
                         </div>
                     </div>
                     <a href="javascript:void(0);" onclick="location.href='mailto:services@fixitexpresso.com?subject=Commercial Equipment Repair Request&body=Please provide details about your equipment and the issue you are experiencing.';" class="btn btn-primary">Get Service Quote</a>
@@ -1826,7 +1271,7 @@
     </section>
 
     <!-- Customer Reviews Section -->
-    <section id="reviews" class="reviews section">
+    <section class="reviews section">
         <div class="container">
             <h2>What Our Customers Say</h2>
             <p class="reviews-subtitle">Authentic Google reviews from Seattle-area businesses • 5.0★ Rating</p>
@@ -1975,139 +1420,109 @@
     <!-- Services Section -->
     <section id="services" class="services section">
         <div class="container">
-            <h2>Commercial Equipment Repair Services</h2>
+            <h2>Professional Commercial Kitchen Equipment Repair Services</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-number">01</div>
                     <h3>BUNN Coffee Machine Repair</h3>
-                    <p>Commercial coffee brewers, grinders, and dispensers. Expert diagnosis, parts replacement, and calibration for consistent coffee quality.</p>
+                    <p><strong>All BUNN Models:</strong> Commercial coffee brewers, grinders, and dispensers. Expert diagnosis, parts replacement, and calibration services for consistent coffee quality and reliability.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-number">02</div>
                     <h3>TurboChef Oven Service</h3>
-                    <p>Professional repair for TurboChef speed ovens including NGC, NGO, and Sota models. Quick diagnosis and fast service. <strong>Drop-off service available</strong> - no travel charges for faster repairs!</p>
+                    <p>Professional repair and maintenance for TurboChef speed ovens including NGC, NGO, Sota, and other models. Quick diagnosis and fast service to minimize kitchen downtime. <strong>Drop-off service now available</strong> - bring your TurboChef oven to us for faster repairs with no travel charges!</p>
                 </div>
                 <div class="service-card">
                     <div class="service-number">03</div>
                     <h3>Schaerer Espresso Machines</h3>
-                    <p>Complete repair services for Schaerer espresso machines and commercial coffee equipment. Professional maintenance to keep your coffee service running smoothly.</p>
+                    <p>Complete repair services for Schaerer espresso machines and commercial coffee equipment. Keep your coffee service running smoothly with professional maintenance and repairs.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-number">04</div>
                     <h3>SureShot Dairy & Kitchen Equipment</h3>
-                    <p>Expert maintenance and repair for SureShot dairy machines and other commercial kitchen equipment. Comprehensive service for all your food service needs.</p>
+                    <p>Expert maintenance and repair for SureShot dairy machines and other commercial kitchen equipment. Comprehensive service for all your food service equipment needs.</p>
                 </div>
             </div>
             
             <!-- Drop-off Service Highlight -->
             <div class="service-areas" style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); color: white; border: none;">
                 <h3 style="color: white;">⚡ NEW: TurboChef Drop-Off Service</h3>
-                <p style="color: #ecf0f1;"><strong>Faster repairs, no travel charges!</strong> Drop off your TurboChef oven for expedited service. Cost-effective repairs without on-site urgency.</p>
+                <p style="color: #ecf0f1;"><strong>Faster repairs, no travel charges!</strong> Drop off your TurboChef oven at our facility for expedited service. Perfect for non-critical situations where you want cost-effective, professional repairs without the urgency of on-site service.</p>
             </div>
             
             <!-- Service Areas -->
             <div class="service-areas">
-                <h3>Service Areas</h3>
-                <p>Seattle, Bellevue, Tacoma, Renton, Kent, Federal Way, Bothell, Redmond, Kirkland, Issaquah, and King County. Other areas available - call to inquire.</p>
+                <h3>Commercial Equipment Repair Service Areas</h3>
+                <p>We provide commercial kitchen equipment repair services throughout the greater Seattle area including: Seattle, Bellevue, Tacoma, Renton, Kent, Federal Way, Bothell, Redmond, Kirkland, Issaquah, and surrounding King County locations. Other areas may be available depending on our availability - please call to inquire.</p>
             </div>
         </div>
     </section>
 
     <!-- Process Section -->
-    <section id="process" class="process section">
+    <section class="process section">
         <div class="container">
-            <h2>Our Repair Process</h2>
-            <p class="process-subtitle">Professional equipment repair in 4 simple steps</p>
+            <h2>Our Commercial Equipment Repair Process</h2>
+            <p class="process-subtitle">Professional equipment repair in 4 simple steps - Fast service available</p>
             <div class="process-steps">
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <h3>Contact Us</h3>
-                    <p>Call for immediate assistance. We'll gather equipment details and schedule service.</p>
+                    <p>Call our equipment experts for immediate assistance. We'll gather details about your equipment and schedule a service appointment.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">2</div>
-                    <h3>Inspection</h3>
-                    <p>Our technician arrives with genuine parts and diagnostic tools for accurate assessment.</p>
+                    <h3>On-Site Inspection</h3>
+                    <p>Our certified technician arrives with genuine parts and diagnostic tools for accurate assessment of your equipment.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">3</div>
-                    <h3>Repair</h3>
-                    <p>Professional repair using authentic parts and manufacturer specifications.</p>
+                    <h3>Expert Repair</h3>
+                    <p>Professional equipment repair using authentic parts, proper calibration, and manufacturer specifications.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">4</div>
-                    <h3>Testing</h3>
-                    <p>Complete testing of equipment functionality with warranty on parts and labor.</p>
+                    <h3>Testing & Warranty</h3>
+                    <p>Complete testing of your equipment functionality with warranty on parts and labor for your peace of mind.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="faq section">
+    <section class="faq section">
         <div class="container">
-            <h2>Equipment Repair FAQ</h2>
+            <h2>Commercial Equipment Repair FAQ</h2>
             <div class="faq-grid">
-                <div class="faq-item collapsed">
-                    <h3 class="faq-question" onclick="toggleFAQ(this)">
-                        What commercial equipment do you repair?
-                        <span class="faq-toggle">+</span>
-                    </h3>
-                    <div class="faq-answer">
-                        <p>We repair BUNN coffee machines, TurboChef ovens, Schaerer espresso machines, SureShot dairy systems, and other commercial kitchen equipment.</p>
-                    </div>
+                <div class="faq-item">
+                    <h3>What commercial equipment do you repair?</h3>
+                    <p>We repair BUNN coffee machines, TurboChef ovens, Schaerer espresso machines, SureShot dairy systems, and other commercial kitchen equipment. Our technicians are trained on all major brands and models.</p>
                 </div>
-                <div class="faq-item collapsed">
-                    <h3 class="faq-question" onclick="toggleFAQ(this)">
-                        How quickly can you repair my commercial equipment?
-                        <span class="faq-toggle">+</span>
-                    </h3>
-                    <div class="faq-answer">
-                        <p>We offer fast repair service for most issues. Our technicians carry common parts and often complete repairs during the initial visit.</p>
-                    </div>
+                <div class="faq-item">
+                    <h3>How quickly can you repair my commercial equipment?</h3>
+                    <p>We offer fast repair service for most issues. Our technicians carry common parts and can often complete repairs during the initial visit. Emergency service is available for critical kitchen operations.</p>
                 </div>
-                <div class="faq-item collapsed">
-                    <h3 class="faq-question" onclick="toggleFAQ(this)">
-                        Do you use genuine parts?
-                        <span class="faq-toggle">+</span>
-                    </h3>
-                    <div class="faq-answer">
-                        <p>Yes, we use only genuine OEM parts to ensure optimal performance and maintain warranties. We stock common components for faster repairs.</p>
-                    </div>
+                <div class="faq-item">
+                    <h3>Do you use genuine parts?</h3>
+                    <p>Yes, we stock and use only genuine OEM parts to ensure optimal performance and maintain your warranty. We maintain an inventory of common components for faster repair completion.</p>
                 </div>
-                <div class="faq-item collapsed">
-                    <h3 class="faq-question" onclick="toggleFAQ(this)">
-                        What areas do you service?
-                        <span class="faq-toggle">+</span>
-                    </h3>
-                    <div class="faq-answer">
-                        <p>Seattle, Bellevue, Tacoma, Renton, and King County. Other areas available - call to discuss. We also offer drop-off service for TurboChef ovens.</p>
-                    </div>
+                <div class="faq-item">
+                    <h3>What areas do you service?</h3>
+                    <p>We provide commercial equipment repair throughout Seattle, Bellevue, Tacoma, Renton, and King County. Other areas may be available depending on our availability - please call to discuss your location. We also offer drop-off service for TurboChef ovens with no travel charges.</p>
                 </div>
-                <div class="faq-item collapsed">
-                    <h3 class="faq-question" onclick="toggleFAQ(this)">
-                        How much does equipment repair cost?
-                        <span class="faq-toggle">+</span>
-                    </h3>
-                    <div class="faq-answer">
-                        <p>Costs are determined after diagnosing the issue and identifying required parts. We provide upfront estimates before starting work.</p>
-                    </div>
+                <div class="faq-item">
+                    <h3>How much does equipment repair cost?</h3>
+                    <p>Repair costs are determined after diagnosing the specific issue and identifying required parts. We provide upfront estimates before starting any work so there are no surprises.</p>
                 </div>
-                <div class="faq-item collapsed">
-                    <h3 class="faq-question" onclick="toggleFAQ(this)">
-                        Do you offer drop-off service?
-                        <span class="faq-toggle">+</span>
-                    </h3>
-                    <div class="faq-answer">
-                        <p>Yes! We offer drop-off service for TurboChef ovens. This allows for faster repairs and waives travel charges.</p>
-                    </div>
+                <div class="faq-item">
+                    <h3>Do you offer drop-off service?</h3>
+                    <p>Yes! Starting this year, we offer drop-off service for TurboChef ovens. This allows for faster repairs and waives travel charges, making it a convenient and cost-effective option for TurboChef oven repairs.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Hours Section -->
-    <section id="contact" class="hours section">
+    <section class="hours section">
         <div class="container">
             <h2>Business Hours</h2>
             <div class="hours-content">
@@ -2115,7 +1530,7 @@
                     <div class="hours-weekdays">Monday - Saturday</div>
                     <div class="hours-time">9:00 AM - 5:00 PM</div>
                     <div class="hours-weekend">Sunday: 11:00 AM - 3:00 PM</div>
-                    <div class="hours-note">Emergency repairs available</div>
+                    <div class="hours-note">Emergency repairs available - Call for details</div>
                 </div>
             </div>
         </div>
@@ -2177,7 +1592,7 @@
             </div>
             <div class="footer-text">
                 <p>&copy; 2025 FixIt Expresso - Seattle's Professional Commercial Kitchen Equipment Repair Service. All rights reserved.</p>
-                <p>Certified technicians serving Seattle, Bellevue, Tacoma and King County since 2023 with 18+ years experience working on commercial kitchen equipment.</p>
+                <p>Certified technicians serving Seattle, Bellevue, Tacoma and King County since 2023.</p>
                 <p><a href="/sitemap.xml" style="color: #95a5a6;">Sitemap</a> | <a href="/robots.txt" style="color: #95a5a6;">Robots.txt</a></p>
             </div>
         </div>
@@ -2263,110 +1678,6 @@
         
         // Initialize first review
         showReview(0);
-
-        // FAQ Toggle Functionality
-        function toggleFAQ(element) {
-            const faqItem = element.parentElement;
-            const toggle = element.querySelector('.faq-toggle');
-            
-            faqItem.classList.toggle('collapsed');
-            
-            if (faqItem.classList.contains('collapsed')) {
-                toggle.textContent = '+';
-            } else {
-                toggle.textContent = '−';
-            }
-        }
-
-        // Hamburger Menu Functionality
-        function toggleMenu() {
-            const hamburger = document.querySelector('.hamburger');
-            const navMenu = document.querySelector('.nav-menu');
-            const overlay = document.querySelector('.menu-overlay');
-            
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            overlay.classList.toggle('active');
-        }
-
-        function closeMenu() {
-            const hamburger = document.querySelector('.hamburger');
-            const navMenu = document.querySelector('.nav-menu');
-            const overlay = document.querySelector('.menu-overlay');
-            
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            overlay.classList.remove('active');
-        }
-
-        // Close menu when clicking overlay
-        document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('menu-overlay')) {
-                closeMenu();
-            }
-        });
-
-        // Close menu on escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeMenu();
-            }
-        });
-
-        // Handle navigation links
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.nav-menu a');
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    
-                    // Only handle hash links
-                    if (href && href.startsWith('#')) {
-                        const targetId = href.substring(1);
-                        const targetElement = document.getElementById(targetId);
-                        
-                        if (targetElement) {
-                            e.preventDefault();
-                            
-                            // Close menu first
-                            closeMenu();
-                            
-                            // Wait a bit for menu close animation, then scroll
-                            setTimeout(() => {
-                                targetElement.scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'start'
-                                });
-                            }, 100);
-                        }
-                    }
-                });
-            });
-        });
     </script>
-
-    <!-- Hamburger Menu -->
-    <div class="hamburger-menu">
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#process">Process</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <!-- Menu Overlay -->
-    <div class="menu-overlay"></div>
 </body>
 </html>
