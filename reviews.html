@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews - FixIt Expresso | Seattle Equipment Repair</title>
+    <meta name="description" content="Read authentic customer reviews for FixIt Expresso's commercial kitchen equipment repair services in Seattle. 5.0★ rating on Google Reviews.">
+    <link rel="stylesheet" href="css/site.8b5291.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .company-name h1 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            padding: 60px 0;
+        }
+
+        .reviews-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Reviews Grid */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .review-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stars {
+            color: #f39c12;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .review-content {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .review-content::before {
+            content: '"';
+            font-size: 2rem;
+            color: #3498db;
+            line-height: 1;
+        }
+
+        .review-content::after {
+            content: '"';
+            font-size: 2rem;
+            color: #3498db;
+            line-height: 1;
+        }
+
+        .reviewer {
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .reviewer-name {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .review-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #3498db;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: white;
+            color: #3498db;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a252f;
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            color: #bdc3c7;
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reviews-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="company-name">
+                    <h1>FixIt Expresso</h1>
+                </div>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Customer Reviews</h1>
+            <p>Authentic Google reviews from Seattle-area businesses who trust FixIt Expresso for their commercial kitchen equipment repair needs.</p>
+        </div>
+    </section>
+
+    <!-- Reviews Stats -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="reviews-stats">
+                <div class="stat-card">
+                    <div class="stat-number">5.0/5</div>
+                    <div class="stat-label">Google Rating</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Google Reviews</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">18+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Same Day</div>
+                    <div class="stat-label">Service Available</div>
+                </div>
+            </div>
+
+            <!-- All Reviews -->
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="review-content">Harvey was able to come out and fix our TurboChef within 24 hours of our first call! Great communication and professional service. I will be calling FixIt Expresso for all our TurboChef repairs from now on!</div>
+                    <div class="reviewer">
+                        <div class="reviewer-name">Russell St. John</div>
+                        <div class="review-date">Google Review • 3 weeks ago</div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="review-content">We just had a catastrophe where our only two TurboChef ovens both went down, and we thought we were going to lose days worth of food sales—but he got creative and borrowed parts from one oven for the other one so we had one functioning while he ordered parts for the other! Service has always been prompt and our time restrictions were accommodated.</div>
+                    <div class="reviewer">
+                        <div class="reviewer-name">Carly Kendrick</div>
+                        <div class="review-date">Google Review • 5 months ago</div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="review-content">Recommended by Turbochef's support team, we hired FixIt to repair a Turbochef Eco. They were refreshingly responsive, clear, and willing to answer any questions. Their pricing was fair and clear. Was able to repair the unit right away and gave us feedback on how to avoid the issue in the future.</div>
+                    <div class="reviewer">
+                        <div class="reviewer-name">Matthew Wendland</div>
+                        <div class="review-date">Google Review • 11 months ago</div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="review-content">I am a chef that oversees a restaurant at SeaTac airport. We have 4 TurboChefs and have had so many issues with them. Manjit and his team came to our rescue!! Within minutes they had isolated the problems, fixed other companies' errors, and are now an essential part of our team! If I could give 10 stars I would!!</div>
+                    <div class="reviewer">
+                        <div class="reviewer-name">Cameon Orel</div>
+                        <div class="review-date">Google Review • 10 months ago</div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="review-content">The owner picked up the phone right away and came in to look at our Bunn coffee machine. He listened carefully to my concerns, was super respectful and kind, and was able to fix our machine super quickly and at a great price. I'll definitely call back when we need service in the future!</div>
+                    <div class="reviewer">
+                        <div class="reviewer-name">Sofia A.</div>
+                        <div class="review-date">Google Review • 1 year ago</div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="review-content">Have two older Turbochef encores. Harvey came out the evening I called and fixed one of the units, enough to get us going. We scheduled a time a few days later to fix the other. Both days prompt and super easy to deal with. Extremely happy with the service.</div>
+                    <div class="reviewer">
+                        <div class="reviewer-name">John Hermann</div>
+                        <div class="review-date">Google Review • 1 year ago</div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="review-content">We've been using Fix it expresso for ongoing appliance repairs and maintenance, and I can't recommend them enough! Their team is consistently reliable and provides excellent service every time. Whether it's a minor fix or a routine check-up, they are always prompt, professional, and thorough.</div>
+                    <div class="reviewer">
+                        <div class="reviewer-name">Veronica Aguirre</div>
+                        <div class="review-date">Google Review • 6 months ago</div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="review-content">We had a TurboChef failing and these folks were quick, nice, and professional. Service was wonderful and I highly recommend.</div>
+                    <div class="reviewer">
+                        <div class="reviewer-name">Jesse Nelson</div>
+                        <div class="review-date">Google Review • 7 months ago</div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="review-content">Use these guys anytime you need a toaster repaired quickly, efficiently, and correctly. Same day service in most cases, fantastic communication, and a commitment to excellent service are what make FixIt my go to anytime my toasters go down. 5 stars easy</div>
+                    <div class="reviewer">
+                        <div class="reviewer-name">Ben Gunsten</div>
+                        <div class="review-date">Google Review • 1 year ago</div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="review-content">Manjit and his team are amazing. Highly recommended for restaurant Turbo Chef repairs. They know what they are doing!! And they are really great people too. 10 STARS!!!</div>
+                    <div class="reviewer">
+                        <div class="reviewer-name">Kathy Casey</div>
+                        <div class="review-date">Google Review • 10 months ago</div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="review-content">Answered the phone right away, drove 90mi (for a reasonable milage fee) that afternoon to fix our turbo chef and get us up and running before business the next day. Rockstar</div>
+                    <div class="reviewer">
+                        <div class="reviewer-name">Jonny Kemp</div>
+                        <div class="review-date">Google Review • 11 months ago</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready for Professional Service?</h2>
+            <p>Join our satisfied customers and get your equipment running at peak performance.</p>
+            <a href="tel:425-547-0200" class="btn">Call Now: 425-547-0200</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 FixIt Expresso - Seattle's Professional Commercial Kitchen Equipment Repair Service</p>
+            <p><a href="index.html" style="color: #3498db;">Home</a> | <a href="faq.html" style="color: #3498db;">FAQ</a> | <a href="tel:425-547-0200" style="color: #3498db;">425-547-0200</a></p>
+        </div>
+    </footer>
+</body>
+</html>

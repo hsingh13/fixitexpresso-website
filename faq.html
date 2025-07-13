@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Equipment Repair Questions | FixIt Expresso Seattle</title>
+    <meta name="description" content="Frequently asked questions about commercial kitchen equipment repair services. Get answers about TurboChef, BUNN, and Schaerer repairs in Seattle.">
+    <link rel="stylesheet" href="css/site.8b5291.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .company-name h1 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px 0;
+        }
+
+        .faq-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .faq-category {
+            background: white;
+            border-radius: 15px;
+            padding: 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .category-header {
+            background: #3498db;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .category-header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .category-header p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .faq-items {
+            padding: 30px;
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: #3498db;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: #3498db;
+            transition: transform 0.3s ease;
+            font-weight: bold;
+        }
+
+        .faq-item.collapsed .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            color: #666;
+            line-height: 1.7;
+            font-size: 1rem;
+            padding-left: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:not(.collapsed) .faq-answer {
+            max-height: 200px;
+            padding-bottom: 10px;
+        }
+
+        /* Contact CTA */
+        .contact-cta {
+            background: #34495e;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .contact-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #3498db;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #34495e;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a252f;
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            color: #bdc3c7;
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .faq-categories {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="company-name">
+                    <h1>FixIt Expresso</h1>
+                </div>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Get answers to common questions about our commercial kitchen equipment repair services in Seattle and surrounding areas.</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-categories">
+                <!-- General Service Questions -->
+                <div class="faq-category">
+                    <div class="category-header">
+                        <h2>General Service</h2>
+                        <p>Basic questions about our repair services</p>
+                    </div>
+                    <div class="faq-items">
+                        <div class="faq-item collapsed">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                What commercial equipment do you repair?
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                We specialize in BUNN coffee machines, TurboChef ovens, Schaerer espresso machines, SureShot dairy systems, and other commercial kitchen equipment. Our technicians are trained on multiple brands and models.
+                            </div>
+                        </div>
+
+                        <div class="faq-item collapsed">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                How quickly can you repair my equipment?
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                We offer same-day service in most cases. Our technicians carry common parts and diagnostic tools, allowing us to complete many repairs during the initial visit. Emergency repairs are available.
+                            </div>
+                        </div>
+
+                        <div class="faq-item collapsed">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                What areas do you service?
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                We serve Seattle, Bellevue, Tacoma, Renton, Kent, Federal Way, Bothell, Redmond, Kirkland, Issaquah, and all of King County. Other areas are available - call to inquire about your location.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Equipment Specific -->
+                <div class="faq-category">
+                    <div class="category-header">
+                        <h2>Equipment Specific</h2>
+                        <p>Questions about specific equipment brands</p>
+                    </div>
+                    <div class="faq-items">
+                        <div class="faq-item collapsed">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                Do you offer TurboChef drop-off service?
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                Yes! We offer drop-off service for TurboChef ovens. This allows for faster repairs without travel charges and is often more cost-effective for non-urgent repairs.
+                            </div>
+                        </div>
+
+                        <div class="faq-item collapsed">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                What BUNN coffee machine models do you service?
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                We service all BUNN commercial coffee machines including brewers, grinders, and dispensers. Our technicians are experienced with both older and newer models.
+                            </div>
+                        </div>
+
+                        <div class="faq-item collapsed">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                Can you repair Schaerer espresso machines?
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                Absolutely. We provide complete repair services for Schaerer espresso machines and other commercial coffee equipment, including maintenance and part replacement.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing & Parts -->
+                <div class="faq-category">
+                    <div class="category-header">
+                        <h2>Pricing & Parts</h2>
+                        <p>Cost and parts information</p>
+                    </div>
+                    <div class="faq-items">
+                        <div class="faq-item collapsed">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                How much does equipment repair cost?
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                Repair costs depend on the specific issue and required parts. We provide upfront estimates after diagnosing the problem and always get approval before starting work.
+                            </div>
+                        </div>
+
+                        <div class="faq-item collapsed">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                Do you use genuine parts?
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                Yes, we use only genuine OEM parts to ensure optimal performance and maintain equipment warranties. We stock common components for faster repairs.
+                            </div>
+                        </div>
+
+                        <div class="faq-item collapsed">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                Do you charge for diagnostic time?
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                We provide transparent pricing for all services including diagnostic time. All costs are discussed upfront with no hidden fees.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Process -->
+                <div class="faq-category">
+                    <div class="category-header">
+                        <h2>Service Process</h2>
+                        <p>How our repair process works</p>
+                    </div>
+                    <div class="faq-items">
+                        <div class="faq-item collapsed">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                What happens during a service call?
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                Our technician arrives with diagnostic tools and common parts, performs a thorough inspection, provides an estimate, completes the repair with your approval, and tests the equipment thoroughly.
+                            </div>
+                        </div>
+
+                        <div class="faq-item collapsed">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                Do you test equipment after repairs?
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                Yes, we perform complete testing of all equipment functionality to ensure proper operation before considering the job complete.
+                            </div>
+                        </div>
+
+                        <div class="faq-item collapsed">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                How do I schedule a repair?
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                Simply call us at 425-547-0200 or email services@fixitexpresso.com. We'll gather equipment details, discuss the issue, and schedule service at your convenience.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+        <div class="container">
+            <h2>Still Have Questions?</h2>
+            <p>Our experienced technicians are ready to help with your commercial equipment needs.</p>
+            <div class="cta-buttons">
+                <a href="tel:425-547-0200" class="btn btn-primary">Call Now: 425-547-0200</a>
+                <a href="mailto:services@fixitexpresso.com" class="btn btn-secondary">Email Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 FixIt Expresso - Seattle's Professional Commercial Kitchen Equipment Repair Service</p>
+            <p><a href="index.html" style="color: #3498db;">Home</a> | <a href="reviews.html" style="color: #3498db;">Reviews</a> | <a href="tel:425-547-0200" style="color: #3498db;">425-547-0200</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const toggle = element.querySelector('.faq-toggle');
+            
+            faqItem.classList.toggle('collapsed');
+            
+            if (faqItem.classList.contains('collapsed')) {
+                toggle.textContent = '+';
+            } else {
+                toggle.textContent = '−';
+            }
+        }
+    </script>
+</body>
+</html>
