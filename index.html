@@ -86,7 +86,7 @@
         "addressLocality": "Seattle",
         "addressRegion": "WA",
         "addressCountry": "US",
-        "areaServed": "Greater Seattle Area"
+        "postalCode": "98101"
       },
       "geo": {
         "@type": "GeoCoordinates",
@@ -105,6 +105,23 @@
         },
         "geoRadius": "50000"
       },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Seattle",
+          "addressRegion": "WA"
+        },
+        {
+          "@type": "City", 
+          "name": "Bellevue",
+          "addressRegion": "WA"
+        },
+        {
+          "@type": "City",
+          "name": "Tacoma", 
+          "addressRegion": "WA"
+        }
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "TurboChef and Commercial Kitchen Equipment Repair Services",
@@ -170,11 +187,11 @@
     }
     </script>
     
-    <!-- TurboChef Product Specific Schema -->
+    <!-- TurboChef Service Schema (Fixed for Google Search Console) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Product",
+      "@type": "Service",
       "name": "TurboChef Oven Repair Service",
       "description": "Professional TurboChef speed oven repair service for NGC, NGO, and Sota models. Expert technicians with certified training and drop-off service available in Seattle area.",
       "brand": {
@@ -182,31 +199,42 @@
         "name": "TurboChef"
       },
       "category": "Commercial Kitchen Equipment Repair Service",
-      "model": ["TurboChef NGC", "TurboChef NGO", "TurboChef Sota", "TurboChef Speed Ovens"],
+      "serviceType": "Equipment Repair and Maintenance",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "FixIt Expresso",
+        "telephone": "+1-425-547-0200",
+        "email": "services@fixitexpresso.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Seattle",
+          "addressRegion": "WA",
+          "addressCountry": "US"
+        }
+      },
       "offers": {
         "@type": "Offer",
         "availability": "https://schema.org/InStock",
-        "priceRange": "Contact for pricing",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "price": "Contact for pricing"
+        },
         "seller": {
           "@type": "Organization",
           "name": "FixIt Expresso",
           "telephone": "+1-425-547-0200"
-        },
-        "areaServed": {
-          "@type": "GeoCircle",
-          "geoMidpoint": {
-            "@type": "GeoCoordinates",
-            "latitude": "47.6062",
-            "longitude": "-122.3321"
-          },
-          "geoRadius": "50000"
         }
       },
-      "manufacturer": {
-        "@type": "Organization",
-        "name": "TurboChef Technologies"
-      },
-      "serviceArea": "Greater Seattle Area, King County, Washington"
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "47.6062",
+          "longitude": "-122.3321"
+        },
+        "geoRadius": "50000"
+      }
     }
     </script>
     
@@ -216,7 +244,6 @@
     
     <!-- Performance Optimizations -->
     <link rel="preload" href="images/coffee-1200.jpg" as="image" type="image/jpeg">
-    <link rel="preload" href="images/1829804-450.jpg" as="image" type="image/jpeg">
     <link rel="dns-prefetch" href="https://www.facebook.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
     
