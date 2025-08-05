@@ -1,0 +1,17 @@
+# Disavow file for fixitexpresso.com
+# Submit to Google Search Console > Security & Manual Actions > Disavow Links
+# This file contains domains and URLs to disavow due to spam/malicious activity
+
+# Malicious referrer domains discovered in Google Search Console
+domain:dzj.me
+
+# Common spam referrer domains (add as discovered)
+domain:semalt.com
+domain:buttons-for-website.com
+domain:social-buttons.com
+
+# Instructions:
+# 1. Upload this file to Google Search Console
+# 2. Go to Security & Manual Actions > Disavow Links
+# 3. Select your property and upload this file
+# 4. Monitor for additional spam referrers and update as needed

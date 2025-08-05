@@ -10,6 +10,12 @@
     <meta name="google-site-verification" content="y6AxgV5TtyHBG-kF3G7vWbTIw4sKB2edW1mJClcZ1qA">
     <meta name="robots" content="max-image-preview:large">
     
+    <!-- Enhanced SEO and Sitemap Discovery -->
+    <meta name="googlebot" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+    <meta name="bingbot" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <meta name="sitemap" content="https://www.fixitexpresso.com/sitemap.xml">
+    
     <!-- Additional TurboChef SEO Meta Tags -->
     <meta name="geo.region" content="US-WA">
     <meta name="geo.placename" content="Seattle, Washington">
@@ -241,6 +247,10 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-6aa032.png">
     <link rel="manifest" href="manifest.json" crossOrigin="use-credentials">
+    
+    <!-- Additional Discovery and Anti-Spam Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data:; frame-ancestors 'self'; referrer no-referrer-when-downgrade;">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     
     <!-- Performance Optimizations -->
     <link rel="preload" href="images/coffee-1200.jpg" as="image" type="image/jpeg">
@@ -2910,6 +2920,37 @@
         
         // Initialize first review
         showReview(0);
+
+        // GitHub Pages redirect fallback (in case .htaccess doesn't work)
+        (function() {
+            const currentUrl = window.location.href;
+            const hostname = window.location.hostname;
+            const protocol = window.location.protocol;
+            
+            // Redirect non-www to www
+            if (hostname === 'fixitexpresso.com') {
+                window.location.replace(currentUrl.replace('fixitexpresso.com', 'www.fixitexpresso.com'));
+                return;
+            }
+            
+            // Redirect HTTP to HTTPS (if somehow accessed via HTTP)
+            if (protocol === 'http:' && hostname.includes('fixitexpresso.com')) {
+                window.location.replace(currentUrl.replace('http:', 'https:'));
+                return;
+            }
+            
+            // Block malicious referrers
+            const referrer = document.referrer;
+            if (referrer && (
+                referrer.includes('dzj.me') ||
+                referrer.includes('semalt.com') ||
+                referrer.includes('buttons-for-website.com') ||
+                referrer.includes('social-buttons.com')
+            )) {
+                // Log the attempt but don't redirect away from legitimate content
+                console.warn('Blocked malicious referrer:', referrer);
+            }
+        })();
 
         // FAQ Functionality
         document.querySelectorAll('.faq-question').forEach(question => {

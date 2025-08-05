@@ -1,6 +1,16 @@
 # Force HTTPS and WWW subdomain
 RewriteEngine On
 
+# Block malicious referrer domains
+RewriteCond %{HTTP_REFERER} ^https?://.*dzj\.me [NC]
+RewriteRule .* - [F,L]
+
+# Block other common spam referrers
+RewriteCond %{HTTP_REFERER} ^https?://.*semalt\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?://.*buttons-for-website\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?://.*social-buttons\.com [NC]
+RewriteRule .* - [F,L]
+
 # Redirect HTTP to HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
