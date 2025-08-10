@@ -1,0 +1,81 @@
+# GitHub Pages Jekyll Configuration for FixIt Expresso
+# This file helps GitHub Pages serve your site correctly
+
+# Site settings
+title: "FixIt Expresso - TurboChef Repair Seattle"
+description: "Professional TurboChef speed oven repair service in Seattle. Expert technicians for TurboChef NGC, NGO, Sota models. BUNN coffee machines & commercial kitchen equipment repair."
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://www.fixitexpresso.com" # the base hostname & protocol for your site
+
+# SEO settings
+lang: en-US
+author: "FixIt Expresso"
+twitter:
+  username: fixitexpresso
+  card: summary_large_image
+
+# Social media
+social:
+  name: FixIt Expresso
+  links:
+    - https://www.facebook.com/people/FixIt-Expresso/61565950418990/
+
+# GitHub Pages settings
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - disavow.txt
+  - .gitignore
+  - .git
+  - node_modules
+  - package*.json
+
+# Include files that start with dot
+include:
+  - .htaccess
+
+# Markdown settings
+markdown: kramdown
+highlighter: rouge
+
+# Sass settings
+sass:
+  style: compressed
+
+# SEO optimizations
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+      image: "/images/1829804-450.jpg"
+
+# Custom variables for TurboChef SEO
+business:
+  name: "FixIt Expresso"
+  phone: "425-547-0200"
+  email: "services@fixitexpresso.com"
+  address: "Greater Seattle Area, WA"
+  services: 
+    - "TurboChef NGC repair"
+    - "TurboChef NGO service"
+    - "TurboChef Sota repair"
+    - "BUNN coffee machine repair"
+    - "Schaerer espresso machine service"
+  areas:
+    - "Seattle"
+    - "Bellevue" 
+    - "Tacoma"
+    - "King County"
+
+# Force HTTPS and WWW
+enforce_ssl: www.fixitexpresso.com
+
+# Timezone
+timezone: America/Los_Angeles

@@ -2921,34 +2921,49 @@
         // Initialize first review
         showReview(0);
 
-        // GitHub Pages redirect fallback (in case .htaccess doesn't work)
+        // GitHub Pages redirect and security (search engine friendly)
         (function() {
             const currentUrl = window.location.href;
             const hostname = window.location.hostname;
             const protocol = window.location.protocol;
+            const userAgent = navigator.userAgent.toLowerCase();
             
-            // Redirect non-www to www
-            if (hostname === 'fixitexpresso.com') {
-                window.location.replace(currentUrl.replace('fixitexpresso.com', 'www.fixitexpresso.com'));
-                return;
+            // Check if this is a search engine crawler
+            const isSearchCrawler = /googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly/i.test(userAgent);
+            
+            // Only redirect for regular users, not crawlers
+            if (!isSearchCrawler) {
+                // Redirect non-www to www (to match GitHub Pages setup)
+                if (hostname === 'fixitexpresso.com') {
+                    window.location.replace(currentUrl.replace('fixitexpresso.com', 'www.fixitexpresso.com'));
+                    return;
+                }
+                
+                // Redirect HTTP to HTTPS (if somehow accessed via HTTP)
+                if (protocol === 'http:' && hostname.includes('fixitexpresso.com')) {
+                    window.location.replace(currentUrl.replace('http:', 'https:'));
+                    return;
+                }
             }
             
-            // Redirect HTTP to HTTPS (if somehow accessed via HTTP)
-            if (protocol === 'http:' && hostname.includes('fixitexpresso.com')) {
-                window.location.replace(currentUrl.replace('http:', 'https:'));
-                return;
-            }
-            
-            // Block malicious referrers
+            // Log malicious referrers but don't block search engines
             const referrer = document.referrer;
-            if (referrer && (
+            if (referrer && !isSearchCrawler && (
                 referrer.includes('dzj.me') ||
                 referrer.includes('semalt.com') ||
                 referrer.includes('buttons-for-website.com') ||
                 referrer.includes('social-buttons.com')
             )) {
-                // Log the attempt but don't redirect away from legitimate content
-                console.warn('Blocked malicious referrer:', referrer);
+                // Log the attempt for analytics but don't interfere with content
+                console.warn('Detected malicious referrer:', referrer);
+                
+                // Optional: Track this event for analytics
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'spam_referrer_blocked', {
+                        'referrer': referrer,
+                        'user_agent': userAgent
+                    });
+                }
             }
         })();
 
