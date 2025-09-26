@@ -1,1 +1,39 @@
-{"short_name":"","display":"standalone","background_color":"#ffffff","name":"","theme_color":"#ffffff","icons":[{"src":"images\/android-chrome-512x512-646f08.png","sizes":"512x512","type":"image\/png"},{"src":"images\/android-chrome-196x196-4ff8e1.png","sizes":"196x196","type":"image\/png"}]}
+{
+  "name": "FixIt Expresso - TurboChef Repair Seattle",
+  "short_name": "FixIt Expresso",
+  "description": "Professional TurboChef speed oven repair service in Seattle. Expert technicians for NGC, NGO, Sota models.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3498db",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["business", "utilities"],
+  "icons": [
+    {
+      "src": "images/android-chrome-512x512-646f08.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/android-chrome-196x196-4ff8e1.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/apple-touch-icon-152x152-b2fea0.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/apple-touch-icon-120x120-c391a6.png",
+      "sizes": "120x120",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

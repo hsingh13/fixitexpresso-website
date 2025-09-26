@@ -20,4 +20,20 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- FAQ Page -->
+  <url>
+    <loc>https://www.fixitexpresso.com/faq.html</loc>
+    <lastmod>2025-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Reviews Page -->
+  <url>
+    <loc>https://www.fixitexpresso.com/reviews.html</loc>
+    <lastmod>2025-08-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
