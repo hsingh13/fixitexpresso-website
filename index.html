@@ -53,7 +53,7 @@
     <meta property="business:contact_data:postal_code" content="98001-98199">
     <meta property="business:contact_data:street_address" content="Greater Seattle Area">
     <meta name="service-area" content="Seattle, Bellevue, Tacoma, Renton, Kent, Federal Way, Bothell, Redmond, Kirkland, Issaquah, King County">
-    <meta name="equipment-brands" content="TurboChef, BUNN, Schaerer, SureShot">
+    <meta name="equipment-brands" content="TurboChef, Schaerer, BUNN, SureShot">
     <meta name="specialization" content="TurboChef Speed Oven Repair, High-Speed Commercial Oven Service">
     <meta name="certification" content="Certified Commercial Kitchen Equipment Technician">
     <meta name="service-type" content="On-site repair, Drop-off service, Emergency repair, Preventive maintenance">
@@ -137,21 +137,34 @@
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "TurboChef and Commercial Kitchen Equipment Repair Services",
+        "name": "TurboChef Speed Oven and Commercial Kitchen Equipment Repair Services",
         "itemListElement": [
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "TurboChef Speed Oven Repair",
-              "description": "Professional repair service for all TurboChef speed oven models including NGC, NGO, and Sota. Certified technicians with drop-off service available.",
+              "name": "TurboChef Speed Oven Repair - All Models",
+              "description": "Professional repair service for all TurboChef speed oven models including NGC, NGO, Sota, Encore, Fire, Bullet, i3, i5, and more. Certified technicians with drop-off service available.",
               "brand": {
                 "@type": "Brand",
                 "name": "TurboChef"
               },
-              "category": "Commercial Oven Repair",
-              "serviceType": "Repair and Maintenance",
+              "category": "TurboChef Speed Oven Repair",
+              "serviceType": "TurboChef Repair and Maintenance",
               "areaServed": "Seattle, Bellevue, Tacoma, King County"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Schaerer Espresso Machine Service",
+              "description": "Professional Schaerer espresso machine repair and maintenance for commercial establishments",
+              "brand": {
+                "@type": "Brand",
+                "name": "Schaerer"
+              },
+              "category": "Espresso Machine Repair"
             }
           },
           {
@@ -166,27 +179,22 @@
               },
               "category": "Coffee Equipment Repair"
             }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Schaerer Espresso Machine Service",
-              "description": "Professional Schaerer espresso machine repair and maintenance"
-            }
           }
         ]
       },
       "knowsAbout": [
         "TurboChef NGC repair",
-        "TurboChef NGO service", 
+        "TurboChef NGO service",
         "TurboChef Sota repair",
+        "TurboChef Encore repair",
+        "TurboChef Fire repair",
         "TurboChef speed oven maintenance",
-        "Commercial kitchen equipment repair",
+        "TurboChef drop-off service",
+        "TurboChef parts replacement",
+        "Commercial TurboChef service",
         "High speed oven repair",
         "Rapid cook oven service",
-        "TurboChef parts replacement",
-        "Commercial TurboChef service"
+        "Commercial kitchen equipment repair"
       ],
       "specialty": "TurboChef Speed Oven Repair Specialist",
       "yearsInOperation": "18+",
@@ -2659,7 +2667,7 @@
                 <!-- Main heading emphasizes TurboChef repair services -->
                 <h1 itemprop="name">FixIt Expresso</h1>
                 <!-- Service brands including TurboChef speed ovens -->
-                <h2 itemprop="description">BUNN • TurboChef • Schaerer • Fast Service</h2>
+                <h2 itemprop="description">TurboChef • Schaerer • BUNN • Fast Service</h2>
                 <!-- Hidden TurboChef keywords for SEO -->
                 <div style="display: none;" itemprop="keywords">TurboChef NGC repair, TurboChef NGO service, TurboChef Sota repair, TurboChef speed oven repair Seattle, TurboChef drop off service, commercial TurboChef repair technician</div>
                 <div class="cta-buttons">
@@ -2679,7 +2687,7 @@
                     <!-- Company specialization in TurboChef speed oven repair -->
                     <h2 itemprop="name">Why Choose FixIt Expresso</h2>
                     <!-- TurboChef repair experience and service description -->
-                    <p itemprop="description">Seattle's commercial kitchen equipment repair specialist with 18+ years of experience. We service BUNN coffee machines, TurboChef ovens, Schaerer espresso machines, and SureShot dairy systems with fast, professional repairs.</p>
+                    <p itemprop="description">Seattle's commercial kitchen equipment repair specialist with 18+ years of experience. We service TurboChef speed ovens, Schaerer espresso machines, BUNN coffee machines, and SureShot dairy systems with fast, professional repairs.</p>
                     <!-- Service area for TurboChef repair -->
                     <p itemprop="areaServed">Serving coffee shops, restaurants, and commercial kitchens across Seattle, Bellevue, Tacoma, and King County with reliable equipment maintenance and emergency repairs.</p>
                     <!-- Hidden TurboChef model keywords -->
@@ -2723,15 +2731,9 @@
         <div class="container">
             <h2 itemprop="name">Our Repair Services</h2>
             <div class="services-grid">
-                <div class="service-card" itemscope itemtype="https://schema.org/Service">
-                    <div class="service-number">01</div>
-                    <h3 itemprop="name">BUNN Coffee Machine Repair</h3>
-                    <p itemprop="description">Commercial coffee brewers, grinders, and dispensers. Expert diagnosis, parts replacement, and calibration for consistent coffee quality.</p>
-                    <meta itemprop="serviceType" content="Coffee Equipment Repair">
-                </div>
                 <!-- TurboChef Speed Oven Repair Service - Primary Specialty -->
                 <div class="service-card" itemscope itemtype="https://schema.org/Service">
-                    <div class="service-number">02</div>
+                    <div class="service-number">01</div>
                     <!-- TurboChef oven repair service highlighting all models -->
                     <h3 itemprop="name">TurboChef Oven Service</h3>
                     <!-- TurboChef NGC, NGO, Sota repair description with drop-off service -->
@@ -2740,6 +2742,12 @@
                     <meta itemprop="brand" content="TurboChef">
                     <!-- Hidden TurboChef model keywords for enhanced SEO -->
                     <span style="display: none;" itemprop="keywords">TurboChef NGC repair, TurboChef NGO service, TurboChef Sota repair, TurboChef speed oven repair, TurboChef drop off service, TurboChef parts replacement, commercial TurboChef repair, TurboChef oven service technician, TurboChef maintenance Seattle</span>
+                </div>
+                <div class="service-card" itemscope itemtype="https://schema.org/Service">
+                    <div class="service-number">02</div>
+                    <h3 itemprop="name">BUNN Coffee Machine Repair</h3>
+                    <p itemprop="description">Commercial coffee brewers, grinders, and dispensers. Expert diagnosis, parts replacement, and calibration for consistent coffee quality.</p>
+                    <meta itemprop="serviceType" content="Coffee Equipment Repair">
                 </div>
                 <div class="service-card" itemscope itemtype="https://schema.org/Service">
                     <div class="service-number">03</div>
@@ -3086,11 +3094,19 @@
             <h2>Frequently Asked Questions</h2>
             <div class="faq-grid">
                 <div class="faq-item collapsed">
+                    <h3 class="faq-question">What TurboChef models do you repair?
+                        <span class="faq-toggle">+</span>
+                    </h3>
+                    <div class="faq-answer">
+                        <p>We repair all TurboChef speed oven models including NGC, NGO, Sota, Encore, Fire, Bullet, i3, i5, Plexor, Tornado, ECO, C3, C4, and HhC. Our certified technicians have 18+ years experience with both current and legacy TurboChef models.</p>
+                    </div>
+                </div>
+                <div class="faq-item collapsed">
                     <h3 class="faq-question">What equipment brands do you service?
                         <span class="faq-toggle">+</span>
                     </h3>
                     <div class="faq-answer">
-                        <p>We specialize in BUNN coffee machines, TurboChef ovens, Schaerer espresso machines, and SureShot dairy equipment. We also service other commercial kitchen equipment brands.</p>
+                        <p>We specialize in TurboChef speed ovens, Schaerer espresso machines, BUNN coffee machines, and SureShot dairy equipment. We also service other commercial kitchen equipment brands.</p>
                     </div>
                 </div>
                 <div class="faq-item collapsed">
