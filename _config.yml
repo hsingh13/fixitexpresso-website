@@ -3,7 +3,7 @@
 
 # Site settings
 title: "FixIt Expresso - TurboChef Repair Seattle"
-description: "Professional TurboChef speed oven repair service in Seattle. Expert technicians for TurboChef NGC, NGO, Sota models. BUNN coffee machines & commercial kitchen equipment repair."
+description: "Professional TurboChef speed oven repair service in Seattle. Expert technicians for TurboChef NGC, NGO, Sota models and commercial kitchen equipment repair."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.fixitexpresso.com" # the base hostname & protocol for your site
 
@@ -66,7 +66,6 @@ business:
     - "TurboChef NGC repair"
     - "TurboChef NGO service"
     - "TurboChef Sota repair"
-    - "BUNN coffee machine repair"
     - "Schaerer espresso machine service"
   areas:
     - "Seattle"
