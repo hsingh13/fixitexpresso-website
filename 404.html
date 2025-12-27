@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found | FixIt Expresso - TurboChef Repair Seattle</title>
     <meta name="description" content="The page you're looking for cannot be found. Find TurboChef repair services and commercial kitchen equipment repair in Seattle.">
-    <link rel="canonical" href="https://www.fixitexpresso.com/404.html">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <style>
         * {
@@ -197,41 +196,5 @@
         </div>
     </div>
 
-    <script>
-        // Auto-redirect common URL variations to prevent 404s
-        (function() {
-            const currentPath = window.location.pathname.toLowerCase();
-            const hostname = window.location.hostname;
-            
-            // Common redirects for old URLs or variations
-            const redirects = {
-                '/home': '/',
-                '/index': '/',
-                '/index.php': '/',
-                '/index.htm': '/',
-                '/turbochef': '/turbochef-troubleshooting.html',
-                '/turbochef-repair': '/',
-                '/repair': '/',
-                '/services': '/',
-                '/contact': '/',
-                '/about': '/'
-            };
-            
-            // Check if we should redirect
-            if (redirects[currentPath]) {
-                window.location.replace('https://www.fixitexpresso.com' + redirects[currentPath]);
-                return;
-            }
-            
-            // Log the 404 for analytics (if Google Analytics is present)
-            if (typeof gtag !== 'undefined') {
-                gtag('event', '404_page_view', {
-                    'page_location': window.location.href,
-                    'page_title': '404 - Page Not Found',
-                    'custom_parameter_1': document.referrer || 'direct'
-                });
-            }
-        })();
-    </script>
 </body>
 </html>

@@ -50,12 +50,5 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Custom 404 Error Page -->
-  <url>
-    <loc>https://www.fixitexpresso.com/404.html</loc>
-    <lastmod>2024-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.1</priority>
-  </url>
 
 </urlset>
