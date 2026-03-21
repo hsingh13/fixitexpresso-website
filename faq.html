@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BG9SJWRCJ"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4BG9SJWRCJ');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - Equipment Repair Questions | FixIt Expresso Seattle</title>
-    <meta name="description" content="Frequently asked questions about commercial kitchen equipment repair services. Get answers about TurboChef and Schaerer repairs in Seattle.">
+    <title>TurboChef Repair FAQ — Cost, Time &amp; Service</title>
+    <meta name="description" content="FAQ about TurboChef oven repair: cost, turnaround time, models serviced, drop-off service for Sota (NGO), service areas. Seattle's TurboChef specialists. Call 425-547-0200.">
     <link rel="canonical" href="https://www.fixitexpresso.com/faq.html">
     <style>
         * {
@@ -273,9 +276,37 @@
                 max-width: 300px;
             }
         }
+
+        /* Mobile Sticky Call Bar */
+        .mobile-call-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #27ae60;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            z-index: 9999;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+        }
+        .mobile-call-bar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        @media (max-width: 768px) {
+            .mobile-call-bar { display: block; }
+            body { padding-bottom: 50px; }
+        }
     </style>
 </head>
 <body>
+    <div class="mobile-call-bar">
+        <a href="tel:425-547-0200">Call Now: 425-547-0200</a>
+    </div>
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -322,7 +353,7 @@
                                 <span class="faq-toggle">+</span>
                             </div>
                             <div class="faq-answer">
-                                We specialize in TurboChef ovens, Schaerer espresso machines, SureShot dairy systems, and other commercial kitchen equipment. Our technicians are trained on multiple brands and models.
+                                We specialize in TurboChef speed ovens — all models including Sota (NGO), Bullet, Encore, HhD, i3, i5, NGC, and legacy models. We also service other commercial kitchen equipment. Our technicians are trained on multiple brands and models.
                             </div>
                         </div>
 
@@ -361,17 +392,17 @@
                                 <span class="faq-toggle">+</span>
                             </div>
                             <div class="faq-answer">
-                                Yes! We offer drop-off service for TurboChef ovens. This allows for faster repairs without travel charges and is often more cost-effective for non-urgent repairs.
+                                Yes! We offer drop-off service for TurboChef Sota (NGO) ovens. This allows for faster repairs without travel charges and is often more cost-effective for non-urgent repairs. For other models, we provide on-site service within 80 miles of Seattle.
                             </div>
                         </div>
 
                         <div class="faq-item collapsed">
                             <div class="faq-question" onclick="toggleFAQ(this)">
-                                Can you repair Schaerer espresso machines?
+                                What types of businesses do you serve?
                                 <span class="faq-toggle">+</span>
                             </div>
                             <div class="faq-answer">
-                                Absolutely. We provide complete repair services for Schaerer espresso machines and other commercial coffee equipment, including maintenance and part replacement.
+                                We service TurboChef ovens for restaurants, Subway franchises, hotels, hospitals, schools, corporate cafeterias, and any commercial kitchen. If you have a TurboChef oven, we can help.
                             </div>
                         </div>
                     </div>
@@ -465,7 +496,7 @@
             <p>Our experienced technicians are ready to help with your commercial equipment needs.</p>
             <div class="cta-buttons">
                 <a href="tel:425-547-0200" class="btn btn-primary">Call Now: 425-547-0200</a>
-                <a href="mailto:services@fixitexpresso.com" class="btn btn-secondary">Email Us</a>
+                <a href="contact.html" class="btn btn-secondary">Request Quote</a>
             </div>
         </div>
     </section>
@@ -473,7 +504,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 FixIt Expresso - Seattle's Professional Commercial Kitchen Equipment Repair Service</p>
+            <p>&copy; 2026 FixIt Expresso - Seattle's Professional Commercial Kitchen Equipment Repair Service</p>
             <p><a href="index.html" style="color: #3498db;">Home</a> | <a href="reviews.html" style="color: #3498db;">Reviews</a> | <a href="tel:425-547-0200" style="color: #3498db;">425-547-0200</a></p>
         </div>
     </footer>

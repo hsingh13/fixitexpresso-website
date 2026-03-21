@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BG9SJWRCJ"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4BG9SJWRCJ');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — TurboChef Repair Seattle</title>
+    <meta name="description" content="Request TurboChef oven repair service in Seattle. Fill out our form or call 425-547-0200. Sota, Bullet, Encore, HhD, i3, i5 — all models serviced.">
+    <link rel="canonical" href="https://www.fixitexpresso.com/contact.html">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .company-name h1 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover { color: #3498db; }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contact Layout */
+        .contact-section {
+            padding: 60px 0;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        /* Left: Info */
+        .contact-info {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        .contact-info h2 {
+            font-size: 1.6rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+        }
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .info-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .info-icon {
+            width: 45px;
+            height: 45px;
+            background: #3498db;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .info-item h3 {
+            font-size: 1rem;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+        .info-item p, .info-item a {
+            color: #666;
+            text-decoration: none;
+            font-size: 1.05rem;
+        }
+        .info-item a:hover { color: #3498db; }
+
+        .turbochef-logo-contact {
+            display: block;
+            max-width: 160px;
+            margin: 30px auto 0;
+            opacity: 0.7;
+        }
+
+        .service-note {
+            background: #eaf4fe;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 25px;
+            font-size: 0.95rem;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        /* Right: Form */
+        .contact-form-wrap {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        .contact-form-wrap h2 {
+            font-size: 1.6rem;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        .contact-form-wrap .subtitle {
+            color: #888;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+            background: #fafafa;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            background: #fff;
+        }
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        .btn-submit:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .form-note {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a252f;
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        .footer p {
+            color: #bdc3c7;
+            margin-bottom: 10px;
+        }
+        .footer a { color: #3498db; }
+
+        /* Mobile Sticky Call Bar */
+        .mobile-call-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #27ae60;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            z-index: 9999;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+        }
+        .mobile-call-bar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .page-header h1 { font-size: 2rem; }
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .contact-info, .contact-form-wrap {
+                padding: 25px;
+            }
+            .mobile-call-bar { display: block; }
+            body { padding-bottom: 50px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-call-bar">
+        <a href="tel:425-547-0200">Call Now: 425-547-0200</a>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="company-name">
+                    <h1>FixIt Expresso</h1>
+                </div>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Get TurboChef Repair Service</h1>
+            <p>Fill out the form below and we'll get back to you promptly, or call us directly for immediate service.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Left: Contact Info -->
+                <div class="contact-info">
+                    <h2>Reach Us Directly</h2>
+
+                    <div class="info-item">
+                        <div class="info-icon">P</div>
+                        <div>
+                            <h3>Call for Service</h3>
+                            <a href="tel:425-547-0200">425-547-0200</a>
+                            <p style="font-size:0.85rem; color:#999; margin-top:2px;">Mon-Sat 9AM-5PM, Sun 11AM-3PM</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">E</div>
+                        <div>
+                            <h3>Email</h3>
+                            <a href="mailto:services@fixitexpresso.com">services@fixitexpresso.com</a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">A</div>
+                        <div>
+                            <h3>Service Area</h3>
+                            <p>Within 80 miles of Seattle, WA</p>
+                            <p style="font-size:0.85rem; color:#999; margin-top:2px;">King, Pierce, Snohomish, Kitsap, Thurston, Skagit &amp; Island counties</p>
+                        </div>
+                    </div>
+
+                    <div class="service-note">
+                        <strong>Sota (NGO) owners:</strong> Drop off your oven for faster repairs with no travel fees!
+                    </div>
+
+                    <img src="images/turbochef-logo.png" alt="TurboChef" class="turbochef-logo-contact">
+                </div>
+
+                <!-- Right: Form -->
+                <div class="contact-form-wrap">
+                    <h2>Request a Service Quote</h2>
+                    <p class="subtitle">We typically respond within a few hours during business hours.</p>
+
+                    <form action="https://formspree.io/f/mlgpvqkg" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name *</label>
+                                <input type="text" id="name" name="name" required placeholder="John Smith">
+                            </div>
+                            <div class="form-group">
+                                <label for="business">Business Name</label>
+                                <input type="text" id="business" name="business" placeholder="Restaurant / Company name">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="(425) 000-0000">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="you@example.com">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="model">TurboChef Model</label>
+                                <select id="model" name="model">
+                                    <option value="">Select model (if known)</option>
+                                    <option value="Sota (NGO)">Sota (NGO)</option>
+                                    <option value="Bullet / Encore">Bullet / Encore</option>
+                                    <option value="NGC">NGC</option>
+                                    <option value="HhD Double Batch">HhD Double Batch</option>
+                                    <option value="i3">i3</option>
+                                    <option value="i5">i5</option>
+                                    <option value="ECO">ECO</option>
+                                    <option value="HhC / Conveyor">HhC / Conveyor</option>
+                                    <option value="Fire">Fire</option>
+                                    <option value="Other / Not sure">Other / Not sure</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" name="city" placeholder="Seattle, Bellevue, etc.">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="issue">Describe the Issue *</label>
+                            <textarea id="issue" name="issue" required placeholder="What's happening with your oven? Error codes, symptoms, etc."></textarea>
+                        </div>
+
+                        <input type="hidden" name="_subject" value="New TurboChef Repair Request from Website">
+
+                        <button type="submit" class="btn-submit">Send Service Request</button>
+                        <p class="form-note">We'll respond within a few hours. For emergencies, call 425-547-0200 directly.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 FixIt Expresso - Seattle's TurboChef Speed Oven Repair Specialists</p>
+            <p><a href="index.html">Home</a> | <a href="reviews.html">Reviews</a> | <a href="faq.html">FAQ</a> | <a href="tel:425-547-0200">425-547-0200</a></p>
+        </div>
+    </footer>
+</body>
+</html>
