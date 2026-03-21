@@ -1,0 +1,59 @@
+# FixIt Expresso - TurboChef Speed Oven Repair Seattle
+
+> Professional TurboChef speed oven repair service in the greater Seattle area. 18+ years experience. All TurboChef models serviced. Recommended by TurboChef's own support team.
+
+## About
+
+FixIt Expresso specializes in repairing TurboChef commercial speed ovens for restaurants, hotels, hospitals, schools, and commercial kitchens across the greater Seattle area. We service all TurboChef models including Sota (NGO), Bullet, Encore, HhD Double Batch, i3, i5, NGC, ECO, Fire, and legacy models. We offer on-site repair within 80 miles of Seattle and drop-off service for Sota (NGO) ovens to save on travel fees.
+
+## Contact
+
+- Phone: 425-547-0200
+- Email: services@fixitexpresso.com
+- Service Area: Seattle, Bellevue, Tacoma, and surrounding areas within 80 miles
+- Hours: Mon-Sat 9AM-5PM, Sun 11AM-3PM
+
+## Services
+
+- TurboChef speed oven repair (all models)
+- Error code diagnosis (F1-F10)
+- Magnetron replacement
+- Control board repair
+- Door component service
+- Preventive maintenance
+- Drop-off service for Sota (NGO) ovens
+- Same-day emergency service
+
+## TurboChef Models We Repair
+
+- Sota (also called NGO) — most common model, drop-off eligible
+- Bullet / Encore — popular in Subway and fast-casual restaurants
+- HhD Double Batch — used by Panera Bread
+- i3 and i5 — chain restaurant and franchise models
+- NGC — high-volume commercial kitchens
+- ECO — energy-efficient model
+- Fire — pizza and high-heat cooking
+- HhC, Conveyor, Tornado, C3, C4, Plexor — legacy models
+
+## Common TurboChef Error Codes
+
+- F1: Blower Running Status Bad
+- F2: Cook Temperature Low
+- F3: Magnetron Current Low
+- F4: Door Monitor Defective
+- F5: Magnetron Over Temperature
+- F6: EC Temp High
+- F7: RTD Failure (temperature probe)
+- F8: High Limit Tripped / Heat Low
+- F9: Belt Failure / Temp High
+- F10: Communication Failure
+
+## Pages
+
+- [Home](https://www.fixitexpresso.com/)
+- [TurboChef Problems & Troubleshooting](https://www.fixitexpresso.com/common-turbochef-problems.html)
+- [FAQ](https://www.fixitexpresso.com/faq.html)
+- [Reviews](https://www.fixitexpresso.com/reviews.html)
+- [Contact / Request Service](https://www.fixitexpresso.com/contact.html)
+- [TurboChef Repair Bellevue](https://www.fixitexpresso.com/turbochef-repair-bellevue.html)
+- [TurboChef Repair Tacoma](https://www.fixitexpresso.com/turbochef-repair-tacoma.html)
