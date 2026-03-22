@@ -1312,6 +1312,7 @@
             background: #ccc;
             margin: 0 4px;
             transition: background 0.3s;
+            cursor: pointer;
         }
         .oven-slideshow .slide-dots span.dot-active {
             background: #3498db;
@@ -2935,7 +2936,7 @@
                         </div>
                         <div class="slide">
                             <img src="images/turbochef-i3.webp" alt="TurboChef i3 Rapid Cook Oven">
-                            <span>i3</span>
+                            <span>i3 & i5</span>
                         </div>
                         <div class="slide">
                             <img src="images/turbochef-double-batch.png" alt="TurboChef Double Batch Oven">
@@ -3512,6 +3513,7 @@
         var slides = slideshow.querySelectorAll('.slide');
         var dotsContainer = document.getElementById('slideDots');
         var current = 0;
+        var autoTimer;
 
         // Create dots
         for (var i = 0; i < slides.length; i++) {
@@ -3521,13 +3523,37 @@
         }
         var dots = dotsContainer.querySelectorAll('span');
 
-        setInterval(function() {
+        function goTo(index) {
             slides[current].classList.remove('slide-active');
             dots[current].classList.remove('dot-active');
-            current = (current + 1) % slides.length;
+            current = (index + slides.length) % slides.length;
             slides[current].classList.add('slide-active');
             dots[current].classList.add('dot-active');
-        }, 3000);
+        }
+
+        function resetAuto() {
+            clearInterval(autoTimer);
+            autoTimer = setInterval(function() { goTo(current + 1); }, 3000);
+        }
+
+        // Clickable dots
+        dotsContainer.addEventListener('click', function(e) {
+            if (e.target.tagName === 'SPAN') {
+                goTo(Array.prototype.indexOf.call(dots, e.target));
+                resetAuto();
+            }
+        });
+
+        // Click on slideshow to advance to next photo
+        slideshow.style.cursor = 'pointer';
+        slideshow.addEventListener('click', function(e) {
+            if (e.target.closest('.slide-dots')) return;
+            goTo(current + 1);
+            resetAuto();
+        });
+
+        // Start auto-advance
+        resetAuto();
     })();
     </script>
 </body>
