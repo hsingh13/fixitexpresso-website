@@ -8,7 +8,7 @@
   <!-- Main Homepage - TurboChef Repair Services -->
   <url>
     <loc>https://www.fixitexpresso.com/</loc>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -18,18 +18,10 @@
     </image:image>
   </url>
 
-  <!-- TurboChef Troubleshooting Guide -->
-  <url>
-    <loc>https://www.fixitexpresso.com/turbochef-troubleshooting.html</loc>
-    <lastmod>2026-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <!-- Common TurboChef Problems Guide -->
   <url>
     <loc>https://www.fixitexpresso.com/common-turbochef-problems.html</loc>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -37,7 +29,7 @@
   <!-- FAQ Page -->
   <url>
     <loc>https://www.fixitexpresso.com/faq.html</loc>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -45,7 +37,7 @@
   <!-- Reviews Page -->
   <url>
     <loc>https://www.fixitexpresso.com/reviews.html</loc>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -53,7 +45,7 @@
   <!-- Contact Page -->
   <url>
     <loc>https://www.fixitexpresso.com/contact.html</loc>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -61,7 +53,7 @@
   <!-- Bellevue City Page -->
   <url>
     <loc>https://www.fixitexpresso.com/turbochef-repair-bellevue.html</loc>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -69,7 +61,7 @@
   <!-- Tacoma City Page -->
   <url>
     <loc>https://www.fixitexpresso.com/turbochef-repair-tacoma.html</loc>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
