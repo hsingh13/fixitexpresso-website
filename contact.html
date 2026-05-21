@@ -370,7 +370,7 @@
                     <h2>Request a Service Quote</h2>
                     <p class="subtitle">We typically respond within a few hours during business hours.</p>
 
-                    <form action="https://formspree.io/f/mlgpvqkg" method="POST">
+                    <form id="contactForm" action="https://portal.fixitexpresso.com/api/contact" method="POST">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Your Name *</label>
@@ -421,11 +421,58 @@
                             <textarea id="issue" name="issue" required placeholder="What's happening with your oven? Error codes, symptoms, etc."></textarea>
                         </div>
 
-                        <input type="hidden" name="_subject" value="New TurboChef Repair Request from Website">
+                        <!-- Honeypot: real users leave this blank. Bots fill it and get silently flagged. -->
+                        <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+                            <label for="website">Website</label>
+                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
 
-                        <button type="submit" class="btn-submit">Send Service Request</button>
+                        <button type="submit" class="btn-submit" id="contactSubmitBtn">Send Service Request</button>
                         <p class="form-note">We'll respond within a few hours. For emergencies, call 425-547-0200 directly.</p>
+                        <div id="contactFormMessage" role="status" style="display:none;margin-top:15px;padding:12px 15px;border-radius:8px;text-align:center;font-weight:600;"></div>
                     </form>
+                    <script>
+                        (function () {
+                            var form = document.getElementById('contactForm');
+                            var btn  = document.getElementById('contactSubmitBtn');
+                            var msg  = document.getElementById('contactFormMessage');
+                            function show(text, ok) {
+                                msg.textContent = text;
+                                msg.style.background = ok ? '#eafaf1' : '#fdecea';
+                                msg.style.color      = ok ? '#1e7e34' : '#c0392b';
+                                msg.style.display    = 'block';
+                            }
+                            form.addEventListener('submit', function (e) {
+                                e.preventDefault();
+                                btn.disabled = true;
+                                btn.textContent = 'Sending…';
+                                var data = {};
+                                new FormData(form).forEach(function (v, k) { data[k] = v; });
+                                fetch(form.action, {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                                    body: JSON.stringify(data)
+                                })
+                                .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, body: j }; }); })
+                                .then(function (res) {
+                                    if (res.ok && res.body && res.body.ok) {
+                                        show("Thanks! We've received your request and will be in touch shortly.", true);
+                                        form.reset();
+                                        if (window.gtag) { gtag('event', 'contact_form_submit', { event_category: 'engagement' }); }
+                                    } else {
+                                        show((res.body && res.body.error) || 'Something went wrong. Please call 425-547-0200.', false);
+                                    }
+                                })
+                                .catch(function () {
+                                    show('Network error. Please call 425-547-0200 or try again.', false);
+                                })
+                                .finally(function () {
+                                    btn.disabled = false;
+                                    btn.textContent = 'Send Service Request';
+                                });
+                            });
+                        })();
+                    </script>
                 </div>
             </div>
         </div>
