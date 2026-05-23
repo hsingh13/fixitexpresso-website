@@ -4,6 +4,8 @@
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BG9SJWRCJ"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4BG9SJWRCJ');</script>
+    <!-- Cloudflare Turnstile (anti-spam) -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us — TurboChef Repair Seattle</title>
@@ -427,6 +429,9 @@
                             <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
                         </div>
 
+                        <!-- Cloudflare Turnstile widget. -->
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAADUuZqPgBVFic703" data-theme="light" style="margin-bottom:15px;"></div>
+
                         <button type="submit" class="btn-submit" id="contactSubmitBtn">Send Service Request</button>
                         <p class="form-note">We'll respond within a few hours. For emergencies, call 425-547-0200 directly.</p>
                         <div id="contactFormMessage" role="status" style="display:none;margin-top:15px;padding:12px 15px;border-radius:8px;text-align:center;font-weight:600;"></div>
@@ -469,6 +474,7 @@
                                 .finally(function () {
                                     btn.disabled = false;
                                     btn.textContent = 'Send Service Request';
+                                    if (window.turnstile) { try { turnstile.reset(); } catch (e) {} }
                                 });
                             });
                         })();
