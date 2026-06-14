@@ -1128,6 +1128,7 @@
             font-size: 16px;
             transition: all 0.3s ease;
             position: relative;
+            white-space: nowrap;
         }
 
         .nav-menu a:hover {
@@ -1525,9 +1526,9 @@
 
         .reviews-carousel {
             position: relative;
-            max-width: 800px;
+            max-width: 600px;
             margin: 0 auto 40px;
-            min-height: 200px;
+            min-height: 160px;
         }
 
         .review-card {
@@ -1535,8 +1536,8 @@
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            padding: 40px 30px;
+            border-radius: 16px;
+            padding: 25px 25px;
             margin: 0 auto;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
             animation: fadeInReview 0.8s ease-in-out;
@@ -1547,16 +1548,16 @@
         }
 
         .stars {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: #f1c40f;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
             text-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
         }
 
         .review-card p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 25px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 18px;
             color: #ecf0f1;
             font-style: italic;
             position: relative;
@@ -1564,10 +1565,10 @@
 
         .review-card p::before {
             content: '"';
-            font-size: 3rem;
+            font-size: 2.4rem;
             position: absolute;
-            top: -15px;
-            left: -15px;
+            top: -10px;
+            left: -10px;
             color: rgba(255, 255, 255, 0.3);
             font-family: Georgia, serif;
         }
@@ -1964,22 +1965,22 @@
         .footer {
             background: #1a252f;
             color: white;
-            padding: 60px 0 20px;
+            padding: 30px 0 15px;
         }
 
         .footer-content {
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
         /* Unified Contact Card */
         .unified-contact-card {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-radius: 14px;
+            padding: 22px 26px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 26px;
             border: 1px solid rgba(52, 152, 219, 0.2);
         }
 
@@ -1990,26 +1991,26 @@
         .section-header {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
+            gap: 10px;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
             border-bottom: 2px solid rgba(52, 152, 219, 0.3);
         }
 
         .section-icon {
-            font-size: 1.5rem;
+            font-size: 1.05rem;
             background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-            padding: 8px;
-            border-radius: 8px;
+            padding: 5px;
+            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-width: 40px;
-            height: 40px;
+            min-width: 28px;
+            height: 28px;
         }
 
         .section-header h4 {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #3498db;
             font-weight: 600;
             margin: 0;
@@ -2019,28 +2020,27 @@
         .contact-details-unified {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 10px;
         }
 
         .contact-method {
             display: flex;
             align-items: center;
-            gap: 15px;
-            padding: 15px;
+            gap: 12px;
+            padding: 10px 12px;
             background: rgba(52, 152, 219, 0.1);
-            border-radius: 12px;
-            border-left: 4px solid #3498db;
-            transition: all 0.3s ease;
+            border-radius: 10px;
+            border-left: 3px solid #3498db;
+            transition: background 0.3s ease;
         }
 
         .contact-method:hover {
-            background: rgba(52, 152, 219, 0.2);
-            transform: translateX(5px);
+            background: rgba(52, 152, 219, 0.18);
         }
 
         .contact-icon-small {
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             fill: #3498db;
             flex-shrink: 0;
         }
@@ -2048,46 +2048,36 @@
         .contact-method div {
             display: flex;
             flex-direction: column;
-            gap: 4px;
         }
 
         .contact-method strong {
             color: white;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
-        }
-
-        .contact-method span {
-            color: #bdc3c7;
-            font-size: 0.85rem;
         }
 
         /* Service Details Unified */
         .service-details-unified {
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 10px;
         }
 
         .service-item {
-            padding: 15px;
+            padding: 10px 12px;
             background: rgba(52, 73, 94, 0.4);
-            border-radius: 10px;
+            border-radius: 8px;
             border-left: 3px solid #e74c3c;
-            transition: all 0.3s ease;
-        }
-
-        .service-item:hover {
-            background: rgba(231, 76, 60, 0.1);
-            border-left-width: 5px;
+            display: flex;
+            gap: 8px;
+            align-items: baseline;
+            flex-wrap: wrap;
         }
 
         .service-item strong {
             color: #e74c3c;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
-            display: block;
-            margin-bottom: 5px;
         }
 
         .service-item span {
@@ -2469,11 +2459,11 @@
             }
 
             .review-card {
-                padding: 30px 20px;
+                padding: 20px 16px;
             }
 
             .review-card p {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
 
             .review-navigation {
@@ -2902,6 +2892,19 @@
 </head>
 <body>
     <!-- Header -->
+    <!-- Sticky Top Nav -->
+    <nav style="background: white; padding: 12px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" style="font-size: 1.5rem; color: #2c3e50; font-weight: 700; text-decoration: none;">FixIt Expresso</a>
+            <div style="display: flex; gap: 25px;">
+                <a href="index.html" style="color: #2c3e50; text-decoration: none; font-weight: 500;">Home</a>
+                <a href="reviews.html" style="color: #2c3e50; text-decoration: none; font-weight: 500;">Reviews</a>
+                <a href="faq.html" style="color: #2c3e50; text-decoration: none; font-weight: 500;">FAQ</a>
+                <a href="contact.html" style="color: #2c3e50; text-decoration: none; font-weight: 500;">Contact</a>
+            </div>
+        </div>
+    </nav>
+
     <header class="header">
         <div class="container">
             <div class="header-content">
@@ -2955,7 +2958,7 @@
     <!-- Trust Banner -->
     <div style="background: #1a252f; padding: 18px 0; text-align: center;">
         <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 30px; flex-wrap: wrap; color: white; font-size: 0.95rem;">
-            <span style="opacity: 0.9;">5.0 Google Rating</span>
+            <span style="opacity: 0.9;">Trusted by Customers</span>
             <span style="opacity: 0.4;">|</span>
             <span style="opacity: 0.9;">21+ Years Experience</span>
             <span style="opacity: 0.4;">|</span>
@@ -3042,7 +3045,7 @@
                 <div class="service-card fade-in-up" itemscope itemtype="https://schema.org/Service">
                     <div class="service-number">03</div>
                     <h3 itemprop="name">Other Commercial Kitchen Equipment</h3>
-                    <p itemprop="description">We also service Schaerer espresso machines, SureShot dairy systems, and other commercial kitchen equipment. Contact us for details.</p>
+                    <p itemprop="description">We also service MerryChef speed ovens (eikon and conneX series), Schaerer espresso machines, SureShot dairy systems, and other commercial kitchen equipment. Contact us for details.</p>
                     <meta itemprop="serviceType" content="Commercial Kitchen Equipment Repair">
                 </div>
             </div>
@@ -3242,7 +3245,7 @@
             <p style="font-size: 1rem; margin-bottom: 30px; color: #bdc3c7;">Serving restaurants, hotels, hospitals, schools &amp; commercial kitchens across the greater Seattle area.</p>
             <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
                 <a href="tel:425-547-0200" class="btn btn-primary" style="background: #3498db;">Call Now: 425-547-0200</a>
-                <a href="contact.html" class="btn btn-secondary" style="background: transparent; border: 2px solid white; color: white;">Email for Quote</a>
+                <a href="contact.html" class="btn btn-secondary" style="background: transparent; border: 2px solid white; color: white;">Contact Us</a>
             </div>
         </div>
     </section>
@@ -3326,7 +3329,6 @@
                                 </svg>
                                 <div>
                                     <strong itemprop="telephone"><a href="tel:425-547-0200" style="color: inherit; text-decoration: none;">425-547-0200</a></strong>
-                                    <span>Immediate service</span>
                                 </div>
                             </div>
                             <div class="contact-method">
@@ -3338,7 +3340,6 @@
                                 </svg>
                                 <div>
                                     <strong itemprop="email"><a href="mailto:services@fixitexpresso.com?subject=Commercial Equipment Repair Request&body=Please provide details about your equipment and the issue you are experiencing." style="color: inherit; text-decoration: none;">services@fixitexpresso.com</a></strong>
-                                    <span>Service quotes</span>
                                 </div>
                             </div>
                         </div>
@@ -3352,15 +3353,11 @@
                         <div class="service-details-unified">
                             <div class="service-item" itemprop="areaServed">
                                 <strong>Service Area:</strong>
-                                <span>Greater Seattle metropolitan area including all primary cities and extended coverage areas</span>
+                                <span>Greater Seattle area within 80 miles</span>
                             </div>
                             <div class="service-item" itemprop="hoursAvailable">
                                 <strong>Hours:</strong>
                                 <span>Mon-Sun: 9AM-5PM</span>
-                            </div>
-                            <div class="service-item">
-                                <strong>Emergency:</strong>
-                                <span>Available for urgent repairs</span>
                             </div>
                         </div>
                     </div>
@@ -3567,9 +3564,12 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="common-turbochef-problems.html">TurboChef Troubleshooting</a></li>
                 <li><a href="common-turbochef-problems.html">Common TurboChef Problems</a></li>
+                <li><a href="common-merrychef-problems.html">MerryChef Troubleshooting</a></li>
+                <li><a href="common-merrychef-problems.html">Common MerryChef Problems</a></li>
                 <li><a href="#process">Process</a></li>
-                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
                 <li><a href="#faq">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </div>
