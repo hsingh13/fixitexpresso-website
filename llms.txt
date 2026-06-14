@@ -62,8 +62,8 @@ MerryChef models we service:
 ## Pages
 
 - [Home](https://www.fixitexpresso.com/)
-- [TurboChef Problems & Troubleshooting](https://www.fixitexpresso.com/common-turbochef-problems.html)
-- [MerryChef Problems & Troubleshooting](https://www.fixitexpresso.com/common-merrychef-problems.html)
+- [Common TurboChef Problems](https://www.fixitexpresso.com/common-turbochef-problems.html)
+- [Common MerryChef Problems](https://www.fixitexpresso.com/common-merrychef-problems.html)
 - [FAQ](https://www.fixitexpresso.com/faq.html)
 - [Reviews](https://www.fixitexpresso.com/reviews.html)
 - [Contact / Request Service](https://www.fixitexpresso.com/contact.html)
