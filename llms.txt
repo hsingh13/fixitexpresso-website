@@ -1,10 +1,10 @@
 # FixIt Expresso - TurboChef Speed Oven Repair Seattle
 
-> Authorized TurboChef Service Provider in the greater Seattle area. Factory-trained technicians authorized to perform warranty and non-warranty service on all TurboChef speed oven models. 21+ years experience.
+> TurboChef speed oven repair specialists in the greater Seattle area. Factory-trained technicians authorized to perform warranty and non-warranty service on all TurboChef speed oven models. 21+ years experience.
 
 ## About
 
-FixIt Expresso is an authorized TurboChef service provider specializing in repairing TurboChef commercial speed ovens for restaurants, hotels, hospitals, schools, and commercial kitchens across the greater Seattle area. We are authorized to perform both warranty and non-warranty repairs on all TurboChef models including Sota (NGO), Bullet, Encore, HhD Double Batch, i3, i5, NGC, ECO, Fire, and legacy models. We offer on-site repair within 80 miles of Seattle and drop-off service for Sota (NGO) ovens to save on travel fees.
+FixIt Expresso specializes in repairing TurboChef commercial speed ovens for restaurants, hotels, hospitals, schools, and commercial kitchens across the greater Seattle area. We are authorized to perform both warranty and non-warranty repairs on all TurboChef models including Sota (NGO), Bullet, Encore, HhD Double Batch, i3, i5, NGC, ECO, Fire, and legacy models. We offer on-site repair within 80 miles of Seattle and drop-off service for Sota (NGO) ovens to save on travel fees.
 
 ## Contact
 
@@ -16,6 +16,7 @@ FixIt Expresso is an authorized TurboChef service provider specializing in repai
 ## Services
 
 - TurboChef speed oven repair (all models)
+- MerryChef speed oven repair (eikon and conneX series)
 - Error code diagnosis (F1-F10)
 - Magnetron replacement
 - Control board repair
@@ -35,6 +36,16 @@ FixIt Expresso is an authorized TurboChef service provider specializing in repai
 - Fire — pizza and high-heat cooking
 - HhC, Conveyor, Tornado, C3, C4, Plexor — legacy models
 
+## MerryChef Speed Ovens (Secondary Specialty)
+
+In addition to TurboChef, we also repair MerryChef speed ovens in the Seattle area. TurboChef is our primary specialty, but our technicians are experienced with MerryChef diagnostics and repairs including heating issues, magnetron failures, control board problems, door faults, and error codes.
+
+MerryChef models we service:
+
+- eikon e1s, e2s — compact countertop speed ovens
+- eikon e3, e4, e6 — higher-power eikon models
+- conneX 11, 12, 16 — modern connected high-power line
+
 ## Common TurboChef Error Codes
 
 - F1: Blower Running Status Bad
@@ -52,6 +63,7 @@ FixIt Expresso is an authorized TurboChef service provider specializing in repai
 
 - [Home](https://www.fixitexpresso.com/)
 - [TurboChef Problems & Troubleshooting](https://www.fixitexpresso.com/common-turbochef-problems.html)
+- [MerryChef Problems & Troubleshooting](https://www.fixitexpresso.com/common-merrychef-problems.html)
 - [FAQ](https://www.fixitexpresso.com/faq.html)
 - [Reviews](https://www.fixitexpresso.com/reviews.html)
 - [Contact / Request Service](https://www.fixitexpresso.com/contact.html)
