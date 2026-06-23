@@ -1,6 +1,6 @@
 # FixIt Expresso — TurboChef & MerryChef Speed Oven Repair Seattle
 
-> Seattle's Authorized TurboChef and MerryChef Service Provider. Factory-trained technicians, 21+ years experience, serving all of the greater Puget Sound region.
+> Seattle's Authorized TurboChef Service Provider and experienced MerryChef repair specialist. 21+ years commercial kitchen equipment experience, serving all of the greater Puget Sound region.
 
 ## About
 
@@ -48,13 +48,12 @@ Full guide: https://www.fixitexpresso.com/common-turbochef-problems.html
 
 ## MerryChef Repair (Secondary Specialty)
 
-Authorized MerryChef Service Provider for eikon and conneX series ovens.
+Experienced MerryChef eikon series repair specialists.
 
 **Models serviced:**
 - eikon e1s, e2s — compact countertop speed ovens
-- eikon e4s, e4 — high-volume dual-cavity models
 - eikon e3 — mid-range model
-- conneX 12, conneX 16 — modern high-capacity connected ovens
+- eikon e4s, e4 — high-volume dual-cavity models
 
 **MerryChef Error Codes (E101–E117):**
 - E101: Microwave system failure
