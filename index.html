@@ -797,6 +797,12 @@
     
     <!-- Performance Optimizations -->
     <link rel="preload" href="images/turbochef-sota.jpg" as="image" type="image/jpeg">
+    <!-- Hero is a CSS background, so the browser cannot discover it until the
+         stylesheet parses — that late start was the bulk of mobile LCP. Preload
+         the variant this viewport will actually use. -->
+    <link rel="preload" href="images/coffee-768.webp" as="image" type="image/webp" media="(max-width: 768px)" fetchpriority="high">
+    <link rel="preload" href="images/coffee-1200.webp" as="image" type="image/webp" media="(min-width: 769px) and (max-width: 1200px)" fetchpriority="high">
+    <link rel="preload" href="images/coffee-1920.webp" as="image" type="image/webp" media="(min-width: 1201px)" fetchpriority="high">
     <link rel="dns-prefetch" href="https://www.facebook.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
 

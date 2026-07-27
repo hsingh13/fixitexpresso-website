@@ -656,10 +656,21 @@ section {
   padding: 0;
   position: relative;
   overflow: hidden;
-  background: var(--gradient-hero), url('images/coffee-1920.webp');
+  /* Responsive hero. Previously always coffee-1920.webp (184KB) — ~5x more
+     pixels than a phone viewport needs, and the single biggest contributor to
+     LCP on mobile. Smallest variant first so phones never fetch the large one. */
+  background: var(--gradient-hero), url('images/coffee-768.webp');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+}
+
+@media (min-width: 769px) {
+  .hero { background-image: var(--gradient-hero), url('images/coffee-1200.webp'); }
+}
+
+@media (min-width: 1201px) {
+  .hero { background-image: var(--gradient-hero), url('images/coffee-1920.webp'); }
 }
 
 .hero::before {
