@@ -665,6 +665,12 @@ section {
   background-attachment: fixed;
 }
 
+/* background-attachment:fixed forces a repaint on every scroll frame and is
+   ignored on iOS Safari anyway — drop it on touch-sized viewports. */
+@media (max-width: 768px) {
+  .hero { background-attachment: scroll; }
+}
+
 @media (min-width: 769px) {
   .hero { background-image: var(--gradient-hero), url('images/coffee-1200.webp'); }
 }
