@@ -46,44 +46,103 @@
     }
     </script>
 
-    <!-- HowTo Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "HowTo",
-      "name": "How to Troubleshoot a TurboChef Oven",
-      "description": "Quick steps for common TurboChef speed oven problems before calling a professional technician in Seattle.",
-      "totalTime": "PT10M",
-      "step": [
-        {"@type": "HowToStep", "name": "Power cycle the oven", "text": "Turn the oven off and unplug it for 2-5 minutes to clear error codes."},
-        {"@type": "HowToStep", "name": "Clear the airways", "text": "Ensure rear and side fan guards are clean and unobstructed."},
-        {"@type": "HowToStep", "name": "Check the door", "text": "Ensure the door is properly aligned and closing securely."},
-        {"@type": "HowToStep", "name": "Clean the cooking cavity", "text": "Remove food debris and grease buildup from the cavity."},
-        {"@type": "HowToStep", "name": "Call FixIt Expresso", "text": "If error codes F3, F4, F7, or F10 persist after reset, call FixIt Expresso at 425-547-0200."}
-      ]
-    }
-    </script>
-
     <!-- FAQ Schema -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type": "Question", "name": "What does TurboChef error code F1 mean?", "acceptedAnswer": {"@type": "Answer", "text": "F1 means Blower Running Status Bad. Try resetting the breaker; if it persists, the blower motor likely needs replacement. Call FixIt Expresso at 425-547-0200."}},
-        {"@type": "Question", "name": "What does F3 MAG CURR mean on a TurboChef oven?", "acceptedAnswer": {"@type": "Answer", "text": "F3 MAG CURR means Magnetron Current Low. The magnetron or its high-voltage circuit has failed. This is a microwave-side fault that will not clear with a reset and is not a DIY repair — it requires professional diagnosis and an OEM magnetron. FixIt Expresso stocks TurboChef magnetrons. Call 425-547-0200."}},
-        {"@type": "Question", "name": "What does TurboChef error code F4 mean?", "acceptedAnswer": {"@type": "Answer", "text": "F4 means Door Monitor Defective — a door switch or interlock fault in the door monitor circuit. Close the door firmly and reset. If the code returns, the interlock switches are worn and need replacement. Call 425-547-0200."}},
-        {"@type": "Question", "name": "What does TurboChef error code F7 mean?", "acceptedAnswer": {"@type": "Answer", "text": "F7 is an RTD failure — the oven's temperature probe. When the RTD fails, the control board loses its temperature reading and the display commonly shows 999 degrees or swings between readings. It does not clear with a power cycle and cannot be recalibrated; the probe must be replaced. FixIt Expresso stocks RTD probes. Call 425-547-0200."}},
-        {"@type": "Question", "name": "What does TurboChef error code F10 mean?", "acceptedAnswer": {"@type": "Answer", "text": "F10 is a communication failure between the UI board and the I/O board. Power-cycle once to rule out a transient fault. A persistent F10 means a control board needs diagnosis or replacement. Call 425-547-0200."}},
-        {"@type": "Question", "name": "What does TurboChef error code F8 mean?", "acceptedAnswer": {"@type": "Answer", "text": "F8 means High Limit Tripped. Reset the breaker first. If it continues, call FixIt Expresso at 425-547-0200."}},
-        {"@type": "Question", "name": "Why is my TurboChef oven not heating?", "acceptedAnswer": {"@type": "Answer", "text": "Could be magnetron failure, blown fuses, faulty door sensors, or control board issues. Call FixIt Expresso at 425-547-0200."}},
-        {"@type": "Question", "name": "How much does TurboChef repair cost in Seattle?", "acceptedAnswer": {"@type": "Answer", "text": "Basic repairs typically range $250-400; major components like magnetrons or control boards range $600-900. Call 425-547-0200 for a quote."}},
-        {"@type": "Question", "name": "What are common TurboChef Bullet problems?", "acceptedAnswer": {"@type": "Answer", "text": "TurboChef Bullet ovens commonly experience magnetron failures (F3 error), door interlock issues (F4), and high-limit trips (F8). The Bullet's compact size means heat builds up faster — regular vent cleaning is essential. Call FixIt Expresso at 425-547-0200 for Bullet repair in Seattle."}},
-        {"@type": "Question", "name": "What are common TurboChef SOTA / NGO problems?", "acceptedAnswer": {"@type": "Answer", "text": "TurboChef SOTA (NGO) ovens most often fail due to blower motor issues (F1), RTD temperature probe failures (F7), and control board communication errors (F10). Drop-off service at FixIt Expresso is available for SOTA and NGO models — call 425-547-0200."}},
-        {"@type": "Question", "name": "What are common TurboChef i3 problems?", "acceptedAnswer": {"@type": "Answer", "text": "TurboChef i3 ovens frequently show F2 (cook temp low), F6 (EC temp high from restricted airflow), and belt or conveyor issues on F9. Our technicians stock i3-specific parts and can usually complete repairs same-day. Call 425-547-0200."}}
-      ]
+      "@type": "Question",
+      "name": "What does TurboChef error code F1 mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "F1 means Blower Running Status Bad. This requires professional diagnosis. Call FixIt Expresso at 425-547-0200."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does F3 MAG CURR mean on a TurboChef oven?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "F3 MAG CURR means Magnetron Current Low. This requires professional diagnosis and an OEM magnetron. FixIt Expresso stocks TurboChef magnetrons. Call 425-547-0200."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does TurboChef error code F4 mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "F4 means Door Monitor Defective. This is a safety interlock circuit and requires professional service. Call 425-547-0200."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does TurboChef error code F7 mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "F7 is an RTD failure \u2014 the oven's temperature probe. The probe must be replaced. FixIt Expresso stocks RTD probes. Call 425-547-0200."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does TurboChef error code F10 mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "F10 is a communication failure between the UI and I/O boards. This requires professional diagnosis. Call 425-547-0200."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does TurboChef error code F8 mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "F8 means High Limit Tripped. This requires professional diagnosis. Call FixIt Expresso at 425-547-0200."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my TurboChef oven not heating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Could be magnetron failure, blown fuses, faulty door sensors, or control board issues. Call FixIt Expresso at 425-547-0200."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does TurboChef repair cost in Seattle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Basic repairs typically range $250-400; major components like magnetrons or control boards range $600-900. Call 425-547-0200 for a quote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are common TurboChef Bullet problems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TurboChef Bullet ovens commonly experience magnetron failures (F3), door interlock issues (F4), and high-limit trips (F8). The Bullet's compact cavity means heat builds faster than on larger models, so cooling-path faults show up sooner. Call FixIt Expresso at 425-547-0200 for Bullet repair in Seattle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are common TurboChef SOTA / NGO problems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TurboChef SOTA (NGO) ovens most often fail due to blower motor issues (F1), RTD temperature probe failures (F7), and control board communication errors (F10). Drop-off service at FixIt Expresso is available for SOTA and NGO models \u2014 call 425-547-0200."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are common TurboChef i3 problems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TurboChef i3 ovens frequently show F2 (cook temp low), F6 (EC temp high from restricted airflow), and belt or conveyor issues on F9. Our technicians stock i3-specific parts and can usually complete repairs same-day. Call 425-547-0200."
+      }
     }
-    </script>
+  ]
+}
+</script>
     
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <style>
@@ -200,7 +259,7 @@
             </div>
 
             <h2 style="text-align: center; margin-bottom: 16px; font-size: 2rem; color: #2c3e50;">TurboChef Error Codes &amp; Service Codes (F1&ndash;F10)</h2>
-            <p style="text-align: center; max-width: 720px; margin: 0 auto 24px; color: #666;">Every TurboChef service code below is listed with the exact text your oven displays. Note your code and model number, then call us &mdash; we show up with the right parts on the first visit.</p>
+            <p style="text-align: center; max-width: 720px; margin: 0 auto 24px; color: #666;">Find your code below, then call us with the code and your model number &mdash; we show up with the right parts on the first visit.</p>
 
             <nav class="code-jump" aria-label="Jump to a TurboChef error code">
                 <p><strong>Jump to your code:</strong></p>
@@ -221,49 +280,33 @@
             <div class="problems-grid">
                 <div class="problem-card error-codes" id="f1">
                     <h2 class="error-codes">F1 &ndash; Blower Running Status Bad</h2>
-                    <p>Motor or power issue. Reset the breaker; if it returns, the blower motor likely needs replacement.</p>
                 </div>
                 <div class="problem-card heating" id="f2">
                     <h2 class="heating">F2 &ndash; Cook Temperature Low</h2>
-                    <p>Oven won't reach setpoint. Could be a heating element, relay, or airflow issue.</p>
                 </div>
                 <div class="problem-card power" id="f3">
                     <h2 class="power">F3 &ndash; Magnetron Current Low (&ldquo;MAG CURR&rdquo;)</h2>
-                    <span class="display-string">F3 MAG CURR</span>
-                    <p>If your display reads <strong>F3 MAG CURR</strong>, the magnetron or its high-voltage circuit has failed. This is a microwave-side fault &mdash; it is not a DIY repair, and it will not clear with a reset. It needs professional diagnosis and an OEM magnetron.</p>
-                    <span class="inline-cta">We stock TurboChef magnetrons. <a href="tel:425-547-0200">Call 425-547-0200 &rarr;</a></span>
                 </div>
                 <div class="problem-card door" id="f4">
                     <h2 class="door">F4 &ndash; Door Monitor Defective</h2>
-                    <span class="display-string">F4 MONITOR</span>
-                    <p>Door switch or interlock problem &mdash; the display typically references the door <strong>monitor</strong> circuit. Close the door firmly and reset; if the code returns, the interlock switches are worn and need replacement.</p>
                 </div>
                 <div class="problem-card heating" id="f5">
                     <h2 class="heating">F5 &ndash; Magnetron Over-Temperature</h2>
-                    <p>Usually a clogged vent or fan guard. Clean vents; if it persists, internal inspection needed.</p>
                 </div>
                 <div class="problem-card heating" id="f6">
                     <h2 class="heating">F6 &ndash; EC Temp High</h2>
-                    <p>Restricted airflow. Check rear and side fan guards for blockage.</p>
                 </div>
                 <div class="problem-card error-codes" id="f7">
                     <h2 class="error-codes">F7 &ndash; RTD Failure (Temperature Probe)</h2>
-                    <p>The RTD is the oven's temperature probe. When it fails, the control board loses its temperature reading and the display commonly jumps to <strong>999&deg;</strong> &mdash; or swings wildly between readings. The oven may still blow air but will not hold setpoint.</p>
-                    <p style="margin-top:10px;">A failed RTD does not clear with a power cycle and cannot be cleaned or recalibrated back into spec &mdash; the probe has to be replaced. It's a fast repair when the tech arrives with the part on the truck.</p>
-                    <span class="inline-cta">RTD probes are a stocked part for us. <a href="tel:425-547-0200">Call 425-547-0200 &rarr;</a></span>
                 </div>
                 <div class="problem-card power" id="f8">
                     <h2 class="power">F8 &ndash; High Limit Tripped / Heat Low</h2>
-                    <p>Reset the breaker first. If it trips again, internal component failure — call us.</p>
                 </div>
                 <div class="problem-card heating" id="f9">
                     <h2 class="heating">F9 &ndash; Belt Failure / Temp High</h2>
-                    <p>Grease buildup or belt issue. Clean the cavity; persistent F9 means belt replacement.</p>
                 </div>
                 <div class="problem-card error-codes" id="f10">
                     <h2 class="error-codes">F10 &ndash; Communication Failure</h2>
-                    <p>The UI and I/O boards have stopped talking to each other. Power-cycle once to rule out a transient fault; a persistent F10 means a control board needs diagnosis or replacement.</p>
-                    <span class="inline-cta">Control board diagnosis on-site. <a href="tel:425-547-0200">Call 425-547-0200 &rarr;</a></span>
                 </div>
             </div>
 
