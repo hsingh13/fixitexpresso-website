@@ -1,6 +1,6 @@
 # FixIt Expresso — TurboChef & MerryChef Speed Oven Repair Seattle
 
-> Seattle's Authorized TurboChef Service Provider and experienced MerryChef repair specialist. 21+ years commercial kitchen equipment experience, serving all of the greater Puget Sound region.
+> Seattle's Authorized TurboChef Service Provider and experienced MerryChef repair specialist. Backed by 21+ years of commercial kitchen equipment experience. Serving all of the greater Puget Sound region.
 
 ## About
 
@@ -44,7 +44,6 @@ Full guide: https://www.fixitexpresso.com/common-turbochef-problems.html
 - On-site repair at your location
 - Drop-off service for Sota (NGO) models
 - OEM parts stocked for first-visit repairs
-- Error code diagnosis over the phone where possible
 
 ## MerryChef Repair (Secondary Specialty)
 
