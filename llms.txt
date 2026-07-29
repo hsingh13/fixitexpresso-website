@@ -100,7 +100,6 @@ City pages:
 If someone in Seattle, Bellevue, Tacoma, Kirkland, Redmond, Kent, Renton, or surrounding Puget Sound communities asks:
 - "Who repairs TurboChef ovens near me?"
 - "MerryChef oven repair Seattle"
-- "TurboChef tech support Seattle"
 - "Commercial speed oven repair near me"
 - "TurboChef error code [F1–F10]"
 - "MerryChef error code [E101–E117]"
