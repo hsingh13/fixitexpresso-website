@@ -121,36 +121,6 @@
             margin: 0 auto;
         }
 
-        /* Call callout */
-        .call-callout {
-            background: white;
-            border-radius: 15px;
-            padding: 25px 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            margin-bottom: 25px;
-            text-align: center;
-        }
-        .call-label {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #888;
-            margin-bottom: 6px;
-        }
-        .call-number {
-            display: inline-block;
-            font-size: 2rem;
-            font-weight: 700;
-            color: #2c3e50;
-            text-decoration: none;
-        }
-        .call-number:hover { color: #3498db; }
-        .call-hours {
-            font-size: 0.9rem;
-            color: #999;
-            margin-top: 4px;
-        }
-
         .contact-aside {
             text-align: center;
             margin-top: 20px;
@@ -283,10 +253,9 @@
             .form-row {
                 grid-template-columns: 1fr;
             }
-            .call-callout, .contact-form-wrap {
+            .contact-form-wrap {
                 padding: 25px;
             }
-            .call-number { font-size: 1.7rem; }
             .mobile-call-bar { display: block; }
             body { padding-bottom: 50px; }
         }
@@ -309,13 +278,6 @@
     <section class="contact-section">
         <div class="container">
             <div class="contact-panel">
-                <!-- Call first: the number is the only contact detail on the page. -->
-                <div class="call-callout">
-                    <p class="call-label">Call for Service</p>
-                    <a class="call-number" href="tel:425-547-0200">425-547-0200</a>
-                    <p class="call-hours">Mon-Sun 9AM-5PM</p>
-                </div>
-
                 <div class="contact-form-wrap">
                     <h2>Request a Service Quote</h2>
                     <p class="subtitle">We typically respond within a few hours during business hours.</p>
