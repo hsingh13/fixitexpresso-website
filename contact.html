@@ -205,11 +205,14 @@
             transform: translateY(-2px);
         }
 
+        /* Sized up for desktop: the sticky call bar is mobile-only, so on a
+           desktop this note is the most prominent phone number on the page.
+           Stepped back down inside the 768px block below. */
         .form-note {
             text-align: center;
-            margin-top: 12px;
-            font-size: 0.85rem;
-            color: #999;
+            margin-top: 14px;
+            font-size: 1.05rem;
+            color: #666;
         }
 
         /* Footer */
@@ -255,6 +258,10 @@
             }
             .contact-form-wrap {
                 padding: 25px;
+            }
+            .form-note {
+                font-size: 0.85rem;
+                color: #999;
             }
             .mobile-call-bar { display: block; }
             body { padding-bottom: 50px; }
