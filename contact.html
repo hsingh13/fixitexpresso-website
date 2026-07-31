@@ -112,85 +112,54 @@
             margin: 0 auto;
         }
 
-        /* Contact Layout */
+        /* Contact Layout — form-first, single column */
         .contact-section {
             padding: 60px 0;
         }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 50px;
-            align-items: start;
+        .contact-panel {
+            max-width: 720px;
+            margin: 0 auto;
         }
 
-        /* Left: Info */
-        .contact-info {
+        /* Call callout */
+        .call-callout {
             background: white;
             border-radius: 15px;
-            padding: 40px;
+            padding: 25px 30px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-        .contact-info h2 {
-            font-size: 1.6rem;
-            color: #2c3e50;
             margin-bottom: 25px;
+            text-align: center;
         }
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 25px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid #f0f0f0;
+        .call-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 6px;
         }
-        .info-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        .info-icon {
-            width: 45px;
-            height: 45px;
-            background: #3498db;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-        .info-item h3 {
-            font-size: 1rem;
+        .call-number {
+            display: inline-block;
+            font-size: 2rem;
+            font-weight: 700;
             color: #2c3e50;
-            margin-bottom: 4px;
-        }
-        .info-item p, .info-item a {
-            color: #666;
             text-decoration: none;
-            font-size: 1.05rem;
         }
-        .info-item a:hover { color: #3498db; }
-
-        .turbochef-logo-contact {
-            display: block;
-            max-width: 160px;
-            margin: 30px auto 0;
-            opacity: 0.7;
+        .call-number:hover { color: #3498db; }
+        .call-hours {
+            font-size: 0.9rem;
+            color: #999;
+            margin-top: 4px;
         }
 
-        .service-note {
-            background: #eaf4fe;
-            border-left: 4px solid #3498db;
-            padding: 15px 20px;
-            border-radius: 0 8px 8px 0;
-            margin-top: 25px;
-            font-size: 0.95rem;
-            color: #2c3e50;
-            line-height: 1.6;
+        .contact-aside {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.92rem;
+            color: #666;
         }
+        .contact-aside a { color: #3498db; }
 
-        /* Right: Form */
+        /* Form */
         .contact-form-wrap {
             background: white;
             border-radius: 15px;
@@ -311,16 +280,13 @@
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .page-header h1 { font-size: 2rem; }
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
             .form-row {
                 grid-template-columns: 1fr;
             }
-            .contact-info, .contact-form-wrap {
+            .call-callout, .contact-form-wrap {
                 padding: 25px;
             }
+            .call-number { font-size: 1.7rem; }
             .mobile-call-bar { display: block; }
             body { padding-bottom: 50px; }
         }
@@ -342,45 +308,14 @@
     <!-- Contact Section -->
     <section class="contact-section">
         <div class="container">
-            <div class="contact-grid">
-                <!-- Left: Contact Info -->
-                <div class="contact-info">
-                    <h2>Reach Us Directly</h2>
-                    <p style="color:#666; font-size:0.92rem; margin-bottom:14px;">Not sure what you need? See our <a href="turbochef-repair.html">TurboChef repair service overview</a> first.</p>
-
-                    <div class="info-item">
-                        <div class="info-icon">P</div>
-                        <div>
-                            <h3>Call for Service</h3>
-                            <a href="tel:425-547-0200">425-547-0200</a>
-                            <p style="font-size:0.85rem; color:#999; margin-top:2px;">Mon-Sun 9AM-5PM</p>
-                        </div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="info-icon">E</div>
-                        <div>
-                            <h3>Email</h3>
-                            <a href="mailto:services@fixitexpresso.com">services@fixitexpresso.com</a>
-                        </div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="info-icon">A</div>
-                        <div>
-                            <h3>Service Area</h3>
-                            <p>Within 80 miles of Seattle, WA</p>
-                            <p style="font-size:0.85rem; color:#999; margin-top:2px;">King, Pierce, Snohomish, Kitsap, Thurston, Skagit &amp; Island counties</p>
-                        </div>
-                    </div>
-
-                    <div class="service-note">
-                        <strong>Sota (NGO) owners:</strong> Drop off your oven for faster repairs with no travel fees!
-                    </div>
-
+            <div class="contact-panel">
+                <!-- Call first: the number is the only contact detail on the page. -->
+                <div class="call-callout">
+                    <p class="call-label">Call for Service</p>
+                    <a class="call-number" href="tel:425-547-0200">425-547-0200</a>
+                    <p class="call-hours">Mon-Sun 9AM-5PM</p>
                 </div>
 
-                <!-- Right: Form -->
                 <div class="contact-form-wrap">
                     <h2>Request a Service Quote</h2>
                     <p class="subtitle">We typically respond within a few hours during business hours.</p>
@@ -505,6 +440,8 @@
                         })();
                     </script>
                 </div>
+
+                <p class="contact-aside">Not sure what you need? See our <a href="turbochef-repair.html">TurboChef repair service overview</a>.</p>
             </div>
         </div>
     </section>
