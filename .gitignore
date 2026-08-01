@@ -28,3 +28,7 @@ node_modules/
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Local staging-only reference material — never meant to ship, so it stays
+# out of every commit and can't accidentally ride along on a merge to main.
+/.staging-context/
