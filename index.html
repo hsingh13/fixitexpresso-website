@@ -298,7 +298,7 @@
       "description": "Frequently asked questions about TurboChef speed oven repair services in Seattle",
       "url": "https://www.fixitexpresso.com/#faq",
       "datePublished": "2024-10-15",
-      "dateModified": "2024-10-17",
+      "dateModified": "2026-08-03",
       "author": {
         "@type": "Organization",
         "name": "FixIt Expresso",
@@ -755,10 +755,13 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     
     <!-- Performance Optimizations -->
-    <!-- Hero is a CSS background (url('images/turbochef-sota.jpg') in .hero),
+    <!-- Hero is a CSS background (url('images/turbochef-sota.webp') in .hero),
          so the browser cannot discover it until the stylesheet parses unless
-         preloaded with high priority. -->
-    <link rel="preload" href="images/turbochef-sota.jpg" as="image" type="image/jpeg" fetchpriority="high">
+         preloaded with high priority. WebP here is 23KB vs the JPEG's 62KB --
+         this is the LCP resource, so those bytes are on the critical path.
+         The .jpg is still on disk and still referenced by the JSON-LD image
+         properties and by the other pages that share this hero. -->
+    <link rel="preload" href="images/turbochef-sota.webp" as="image" type="image/webp" fetchpriority="high">
     <link rel="dns-prefetch" href="https://www.facebook.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
@@ -1185,7 +1188,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('images/turbochef-sota.jpg');
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('images/turbochef-sota.webp');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -1222,6 +1225,18 @@
             justify-content: center;
             flex-wrap: wrap;
             animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        /* The About section reuses the same button-row standard as the hero
+           and bottom-CTA rows -- flex with gap:20px, which also equalises the
+           two buttons' heights (btn-secondary's 2px border otherwise makes it
+           4px taller than btn-primary beside it). It stays left-aligned with
+           the prose above it rather than centred, and skips the hero's
+           entrance animation since this section has none. */
+        .about-text .cta-buttons {
+            justify-content: flex-start;
+            animation: none;
+            margin-top: 26px;
         }
 
         .btn {
@@ -2261,14 +2276,6 @@
                 display: block;
             }
 
-            /* The inline margin-left:12px on the About section's second
-               button is meant for the desktop side-by-side layout; it fights
-               the margin:0 auto centering above and knocks this button off
-               center on mobile. */
-            .about-text .btn-secondary {
-                margin-left: auto !important;
-            }
-
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
@@ -2946,29 +2953,35 @@
                             <strong>Same-Day Service</strong>
                         </div>
                     </div>
-                    <a href="contact.html" class="btn btn-primary">Get Service Quote</a>
-                    <a href="turbochef-repair.html" class="btn btn-secondary" style="margin-left: 12px; background: transparent; border: 2px solid #2c5aa0; color: #2c5aa0;">TurboChef Repair Services &rarr;</a>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn btn-primary">Get Service Quote</a>
+                        <a href="turbochef-repair.html" class="btn btn-secondary" style="background: transparent; border: 2px solid #2c5aa0; color: #2c5aa0;">TurboChef Repair Services &rarr;</a>
+                    </div>
                 </div>
                 <div class="about-image">
                     <div class="oven-slideshow" id="ovenSlideshow">
+                        <!-- Only the initially-visible slide loads eagerly; the rest sit at
+                             opacity:0 until the slideshow rotates, so they're lazy. All are
+                             WebP (was PNG: 828KB total for four of them, now 110KB) and carry
+                             intrinsic width/height so the browser reserves the box. -->
                         <div class="slide slide-active">
-                            <img src="images/turbochef-bullet.png" alt="TurboChef Bullet Speed Oven">
+                            <img src="images/turbochef-bullet.webp" alt="TurboChef Bullet Speed Oven" width="900" height="900" decoding="async">
                             <span>Bullet</span>
                         </div>
                         <div class="slide">
-                            <img src="images/turbochef-eco.png" alt="TurboChef ECO Speed Oven" style="max-height: 320px;">
+                            <img src="images/turbochef-eco.webp" alt="TurboChef ECO Speed Oven" style="max-height: 320px;" width="604" height="715" loading="lazy" decoding="async">
                             <span>ECO</span>
                         </div>
                         <div class="slide">
-                            <img src="images/turbochef-i3.webp" alt="TurboChef i3 Rapid Cook Oven">
+                            <img src="images/turbochef-i3.webp" alt="TurboChef i3 Rapid Cook Oven" width="604" height="709" loading="lazy" decoding="async">
                             <span>i3 & i5</span>
                         </div>
                         <div class="slide">
-                            <img src="images/turbochef-double-batch.png" alt="TurboChef Double Batch Oven">
+                            <img src="images/turbochef-double-batch.webp" alt="TurboChef Double Batch Oven" width="900" height="900" loading="lazy" decoding="async">
                             <span>Double Batch</span>
                         </div>
                         <div class="slide">
-                            <img src="images/turbochef-hhc-1618.png" alt="TurboChef HhC 1618 Conveyor Oven">
+                            <img src="images/turbochef-hhc-1618.webp" alt="TurboChef HhC 1618 Conveyor Oven" width="900" height="900" loading="lazy" decoding="async">
                             <span>HhC 1618</span>
                         </div>
                         <div class="slide-dots" id="slideDots"></div>
@@ -3190,7 +3203,7 @@
     <!-- Call to Action Section -->
     <section class="cta-section section" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); color: white; text-align: center;">
         <div class="container">
-            <img src="images/turbochef-logo.png" alt="TurboChef" style="max-width: 140px; margin-bottom: 15px;">
+            <img src="images/turbochef-logo.webp" alt="TurboChef" style="max-width: 140px; height: auto; margin-bottom: 15px;" width="500" height="150" loading="lazy" decoding="async">
             <h2 style="color: white; margin-bottom: 20px;">Need TurboChef Oven Repair?</h2>
             <p style="font-size: 1.2rem; margin-bottom: 10px; color: #ecf0f1;">Factory-trained technicians, genuine OEM parts, same-day emergency service.</p>
             <p style="font-size: 1rem; margin-bottom: 30px; color: #bdc3c7;">Serving restaurants, hotels, hospitals, schools &amp; commercial kitchens across the greater Seattle area.</p>
