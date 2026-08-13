@@ -361,8 +361,15 @@
                             <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
                         </div>
 
-                        <!-- Cloudflare Turnstile widget. -->
-                        <div class="cf-turnstile" data-sitekey="0x4AAAAAADUuZqPgBVFic703" data-theme="light" style="margin-bottom:15px;"></div>
+                        <!-- Cloudflare Turnstile widget. The callbacks let the form
+                             track the token itself, so it can tell "not ready yet"
+                             apart from "expired" and fetch a fresh one on demand. -->
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAADUuZqPgBVFic703" data-theme="light"
+                             data-callback="fixitTurnstileOk"
+                             data-expired-callback="fixitTurnstileGone"
+                             data-error-callback="fixitTurnstileGone"
+                             data-refresh-expired="auto"
+                             style="margin-bottom:15px;"></div>
 
                         <button type="submit" class="btn-submit" id="contactSubmitBtn">Send Service Request</button>
                         <p class="form-note">We'll respond within a few hours. For emergencies, call 425-547-0200 directly.</p>
@@ -373,40 +380,124 @@
                             var form = document.getElementById('contactForm');
                             var btn  = document.getElementById('contactSubmitBtn');
                             var msg  = document.getElementById('contactFormMessage');
+
+                            // Turnstile tokens last about five minutes and are single-use.
+                            // Describing an oven fault takes longer than that, so a real
+                            // customer's token is routinely stale by the time they press
+                            // Send — and the old form turned them away with "Verification
+                            // failed", losing the lead. Hold the token here so a stale one
+                            // can be swapped for a fresh one and the request resent once.
+                            var token = '';
+                            var waiting = [];
+
+                            window.fixitTurnstileOk = function (t) {
+                                token = t || '';
+                                var queued = waiting; waiting = [];
+                                for (var i = 0; i < queued.length; i++) { queued[i](token); }
+                            };
+                            window.fixitTurnstileGone = function () { token = ''; };
+
+                            // Hand back a token, waiting up to `ms` for the widget to
+                            // produce one rather than posting an empty field.
+                            function withToken(ms, cb) {
+                                if (token) { cb(token); return; }
+                                var done = false;
+                                var timer = setTimeout(function () {
+                                    if (done) { return; }
+                                    done = true;
+                                    var i = waiting.indexOf(receive);
+                                    if (i >= 0) { waiting.splice(i, 1); }
+                                    cb('');
+                                }, ms);
+                                function receive(t) {
+                                    if (done) { return; }
+                                    done = true; clearTimeout(timer); cb(t);
+                                }
+                                waiting.push(receive);
+                            }
+
+                            function resetWidget() {
+                                token = '';
+                                if (window.turnstile) { try { turnstile.reset(); } catch (e) {} }
+                            }
+
                             function show(text, ok) {
                                 msg.textContent = text;
                                 msg.style.background = ok ? '#eafaf1' : '#fdecea';
                                 msg.style.color      = ok ? '#1e7e34' : '#c0392b';
                                 msg.style.display    = 'block';
                             }
-                            form.addEventListener('submit', function (e) {
-                                e.preventDefault();
-                                btn.disabled = true;
-                                btn.textContent = 'Sending…';
-                                var data = {};
-                                new FormData(form).forEach(function (v, k) { data[k] = v; });
+
+                            function post(data, cb) {
                                 fetch(form.action, {
                                     method: 'POST',
                                     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                                     body: JSON.stringify(data)
                                 })
                                 .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, body: j }; }); })
-                                .then(function (res) {
-                                    if (res.ok && res.body && res.body.ok) {
-                                        show("Thanks! We've received your request and will be in touch shortly.", true);
-                                        form.reset();
-                                        if (window.gtag) { gtag('event', 'contact_form_submit', { event_category: 'engagement' }); }
-                                    } else {
-                                        show((res.body && res.body.error) || 'Something went wrong. Please call 425-547-0200.', false);
-                                    }
-                                })
-                                .catch(function () {
-                                    show('Network error. Please call 425-547-0200 or try again.', false);
-                                })
-                                .finally(function () {
-                                    btn.disabled = false;
-                                    btn.textContent = 'Send Service Request';
-                                    if (window.turnstile) { try { turnstile.reset(); } catch (e) {} }
+                                .then(cb)
+                                .catch(function () { cb(null); });
+                            }
+
+                            function done() {
+                                btn.disabled = false;
+                                btn.textContent = 'Send Service Request';
+                            }
+
+                            function succeeded() {
+                                show("Thanks! We've received your request and will be in touch shortly.", true);
+                                form.reset();
+                                if (window.gtag) { gtag('event', 'contact_form_submit', { event_category: 'engagement' }); }
+                                resetWidget();
+                                done();
+                            }
+
+                            function failed(res) {
+                                var why = (res && res.body && res.body.error)
+                                    || 'Something went wrong. Please call 425-547-0200.';
+                                show(why, false);
+                                // Failures were invisible in analytics: only successes were
+                                // ever reported, so a form rejecting people looked identical
+                                // to a form nobody used.
+                                if (window.gtag) {
+                                    gtag('event', 'contact_form_error', {
+                                        event_category: 'engagement', event_label: why
+                                    });
+                                }
+                                resetWidget();
+                                done();
+                            }
+
+                            form.addEventListener('submit', function (e) {
+                                e.preventDefault();
+                                btn.disabled = true;
+                                btn.textContent = 'Sending…';
+
+                                var data = {};
+                                new FormData(form).forEach(function (v, k) { data[k] = v; });
+
+                                withToken(6000, function (t) {
+                                    if (t) { data['cf-turnstile-response'] = t; }
+                                    post(data, function (res) {
+                                        if (res && res.ok && res.body && res.body.ok) { succeeded(); return; }
+                                        // The server flags the rejections that mean "real
+                                        // person, stale token". Mint a new one and resend
+                                        // once, so the customer never sees a robot check fail.
+                                        if (res && res.body && res.body.retry) {
+                                            btn.textContent = 'Verifying…';
+                                            resetWidget();
+                                            withToken(8000, function (fresh) {
+                                                if (!fresh) { failed(res); return; }
+                                                data['cf-turnstile-response'] = fresh;
+                                                post(data, function (again) {
+                                                    if (again && again.ok && again.body && again.body.ok) { succeeded(); return; }
+                                                    failed(again || res);
+                                                });
+                                            });
+                                            return;
+                                        }
+                                        failed(res);
+                                    });
                                 });
                             });
                         })();
