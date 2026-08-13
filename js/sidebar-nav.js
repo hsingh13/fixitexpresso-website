@@ -112,3 +112,28 @@
         document.addEventListener('DOMContentLoaded', mount);
     }
 })();
+
+/* Phone-click tracking.
+ *
+ * The phone is where most work actually comes from, and it was the one channel
+ * nobody could measure: analytics recorded a successful contact-form submit and
+ * nothing else, so "are the calls drying up?" had no data behind it either way.
+ * Every tel: link on the site now reports a click, which makes the call channel
+ * visible in GA alongside the form.
+ */
+(function () {
+    document.addEventListener('click', function (e) {
+        var el = e.target;
+        var link = null;
+        while (el && el !== document) {
+            if (el.tagName === 'A' && (el.getAttribute('href') || '').indexOf('tel:') === 0) { link = el; break; }
+            el = el.parentNode;
+        }
+        if (!link || !window.gtag) { return; }
+        gtag('event', 'phone_click', {
+            event_category: 'engagement',
+            event_label: link.getAttribute('href').replace('tel:', ''),
+            page_path: location.pathname
+        });
+    }, true);
+})();
