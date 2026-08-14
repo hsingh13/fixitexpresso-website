@@ -2914,9 +2914,15 @@
                      "turbochef oven repair", which the old brand-only H1 gave
                      no signal for. Company name still appears in the title,
                      nav, trust banner and the About section below. -->
-                <h1 itemprop="name">TurboChef Oven Repair in Seattle</h1>
+                <!-- The Service's name belongs in microdata, not on the H1.
+                     Putting itemprop="name" on the H1 forced a choice between
+                     a correct machine-readable name and a headline that reads
+                     well to a customer; a meta tag lets the H1 be written for
+                     people while the structured data stays accurate. -->
+                <meta itemprop="name" content="TurboChef Oven Repair">
+                <h1>FixIt Expresso — TurboChef Oven Repair in Seattle</h1>
                 <!-- Service focus: TurboChef speed ovens -->
-                <h2 itemprop="description">Commercial speed oven repair across Seattle &amp; the Puget Sound — authorized TurboChef service from FixIt Expresso.</h2>
+                <h2 itemprop="description">Commercial speed oven repair across Seattle &amp; the Puget Sound — authorized TurboChef service.</h2>
                 <div class="cta-buttons">
                     <a href="#services" class="btn btn-primary">Our Repair Services</a>
                     <a href="tel:425-547-0200" class="btn btn-secondary">Call for Service</a>
