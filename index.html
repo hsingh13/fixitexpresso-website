@@ -2907,10 +2907,16 @@
         <!-- TurboChef oven repair service hero section featuring NGC, NGO, and Sota models -->
         <div class="container">
             <div class="hero-content">
-                <!-- Main heading emphasizes TurboChef repair services -->
-                <h1 itemprop="name">FixIt Expresso</h1>
+                <!-- H1 names the SERVICE, not the company. Two reasons: this
+                     section is itemtype=Service, so itemprop="name" was
+                     declaring the service to be called "FixIt Expresso"; and
+                     Google ranks this page (not turbochef-repair.html) for
+                     "turbochef oven repair", which the old brand-only H1 gave
+                     no signal for. Company name still appears in the title,
+                     nav, trust banner and the About section below. -->
+                <h1 itemprop="name">TurboChef Oven Repair in Seattle</h1>
                 <!-- Service focus: TurboChef speed ovens -->
-                <h2 itemprop="description">Commercial Speed Oven Repair — Seattle Area</h2>
+                <h2 itemprop="description">Commercial speed oven repair across Seattle &amp; the Puget Sound — authorized TurboChef service from FixIt Expresso.</h2>
                 <div class="cta-buttons">
                     <a href="#services" class="btn btn-primary">Our Repair Services</a>
                     <a href="tel:425-547-0200" class="btn btn-secondary">Call for Service</a>
