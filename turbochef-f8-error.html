@@ -89,6 +89,13 @@
         }
 
         .page-updated { font-size: .85rem; opacity: .72; margin: 14px 0 0; }
+
+        /* Links in the dark banner had no colour rule, so they fell back to the
+           browser default #0000EE -- 1.17:1 against the #2c3e50 banner, i.e.
+           invisible. #93C5FD is 8.6:1 here. Scoped to `p a` so the CTA buttons,
+           which are not inside a paragraph, keep their own treatment. */
+        .hero p a, .header p a { color: #93C5FD; text-decoration: underline; text-underline-offset: 2px; }
+        .hero p a:hover, .header p a:hover { color: #BFDBFE; }
     </style>
 </head>
 <body>
@@ -121,20 +128,20 @@
     <section class="section">
         <div class="container">
             <h2>What Does the TurboChef F8 Error Mean?</h2>
-            <p>On a TurboChef speed oven, the error code <strong>F8 means High Limit Tripped</strong>. Every TurboChef has a safety high-limit thermostat — a fail-safe that cuts power to the heating system if the cavity gets too hot. When that limit trips, the oven locks out with F8 and stops heating rather than risk damaging the oven or, worse, creating a fire hazard. The code can also appear as &ldquo;Heat Low&rdquo; on some units.</p>
-            <p>What that means in practice: your oven is down. It may power on, but it won't run a cooking cycle because the heating system is deliberately disabled. The trip happens for a reason — something got too hot, or a component failed in a way that reads as an over-temperature — so simply clearing the code without finding the cause means the fault will come back.</p>
-            <p>F8 is a fault that needs professional diagnosis. Restricted airflow is the most common root cause, but a failing high-limit thermostat, a stuck heating element, or a control fault can produce the same code. A factory-trained technician verifies the whole heating system — airflow, thermostat, elements, and controls — before resetting anything, and replaces any failed part with a genuine OEM component. Call FixIt Expresso at 425-547-0200.</p>
+            <p>On a TurboChef speed oven, the error code <strong>F8 means High Limit Tripped</strong>. Every TurboChef has a safety high-limit thermostat, a fail-safe that cuts power to the heating system if the cavity gets too hot. When that limit trips, the oven locks out with F8 and stops heating rather than risk damaging the oven or, worse, creating a fire hazard. The code can also appear as &ldquo;Heat Low&rdquo; on some units.</p>
+            <p>What that means in practice: your oven is down. It may power on, but it won't run a cooking cycle because the heating system is deliberately disabled. The trip happens for a reason (something got too hot, or a component failed in a way that reads as an over-temperature) so simply clearing the code without finding the cause means the fault will come back.</p>
+            <p>F8 is a fault that needs professional diagnosis. Restricted airflow is the most common root cause, but a failing high-limit thermostat, a stuck heating element, or a control fault can produce the same code. A factory-trained technician verifies the whole heating system (airflow, thermostat, elements, and controls) before resetting anything, and replaces any failed part with a genuine OEM component. Call FixIt Expresso at 425-547-0200.</p>
 
 
             <div class="error-link">
-                <p><strong>Need the full code list?</strong> See our <a href="common-turbochef-problems.html">TurboChef F1–F10 error code guide</a> to identify any fault before you call — we arrive prepared with the right parts.</p>
+                <p><strong>Need the full code list?</strong> See our <a href="common-turbochef-problems.html">TurboChef F1–F10 error code guide</a> to identify any fault before you call. We arrive prepared with the right parts.</p>
             </div>
 
             <h2 style="margin-top: 40px;">Why F8 Needs an On-Site Diagnosis</h2>
-            <p>More than one part of the oven's heating system can trip the high-limit safety, and the code alone doesn't say which — that's why the whole system gets checked before anything is reset or replaced.</p>
+            <p>More than one part of the oven's heating system can trip the high-limit safety, and the code alone doesn't say which. That's why the whole system gets checked before anything is reset or replaced.</p>
             <figure class="photo-figure">
                 <img src="images/jobs/img_30bd44a4e581.jpg" srcset="images/jobs/img_30bd44a4e581-480w.jpg 480w, images/jobs/img_30bd44a4e581-720w.jpg 720w, images/jobs/img_30bd44a4e581.jpg 960w" sizes="(max-width: 768px) 92vw, 560px" alt="TurboChef heating elements in the oven cavity photographed during a service visit" loading="lazy" width="960" height="1280">
-                <figcaption>The heating elements from a service visit — part of the heating system a technician checks when diagnosing a recurring F8.</figcaption>
+                <figcaption>The heating elements from a service visit, part of the heating system a technician checks when diagnosing a recurring F8.</figcaption>
             </figure>
 
             <div class="problem-grid">
@@ -147,7 +154,7 @@
                     <p>A heating element or control fault that keeps heat applied too long can drive the cavity past the limit. We test the full circuit before resetting anything.</p>
                 </div>
             </div>
-            <p style="margin-top: 8px;"><a href="turbochef-f7-error.html"><strong>F7 (RTD failure)</strong></a> sits right alongside F8 in the heating-fault family — F8 is a tripped safety limit, F7 is a failed temperature reading. <a href="turbochef-f3-error.html"><strong>F3 (Magnetron Current Low)</strong></a> tends to join both on compact-cavity models run hard. All three shut the oven down until a factory-trained technician sorts them out. Call 425-547-0200 for any of the three.</p>
+            <p style="margin-top: 8px;"><a href="turbochef-f7-error.html"><strong>F7 (RTD failure)</strong></a> sits right alongside F8 in the heating-fault family. F8 is a tripped safety limit, F7 is a failed temperature reading. <a href="turbochef-f3-error.html"><strong>F3 (Magnetron Current Low)</strong></a> tends to join both on compact-cavity models run hard. All three shut the oven down until a factory-trained technician sorts them out. Call 425-547-0200 for any of the three.</p>
         </div>
     </section>
 
@@ -158,7 +165,7 @@
             <ol class="process-list">
                 <li>
                     <h3>Tell us the code and model</h3>
-                    <p>Note the F8 (or High Limit / Heat Low) code on the display and your model — Sota, Bullet, Encore, i3, i5, NGC, or another — when you call. That's usually enough for the tech to arrive with the right parts already on hand.</p>
+                    <p>Note the F8 (or High Limit / Heat Low) code on the display and your model (Sota, Bullet, Encore, i3, i5, NGC, or another) when you call. That's usually enough for the tech to arrive with the right parts already on hand.</p>
                 </li>
                 <li>
                     <h3>Same-day or scheduled visit</h3>
@@ -166,11 +173,11 @@
                 </li>
                 <li>
                     <h3>On-site diagnosis</h3>
-                    <p>Our factory-trained technicians confirm the F8 fault, check airflow and the full heating system — thermostat, elements, blower, and controls — and quote the repair before starting work.</p>
+                    <p>Our factory-trained technicians confirm the F8 fault, check airflow and the full heating system (thermostat, elements, blower, and controls) and quote the repair before starting work.</p>
                 </li>
                 <li>
                     <h3>Root-cause repair with OEM parts</h3>
-                    <p>We fix what actually caused the trip — replacing any failed component with genuine OEM parts, and correcting airflow issues so the code doesn't return.</p>
+                    <p>We fix what actually caused the trip, replacing any failed component with genuine OEM parts, and correcting airflow issues so the code doesn't return.</p>
                 </li>
                 <li>
                     <h3>Tested before we leave</h3>
@@ -186,11 +193,11 @@
             <p>F8 can appear across the TurboChef lineup. Here's how it plays out on the platforms we service most:</p>
             <div class="model-card">
                 <h3>Bullet (ENC-1618B) / Encore</h3>
-                <p>High-limit trips (F8) and <a href="turbochef-f3-error.html">magnetron failures (F3)</a> are the most common faults on these compact-cavity models. Heat builds fast in the small cavity, so keeping vents clear matters — F8 is the code that shows up when they aren't.</p>
+                <p>High-limit trips (F8) and <a href="turbochef-f3-error.html">magnetron failures (F3)</a> are the most common faults on these compact-cavity models. Heat builds fast in the small cavity, so keeping vents clear matters. F8 is the code that shows up when they aren't.</p>
             </div>
             <div class="model-card">
                 <h3>NGC</h3>
-                <p>These models most often fail on <a href="turbochef-f3-error.html">magnetron current faults (F3)</a>, airflow restrictions (F5, F6), and <a href="turbochef-f4-error.html">door monitor issues (F4)</a>. Restricted airflow here can escalate into F8 trips — another reason regular filter service matters.</p>
+                <p>These models most often fail on <a href="turbochef-f3-error.html">magnetron current faults (F3)</a>, airflow restrictions (F5, F6), and <a href="turbochef-f4-error.html">door monitor issues (F4)</a>. Restricted airflow here can escalate into F8 trips, another reason regular filter service matters.</p>
             </div>
             <div class="model-card">
                 <h3>Sota (NGO)</h3>
@@ -211,13 +218,13 @@
     <section class="section" style="background: #f8f9fa;">
         <div class="container">
             <h2>Preventative Maintenance That Prevents F8</h2>
-            <p>Most F8 trips are preventable — a scheduled check catches the underlying issue long before the high-limit has to step in:</p>
+            <p>Most F8 trips are preventable, a scheduled check catches the underlying issue long before the high-limit has to step in:</p>
             <h3>Air filter &amp; vent checks</h3>
-            <p>Restricted airflow is behind more faults than any single component failure — it's what drives over-temperature conditions before the safety limit has to step in. Clean filters and clear vents are the single cheapest insurance against a mid-shift breakdown.</p>
+            <p>Restricted airflow is behind more faults than any single component failure. It's what drives over-temperature conditions before the safety limit has to step in. Clean filters and clear vents are the single cheapest insurance against a mid-shift breakdown.</p>
             <h3>Blower performance checks</h3>
             <p>A blower that's slowing down moves less air and lets heat build in the cavity. Catching blower wear early (before it becomes an F1 or contributes to an F8) is faster and cheaper than an emergency call.</p>
             <h3>Probe and temperature checks</h3>
-            <p>Temperature readings can drift out of spec before a fault locks the oven out. A scheduled inspection catches the creeping inaccuracy early — so the underlying cause can be addressed on your timeline, not the oven's.</p>
+            <p>Temperature readings can drift out of spec before a fault locks the oven out. A scheduled inspection catches the creeping inaccuracy early, so the underlying cause can be addressed on your timeline, not the oven's.</p>
         </div>
     </section>
 
@@ -226,7 +233,7 @@
             <h2>TurboChef F8 Error FAQ</h2>
             <div class="faq-item">
                 <h3>What does TurboChef error F8 High Limit mean?</h3>
-                <p>F8 means High Limit Tripped — the oven's safety high-limit thermostat detected an over-temperature condition and shut down the heating system to protect the oven. The oven will not heat until the cause is found and the fault cleared. It requires professional diagnosis. Call FixIt Expresso at 425-547-0200.</p>
+                <p>F8 means High Limit Tripped, the oven's safety high-limit thermostat detected an over-temperature condition and shut down the heating system to protect the oven. The oven will not heat until the cause is found and the fault cleared. It requires professional diagnosis. Call FixIt Expresso at 425-547-0200.</p>
             </div>
             <div class="faq-item">
                 <h3>What causes a TurboChef F8 error?</h3>
@@ -234,7 +241,7 @@
             </div>
             <div class="faq-item">
                 <h3>Will a TurboChef F8 error clear on its own?</h3>
-                <p>No. F8 (High Limit Tripped) is a safety shutdown — the limit tripped for a reason, and the oven needs professional diagnosis to find and fix the underlying heating fault. Call FixIt Expresso at 425-547-0200.</p>
+                <p>No. F8 (High Limit Tripped) is a safety shutdown, the limit tripped for a reason, and the oven needs professional diagnosis to find and fix the underlying heating fault. Call FixIt Expresso at 425-547-0200.</p>
             </div>
             <div class="faq-item">
                 <h3>How quickly can you fix a TurboChef F8 error?</h3>
@@ -250,7 +257,7 @@
     <section class="cta-bottom">
         <div class="container">
             <h2>Seeing F8 on Your TurboChef?</h2>
-            <p>Call now or request service online. We respond fast — same-day emergency service available for a down oven.</p>
+            <p>Call now or request service online. We respond fast, same-day emergency service available for a down oven.</p>
             <a href="tel:425-547-0200" style="background: #e74c3c; color: white;">&#128222; Call 425-547-0200</a>
             <a href="contact.html" style="background: transparent; border: 2px solid white; color: white;">Request Service</a>
         </div>
@@ -259,14 +266,14 @@
     <section class="section">
         <div class="container">
             <div class="city-links">
-                <p>TurboChef F8 high-limit repair across the Puget Sound: Seattle &bull; Bellevue &bull; Redmond &bull; Kirkland &bull; Renton &bull; Kent &bull; Tacoma &bull; Everett &bull; Auburn &bull; Federal Way. We're a mobile service based in Renton — our technicians come to your kitchen within roughly 80 miles of Seattle. See <a href="turbochef-repair.html">TurboChef repair across the Puget Sound</a> for the full picture.</p>
+                <p>TurboChef F8 high-limit repair across the Puget Sound: Seattle &bull; Bellevue &bull; Redmond &bull; Kirkland &bull; Renton &bull; Kent &bull; Tacoma &bull; Everett &bull; Auburn &bull; Federal Way. We're a mobile service based in Renton, our technicians come to your kitchen within roughly 80 miles of Seattle. See <a href="turbochef-repair.html">TurboChef repair across the Puget Sound</a> for the full picture.</p>
             </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2023-2026 FixIt Expresso — TurboChef &amp; MerryChef Repair · Seattle, WA</p>
+            <p>&copy; 2023-2026 FixIt Expresso &mdash; TurboChef &amp; MerryChef Repair · Seattle, WA</p>
             <p><a href="index.html">Home</a> | <a href="common-turbochef-problems.html">TurboChef Error Codes</a> | <a href="common-merrychef-problems.html">MerryChef Error Codes</a> | <a href="reviews.html">Reviews</a> | <a href="contact.html">Contact</a></p>
         </div>
     </footer>
