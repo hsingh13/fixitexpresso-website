@@ -89,6 +89,13 @@
         }
 
         .page-updated { font-size: .85rem; opacity: .72; margin: 14px 0 0; }
+
+        /* Links in the dark banner had no colour rule, so they fell back to the
+           browser default #0000EE -- 1.17:1 against the #2c3e50 banner, i.e.
+           invisible. #93C5FD is 8.6:1 here. Scoped to `p a` so the CTA buttons,
+           which are not inside a paragraph, keep their own treatment. */
+        .hero p a, .header p a { color: #93C5FD; text-decoration: underline; text-underline-offset: 2px; }
+        .hero p a:hover, .header p a:hover { color: #BFDBFE; }
     </style>
 </head>
 <body>
@@ -97,7 +104,7 @@
     <section class="hero">
         <div class="container">
             <h1>TurboChef F4 Monitor / F4 Error — Door Monitor Defective</h1>
-            <p>An F4 code means the safety interlock circuit that confirms the door is closed and latched has detected a fault, so the oven refuses to run. It's a safety-first lockout — and it needs professional diagnosis. Authorized TurboChef Service Provider. Factory-trained technicians, OEM parts in stock. Serving Seattle, Bellevue, Tacoma, and the greater Puget Sound.</p>
+            <p>An F4 code means the safety interlock circuit that confirms the door is closed and latched has detected a fault, so the oven refuses to run. It's a safety-first lockout, and it needs professional diagnosis. Authorized TurboChef Service Provider. Factory-trained technicians, OEM parts in stock. Serving Seattle, Bellevue, Tacoma, and the greater Puget Sound.</p>
             <p class="page-updated">Last updated: <time datetime="2026-08-13">August 13, 2026</time></p>
             <div class="cta-bar">
                 <a href="tel:425-547-0200" class="call">&#128222; Call 425-547-0200</a>
@@ -121,21 +128,21 @@
     <section class="section">
         <div class="container">
             <h2>What Does the TurboChef F4 Error Mean?</h2>
-            <p>On a TurboChef speed oven, the error code <strong>F4 means Door Monitor Defective</strong>. Before the oven will allow any cooking power, a safety interlock circuit must confirm the door is properly closed and latched. That circuit — the door monitor switches and the interlock that reads them — is the last line of defense against operating with a door that could open mid-cycle. When the control board can't get a clean signal from it, the oven locks out with F4.</p>
-            <p>What that means in practice: the oven won't run a cook cycle — or it errors out when you try to start one. The oven may be otherwise fine, but the door system is in an uncertain state, and the safety logic refuses to take that risk. F4 can be intermittent too: a door monitor that works sometimes and fails other times, or trips depending on how the door is closed.</p>
+            <p>On a TurboChef speed oven, the error code <strong>F4 means Door Monitor Defective</strong>. Before the oven will allow any cooking power, a safety interlock circuit must confirm the door is properly closed and latched. That circuit (the door monitor switches and the interlock that reads them) is the last line of defense against operating with a door that could open mid-cycle. When the control board can't get a clean signal from it, the oven locks out with F4.</p>
+            <p>What that means in practice: the oven won't run a cook cycle, or it errors out when you try to start one. The oven may be otherwise fine, but the door system is in an uncertain state, and the safety logic refuses to take that risk. F4 can be intermittent too: a door monitor that works sometimes and fails other times, or trips depending on how the door is closed.</p>
             <p>F4 is a fault that needs professional diagnosis. The door monitor circuit is a safety interlock, and more than one kind of fault can present the same code. A factory-trained technician verifies the full door circuit and corrects the root cause with genuine OEM parts. Call FixIt Expresso at 425-547-0200.</p>
 
             <figure class="photo-figure">
                 <img src="images/jobs/img_1acaa2e216c7.jpg" srcset="images/jobs/img_1acaa2e216c7-480w.jpg 480w, images/jobs/img_1acaa2e216c7-720w.jpg 720w, images/jobs/img_1acaa2e216c7.jpg 960w" sizes="(max-width: 768px) 92vw, 560px" alt="TurboChef service menu showing the F4 Monitor fault count from a service visit" loading="lazy" width="960" height="1280">
-                <figcaption>The TurboChef service menu from a service visit — a fault-counts screen showing the F4 Monitor count, used to confirm the door monitor circuit before any repair is quoted.</figcaption>
+                <figcaption>The TurboChef service menu from a service visit, a fault-counts screen showing the F4 Monitor count, used to confirm the door monitor circuit before any repair is quoted.</figcaption>
             </figure>
 
             <div class="error-link">
-                <p><strong>Need the full code list?</strong> See our <a href="common-turbochef-problems.html">TurboChef F1–F10 error code guide</a> to identify any fault before you call — we arrive prepared with the right parts.</p>
+                <p><strong>Need the full code list?</strong> See our <a href="common-turbochef-problems.html">TurboChef F1–F10 error code guide</a> to identify any fault before you call. We arrive prepared with the right parts.</p>
             </div>
 
             <h2 style="margin-top: 40px;">Why F4 Needs an On-Site Diagnosis</h2>
-            <p>F4 is a safety-interlock lockout, and more than one part of the door system can trigger the same code on the display — the fault code alone doesn't say which. That's why every F4 call gets the full door circuit tested before anything is quoted, not a guess based on the code.</p>
+            <p>F4 is a safety-interlock lockout, and more than one part of the door system can trigger the same code on the display, the fault code alone doesn't say which. That's why every F4 call gets the full door circuit tested before anything is quoted, not a guess based on the code.</p>
             <p style="margin-top: 8px;">F4 is a door-safety fault, but it often has company: <a href="turbochef-f7-error.html"><strong>F7 (RTD failure)</strong></a> and <a href="turbochef-f8-error.html"><strong>F8 (High Limit Tripped)</strong></a> are heating-system faults, and <a href="turbochef-f3-error.html"><strong>F3 (Magnetron Current Low)</strong></a> tends to show up alongside all three on compact-cavity models run hard. Each one shuts the oven down until a factory-trained technician sorts it out. Call 425-547-0200 for any of the four.</p>
         </div>
     </section>
@@ -147,7 +154,7 @@
             <ol class="process-list">
                 <li>
                     <h3>Tell us the code and model</h3>
-                    <p>Note the F4 (or Door Monitor) code on the display and your model — Sota, Bullet, Encore, i3, i5, NGC, or another — when you call. That's usually enough for the tech to arrive with the right parts already on hand.</p>
+                    <p>Note the F4 (or Door Monitor) code on the display and your model (Sota, Bullet, Encore, i3, i5, NGC, or another) when you call. That's usually enough for the tech to arrive with the right parts already on hand.</p>
                 </li>
                 <li>
                     <h3>Same-day or scheduled visit</h3>
@@ -175,11 +182,11 @@
             <p>F4 can appear across the TurboChef lineup. Here's how it plays out on the platforms we service most:</p>
             <div class="model-card">
                 <h3>NGC</h3>
-                <p>These models most often fail on <a href="turbochef-f3-error.html">magnetron current faults (F3)</a>, airflow restrictions (F5, F6), and door monitor issues (F4) — especially in high-volume kitchens where the door gets opened constantly.</p>
+                <p>These models most often fail on <a href="turbochef-f3-error.html">magnetron current faults (F3)</a>, airflow restrictions (F5, F6), and door monitor issues (F4), especially in high-volume kitchens where the door gets opened constantly.</p>
             </div>
             <div class="model-card">
                 <h3>Bullet (ENC-1618B) / Encore</h3>
-                <p>Door interlock wear (F4) is common on high-use units, alongside <a href="turbochef-f3-error.html">magnetron failures (F3)</a> and <a href="turbochef-f8-error.html">high-limit trips (F8)</a>. Heat builds fast in the small cavity — keep vents clear.</p>
+                <p>Door interlock wear (F4) is common on high-use units, alongside <a href="turbochef-f3-error.html">magnetron failures (F3)</a> and <a href="turbochef-f8-error.html">high-limit trips (F8)</a>. Heat builds fast in the small cavity. Keep vents clear.</p>
             </div>
             <div class="model-card">
                 <h3>Sota (NGO)</h3>
@@ -193,20 +200,20 @@
                 <h3>HhD (HHD-1002B), ECO (ECO-1002A), Fire, Tornado, C3 / C4 / HhC</h3>
                 <p>Legacy and specialty platforms we continue to support with OEM parts and factory-trained diagnosis, including double-batch (HhD) and conveyor (HhC) configurations.</p>
             </div>
-            <p>F4 gets a full on-site diagnosis before we quote anything — no guesswork, no surprise charges. Call 425-547-0200.</p>
+            <p>F4 gets a full on-site diagnosis before we quote anything. No guesswork, no surprise charges. Call 425-547-0200.</p>
         </div>
     </section>
 
     <section class="section" style="background: #f8f9fa;">
         <div class="container">
             <h2>Preventative Maintenance That Prevents F4</h2>
-            <p>Most F4 lockouts don't come out of nowhere — a routine maintenance check tends to catch the warning signs first:</p>
+            <p>Most F4 lockouts don't come out of nowhere, a routine maintenance check tends to catch the warning signs first:</p>
             <h3>Door seal and interlock checks</h3>
-            <p>A worn door seal doesn't just waste energy — it's one of several things that can eventually lead to a door-monitor fault. Checking seal and hardware condition on a schedule is faster and cheaper than an emergency call.</p>
+            <p>A worn door seal doesn't just waste energy. It's one of several things that can eventually lead to a door-monitor fault. Checking seal and hardware condition on a schedule is faster and cheaper than an emergency call.</p>
             <h3>Air filter &amp; vent checks</h3>
-            <p>Restricted airflow is behind more faults than any single component failure — it's what drives over-temperature conditions and accelerates wear on door and cavity components alike. Clean filters and clear vents are the cheapest insurance against a mid-shift breakdown.</p>
+            <p>Restricted airflow is behind more faults than any single component failure. It's what drives over-temperature conditions and accelerates wear on door and cavity components alike. Clean filters and clear vents are the cheapest insurance against a mid-shift breakdown.</p>
             <h3>Probe and temperature checks</h3>
-            <p>Temperature readings can drift out of spec before a fault locks the oven out. A scheduled inspection catches the creeping inaccuracy early — so the underlying cause can be addressed on your timeline, not the oven's.</p>
+            <p>Temperature readings can drift out of spec before a fault locks the oven out. A scheduled inspection catches the creeping inaccuracy early, so the underlying cause can be addressed on your timeline, not the oven's.</p>
         </div>
     </section>
 
@@ -223,7 +230,7 @@
             </div>
             <div class="faq-item">
                 <h3>Is it safe to keep using a TurboChef with an F4 error?</h3>
-                <p>No — F4 is a safety interlock lockout. The oven will not run until the door monitor circuit is professionally diagnosed and repaired. Bypassing or ignoring a safety code is never safe. Call FixIt Expresso at 425-547-0200.</p>
+                <p>No. F4 is a safety interlock lockout. The oven will not run until the door monitor circuit is professionally diagnosed and repaired. Bypassing or ignoring a safety code is never safe. Call FixIt Expresso at 425-547-0200.</p>
             </div>
             <div class="faq-item">
                 <h3>How quickly can you fix a TurboChef F4 error?</h3>
@@ -231,7 +238,7 @@
             </div>
             <div class="faq-item">
                 <h3>Which TurboChef models show the F4 error?</h3>
-                <p>F4 is most common on high-use models — NGC units in high-volume kitchens and compact-cavity models like the Bullet and Encore where door interlock wear shows up sooner. We repair F4 on all current and legacy TurboChef models: Sota (NGO), Bullet, Encore, HhD Double Batch, i3, i5, NGC, ECO, Fire, and more.</p>
+                <p>F4 is most common on high-use models, NGC units in high-volume kitchens and compact-cavity models like the Bullet and Encore where door interlock wear shows up sooner. We repair F4 on all current and legacy TurboChef models: Sota (NGO), Bullet, Encore, HhD Double Batch, i3, i5, NGC, ECO, Fire, and more.</p>
             </div>
         </div>
     </section>
@@ -239,7 +246,7 @@
     <section class="cta-bottom">
         <div class="container">
             <h2>Seeing F4 on Your TurboChef?</h2>
-            <p>Call now or request service online. We respond fast — same-day emergency service available for a down oven.</p>
+            <p>Call now or request service online. We respond fast, same-day emergency service available for a down oven.</p>
             <a href="tel:425-547-0200" style="background: #e74c3c; color: white;">&#128222; Call 425-547-0200</a>
             <a href="contact.html" style="background: transparent; border: 2px solid white; color: white;">Request Service</a>
         </div>
@@ -248,14 +255,14 @@
     <section class="section">
         <div class="container">
             <div class="city-links">
-                <p>TurboChef F4 door-monitor repair across the Puget Sound: Seattle &bull; Bellevue &bull; Redmond &bull; Kirkland &bull; Renton &bull; Kent &bull; Tacoma &bull; Everett &bull; Auburn &bull; Federal Way. We're a mobile service based in Renton — our technicians come to your kitchen within roughly 80 miles of Seattle. See <a href="turbochef-repair.html">TurboChef repair across the Puget Sound</a> for the full picture.</p>
+                <p>TurboChef F4 door-monitor repair across the Puget Sound: Seattle &bull; Bellevue &bull; Redmond &bull; Kirkland &bull; Renton &bull; Kent &bull; Tacoma &bull; Everett &bull; Auburn &bull; Federal Way. We're a mobile service based in Renton, our technicians come to your kitchen within roughly 80 miles of Seattle. See <a href="turbochef-repair.html">TurboChef repair across the Puget Sound</a> for the full picture.</p>
             </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2023-2026 FixIt Expresso — TurboChef &amp; MerryChef Repair · Seattle, WA</p>
+            <p>&copy; 2023-2026 FixIt Expresso &mdash; TurboChef &amp; MerryChef Repair · Seattle, WA</p>
             <p><a href="index.html">Home</a> | <a href="common-turbochef-problems.html">TurboChef Error Codes</a> | <a href="common-merrychef-problems.html">MerryChef Error Codes</a> | <a href="reviews.html">Reviews</a> | <a href="contact.html">Contact</a></p>
         </div>
     </footer>
