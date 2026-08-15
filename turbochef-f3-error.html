@@ -89,6 +89,13 @@
         }
 
         .page-updated { font-size: .85rem; opacity: .72; margin: 14px 0 0; }
+
+        /* Links in the dark banner had no colour rule, so they fell back to the
+           browser default #0000EE -- 1.17:1 against the #2c3e50 banner, i.e.
+           invisible. #93C5FD is 8.6:1 here. Scoped to `p a` so the CTA buttons,
+           which are not inside a paragraph, keep their own treatment. */
+        .hero p a, .header p a { color: #93C5FD; text-decoration: underline; text-underline-offset: 2px; }
+        .hero p a:hover, .header p a:hover { color: #BFDBFE; }
     </style>
 </head>
 <body>
@@ -97,7 +104,7 @@
     <section class="hero">
         <div class="container">
             <h1>TurboChef F3 Error — Magnetron Current Low (MAG CURR)</h1>
-            <p>An F3 code means the oven has detected low current through its magnetron — the component that generates the microwave energy your speed oven cooks with. Authorized TurboChef Service Provider. Factory-trained technicians, OEM parts in stock. Serving Seattle, Bellevue, Tacoma, and the greater Puget Sound.</p>
+            <p>An F3 code means the oven has detected low current through its magnetron, the component that generates the microwave energy your speed oven cooks with. Authorized TurboChef Service Provider. Factory-trained technicians, OEM parts in stock. Serving Seattle, Bellevue, Tacoma, and the greater Puget Sound.</p>
             <p class="page-updated">Last updated: <time datetime="2026-08-02">August 2, 2026</time></p>
             <div class="cta-bar">
                 <a href="tel:425-547-0200" class="call">&#128222; Call 425-547-0200</a>
@@ -121,21 +128,21 @@
     <section class="section">
         <div class="container">
             <h2>What Does the TurboChef F3 Error Mean?</h2>
-            <p>On a TurboChef speed oven, the error code <strong>F3 — sometimes shown as &ldquo;MAG CURR&rdquo; — means Magnetron Current Low</strong>. The oven's control board monitors the current drawn by the magnetron, the high-voltage component that generates the microwave energy for rapid cooking. When that current reads below the expected range, the oven locks out with an F3 fault rather than risk cooking with a failing component.</p>
-            <p>What that means in practice: your oven's microwave output is reduced or absent. The convection fan and heating elements may still run, but the oven won't cook the way it's supposed to — and the code will typically return even after a power cycle because the underlying condition hasn't been addressed.</p>
-            <p>F3 is a fault that needs professional diagnosis. The magnetron circuit operates at dangerous high voltage, and the code can share symptoms with other faults — a magnetron problem and a high-limit trip can present similarly — so the correct move is a factory-trained technician with the right test equipment, not a guess-and-replace approach.</p>
+            <p>On a TurboChef speed oven, the error code <strong>F3 (sometimes shown as &ldquo;MAG CURR&rdquo;) means Magnetron Current Low</strong>. The oven's control board monitors the current drawn by the magnetron, the high-voltage component that generates the microwave energy for rapid cooking. When that current reads below the expected range, the oven locks out with an F3 fault rather than risk cooking with a failing component.</p>
+            <p>What that means in practice: your oven's microwave output is reduced or absent. The convection fan and heating elements may still run, but the oven won't cook the way it's supposed to, and the code will typically return even after a power cycle because the underlying condition hasn't been addressed.</p>
+            <p>F3 is a fault that needs professional diagnosis. The magnetron circuit operates at dangerous high voltage, and the code can share symptoms with other faults (a magnetron problem and a high-limit trip can present similarly), so the correct move is a factory-trained technician with the right test equipment, not a guess-and-replace approach.</p>
 
             <figure class="photo-figure">
                 <img src="images/jobs/img_b907b701b819.jpg" srcset="images/jobs/img_b907b701b819-480w.jpg 480w, images/jobs/img_b907b701b819-720w.jpg 720w, images/jobs/img_b907b701b819.jpg 960w" sizes="(max-width: 768px) 92vw, 560px" alt="TurboChef fault history screen showing logged error codes F1 through F8 with an F3 count of 192 from a service visit" loading="lazy" width="960" height="1280">
-                <figcaption>A TurboChef fault history screen from a service visit — the F1–F8 error log with 192 logged F3 events. F3 (Magnetron Current Low) is the magnetron fault this page covers.</figcaption>
+                <figcaption>A TurboChef fault history screen from a service visit, the F1–F8 error log with 192 logged F3 events. F3 (Magnetron Current Low) is the magnetron fault this page covers.</figcaption>
             </figure>
 
             <div class="error-link">
-                <p><strong>Need the full code list?</strong> See our <a href="common-turbochef-problems.html">TurboChef F1–F10 error code guide</a> to identify any fault before you call — we arrive prepared with the right parts.</p>
+                <p><strong>Need the full code list?</strong> See our <a href="common-turbochef-problems.html">TurboChef F1–F10 error code guide</a> to identify any fault before you call. We arrive prepared with the right parts.</p>
             </div>
 
             <h2 style="margin-top: 40px;">Why F3 Needs an On-Site Diagnosis</h2>
-            <p>F3 can trace back to more than one part of the oven's high-voltage system, and the fault code alone doesn't tell you which — swapping a part based on a guess is how a repair turns into two repairs. That's why every F3 call gets a proper diagnosis with the right test equipment before anything is quoted.</p>
+            <p>F3 can trace back to more than one part of the oven's high-voltage system, and the fault code alone doesn't tell you which. Swapping a part based on a guess is how a repair turns into two repairs. That's why every F3 call gets a proper diagnosis with the right test equipment before anything is quoted.</p>
 
             <div class="problem-grid">
                 <div class="problem-card">
@@ -144,15 +151,15 @@
                 </div>
                 <div class="problem-card">
                     <h3>High-use units (NGC / NGO)</h3>
-                    <p>NGC and NGO models most often fail on magnetron current faults (F3), airflow restrictions (F5, F6), and <a href="turbochef-f4-error.html">door monitor issues (F4)</a> — especially in high-volume kitchens.</p>
+                    <p>NGC and NGO models most often fail on magnetron current faults (F3), airflow restrictions (F5, F6), and <a href="turbochef-f4-error.html">door monitor issues (F4)</a>, especially in high-volume kitchens.</p>
                 </div>
                 <div class="problem-card">
                     <h3>Related high-voltage circuit checks</h3>
-                    <p>Because a magnetron fault and a high-limit trip can share symptoms, we verify the full circuit — high-voltage transformer, capacitor, diode, and wiring — before replacing anything.</p>
+                    <p>Because a magnetron fault and a high-limit trip can share symptoms, we verify the full circuit (high-voltage transformer, capacitor, diode, and wiring) before replacing anything.</p>
                 </div>
             </div>
-            <p style="margin-top: 8px;">Worth knowing: <strong>F5 (Magnetron Over-Temperature)</strong> is F3's sibling fault — same component, opposite symptom. Where F3 is low current, F5 is an over-temperature reading from the magnetron's thermal protection. Both get the same fix: a genuine OEM part and a full post-repair cook test.</p>
-            <p style="margin-top: 8px;">Also worth knowing: on compact-cavity models, <a href="turbochef-f4-error.html"><strong>F4 (Door Monitor Defective)</strong></a> and <a href="turbochef-f8-error.html"><strong>F8 (High Limit Tripped)</strong></a> tend to show up alongside F3 — all three are heat-related faults on small-cavity units run hard. Call 425-547-0200 for any F3, F4, or F8 fault.</p>
+            <p style="margin-top: 8px;">Worth knowing: <strong>F5 (Magnetron Over-Temperature)</strong> is F3's sibling fault, same component, opposite symptom. Where F3 is low current, F5 is an over-temperature reading from the magnetron's thermal protection. Both get the same fix: a genuine OEM part and a full post-repair cook test.</p>
+            <p style="margin-top: 8px;">Also worth knowing: on compact-cavity models, <a href="turbochef-f4-error.html"><strong>F4 (Door Monitor Defective)</strong></a> and <a href="turbochef-f8-error.html"><strong>F8 (High Limit Tripped)</strong></a> tend to show up alongside F3. All three are heat-related faults on small-cavity units run hard. Call 425-547-0200 for any F3, F4, or F8 fault.</p>
         </div>
     </section>
 
@@ -163,7 +170,7 @@
             <ol class="process-list">
                 <li>
                     <h3>Tell us the code and model</h3>
-                    <p>Note the F3 (or MAG CURR) code on the display and your model — Sota, Bullet, Encore, i3, i5, NGC, or another — when you call. That's usually enough for the tech to show up with the right OEM part already in hand.</p>
+                    <p>Note the F3 (or MAG CURR) code on the display and your model (Sota, Bullet, Encore, i3, i5, NGC, or another) when you call. That's usually enough for the tech to show up with the right OEM part already in hand.</p>
                 </li>
                 <li>
                     <h3>Same-day or scheduled visit</h3>
@@ -175,7 +182,7 @@
                 </li>
                 <li>
                     <h3>First-visit repair with the right OEM part</h3>
-                    <p>Because we stock the OEM parts these repairs need, most F3 repairs are completed in a single visit — not a return trip after a part ships.</p>
+                    <p>Because we stock the OEM parts these repairs need, most F3 repairs are completed in a single visit, not a return trip after a part ships.</p>
                 </li>
                 <li>
                     <h3>Tested before we leave</h3>
@@ -218,11 +225,11 @@
             <h2>Preventative Maintenance That Prevents F3</h2>
             <p>A surprising share of F3 emergency calls could have been caught early. Here's what's worth staying ahead of:</p>
             <h3>Air filter &amp; vent checks</h3>
-            <p>Restricted airflow is behind more faults than any single component failure — it's what drives F6-type over-temperature codes on i3/i5 units, and it accelerates heat stress on the magnetron. Clean filters and clear vents are the cheapest insurance against a mid-shift breakdown.</p>
+            <p>Restricted airflow is behind more faults than any single component failure. It's what drives F6-type over-temperature codes on i3/i5 units, and it accelerates heat stress on the magnetron. Clean filters and clear vents are the cheapest insurance against a mid-shift breakdown.</p>
             <h3>Magnetron and RTD inspection</h3>
-            <p>Temperature readings and magnetron output can degrade gradually before a fault locks the oven out. A scheduled inspection catches the creeping decline early — so the underlying cause can be addressed on your timeline, not the oven's.</p>
+            <p>Temperature readings and magnetron output can degrade gradually before a fault locks the oven out. A scheduled inspection catches the creeping decline early, so the underlying cause can be addressed on your timeline, not the oven's.</p>
             <h3>Door seal and interlock checks</h3>
-            <p>A worn door seal doesn't just waste energy — it's one of several things that can eventually lead to <a href="turbochef-f4-error.html">F4-type door-monitor faults</a>. Checking it on a schedule is faster and cheaper than an emergency call.</p>
+            <p>A worn door seal doesn't just waste energy. It's one of several things that can eventually lead to <a href="turbochef-f4-error.html">F4-type door-monitor faults</a>. Checking it on a schedule is faster and cheaper than an emergency call.</p>
         </div>
     </section>
 
@@ -231,7 +238,7 @@
             <h2>TurboChef F3 Error FAQ</h2>
             <div class="faq-item">
                 <h3>What does TurboChef error F3 MAG CURR mean?</h3>
-                <p>F3 MAG CURR means Magnetron Current Low. The oven's control system has detected low current through the magnetron — the component that generates microwave energy — so microwave output is reduced or absent. It requires professional diagnosis and the correct OEM part. FixIt Expresso stocks the OEM parts TurboChef repairs need. Call 425-547-0200.</p>
+                <p>F3 MAG CURR means Magnetron Current Low. The oven's control system has detected low current through the magnetron (the component that generates microwave energy) so microwave output is reduced or absent. It requires professional diagnosis and the correct OEM part. FixIt Expresso stocks the OEM parts TurboChef repairs need. Call 425-547-0200.</p>
             </div>
             <div class="faq-item">
                 <h3>What causes a TurboChef F3 error?</h3>
@@ -239,7 +246,7 @@
             </div>
             <div class="faq-item">
                 <h3>Is a TurboChef F3 fault repairable?</h3>
-                <p>Yes — F3 (magnetron current fault) is one of the most common TurboChef faults we repair. The failed component is replaced with a genuine OEM part and the oven is tested before we leave. Call FixIt Expresso at 425-547-0200.</p>
+                <p>Yes. F3 (magnetron current fault) is one of the most common TurboChef faults we repair. The failed component is replaced with a genuine OEM part and the oven is tested before we leave. Call FixIt Expresso at 425-547-0200.</p>
             </div>
             <div class="faq-item">
                 <h3>How quickly can you fix a TurboChef F3 error?</h3>
@@ -255,7 +262,7 @@
     <section class="cta-bottom">
         <div class="container">
             <h2>Seeing F3 on Your TurboChef?</h2>
-            <p>Call now or request service online. We respond fast — same-day emergency service available for a down oven.</p>
+            <p>Call now or request service online. We respond fast, same-day emergency service available for a down oven.</p>
             <a href="tel:425-547-0200" style="background: #e74c3c; color: white;">&#128222; Call 425-547-0200</a>
             <a href="contact.html" style="background: transparent; border: 2px solid white; color: white;">Request Service</a>
         </div>
@@ -264,14 +271,14 @@
     <section class="section">
         <div class="container">
             <div class="city-links">
-                <p>TurboChef F3 magnetron repair across the Puget Sound: Seattle &bull; Bellevue &bull; Redmond &bull; Kirkland &bull; Renton &bull; Kent &bull; Tacoma &bull; Everett &bull; Auburn &bull; Federal Way. We're a mobile service based in Renton — our technicians come to your kitchen within roughly 80 miles of Seattle. See <a href="turbochef-repair.html">TurboChef repair across the Puget Sound</a> for the full picture.</p>
+                <p>TurboChef F3 magnetron repair across the Puget Sound: Seattle &bull; Bellevue &bull; Redmond &bull; Kirkland &bull; Renton &bull; Kent &bull; Tacoma &bull; Everett &bull; Auburn &bull; Federal Way. We're a mobile service based in Renton, our technicians come to your kitchen within roughly 80 miles of Seattle. See <a href="turbochef-repair.html">TurboChef repair across the Puget Sound</a> for the full picture.</p>
             </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2023-2026 FixIt Expresso — TurboChef &amp; MerryChef Repair · Seattle, WA</p>
+            <p>&copy; 2023-2026 FixIt Expresso &mdash; TurboChef &amp; MerryChef Repair · Seattle, WA</p>
             <p><a href="index.html">Home</a> | <a href="common-turbochef-problems.html">TurboChef Error Codes</a> | <a href="common-merrychef-problems.html">MerryChef Error Codes</a> | <a href="reviews.html">Reviews</a> | <a href="contact.html">Contact</a></p>
         </div>
     </footer>
