@@ -755,13 +755,17 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     
     <!-- Performance Optimizations -->
-    <!-- Hero is a CSS background (url('images/turbochef-sota.webp') in .hero),
-         so the browser cannot discover it until the stylesheet parses unless
-         preloaded with high priority. WebP here is 23KB vs the JPEG's 62KB --
-         this is the LCP resource, so those bytes are on the critical path.
-         The .jpg is still on disk and still referenced by the JSON-LD image
-         properties and by the other pages that share this hero. -->
-    <link rel="preload" href="images/turbochef-sota.webp" as="image" type="image/webp" fetchpriority="high">
+    <!-- The hero is a CSS background at every width, so the browser cannot
+         discover it until the stylesheet parses -- hence the high-priority
+         preload. This is the LCP resource, so the bytes are on the critical
+         path: the 900 rung in WebP is 37KB against the same frame's 55KB JPEG.
+         No srcset here on purpose. A background-image cannot take one, and the
+         900 rung (900x794) is the largest copy of this photo that exists --
+         the 1829804-* set runs 240/360/450/576/720/900 and turbochef-sota.jpg
+         is the same frame at 720 -- so every screen wants this same file.
+         turbochef-sota.jpg stays on disk: the JSON-LD image properties and the
+         other pages that share this hero still point at it. -->
+    <link rel="preload" href="images/1829804-900.webp" as="image" type="image/webp" fetchpriority="high">
     <link rel="dns-prefetch" href="https://www.facebook.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
@@ -978,21 +982,24 @@
                 text-align: center;
             }
 
-            /* Improved mobile header */
-            .header {
-                position: sticky;
-                top: 0;
-                z-index: 50;
-                backdrop-filter: blur(10px);
-            }
+            /* The mobile header deliberately carries NO backdrop-filter. It
+               used to blur(10px), which made sense when the bar had a solid
+               navy fill; now that the bar is transparent and sits directly on
+               the hero photo, a blur with nothing behind it just smears a band
+               across the top of the oven. Legibility comes from the
+               text-shadow on .header instead.
+               The old `position: sticky` here was dead code either way -- this
+               block is declared above the base .header rule, which sets
+               `absolute`, and a media query adds no specificity. */
 
-            /* Better mobile hero */
-            .hero {
-                background-attachment: scroll;
-                padding: 80px 0 60px;
-            }
+            /* The mobile hero lives in the LATER max-width:768px block, below
+               the base .hero rule -- see the note there. Putting it here would
+               silently lose the cascade: this block is declared ABOVE the
+               desktop .hero it is meant to override, and a media query adds no
+               specificity. */
 
             /* Mobile-friendly cards */
+
             .service-card,
             .faq-item {
                 margin-bottom: 16px;
@@ -1138,14 +1145,50 @@
             visibility: visible;
         }
 
-        /* Header */
+        /* Header. No background bar: it is lifted out of the flow and floats
+           over the hero photo, so the image runs to the very top of the page
+           instead of starting under a navy strip.
+           `position: absolute` (not fixed) is the point -- it should scroll
+           away with the hero rather than follow the reader down the page. Note
+           that taking it out of flow is what lets the hero start at y=0; if
+           this ever goes back to `position: relative`, the hero drops by the
+           height of the bar and the layout looks like it did before.
+           The scrim is not decoration, it is the only thing making this text
+           readable. Measured across the strip the type sits in, the photo
+           behind it runs from luminance 0.05 all the way to 1.000 -- the white
+           tile wall. Light 14px type on a 1.000 patch is 1:1 contrast, i.e.
+           invisible, which is exactly how it looked on a phone. A top-down
+           fade fixes that everywhere without reinstating the solid navy bar:
+           it is ~55% black at the very top and fully clear by 110px, so the
+           photo still runs edge to edge with no hard seam. */
         .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
-            padding: 15px 0;
-            position: relative;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.28) 55%, rgba(0,0,0,0) 100%);
+            color: #93C5FD;
+            padding: 22px 0 40px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            box-shadow: none;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
             z-index: 50;
+        }
+
+        /* The pin icon inherits currentColor, so it tints with the text. */
+        .header .contact-item svg { color: inherit; }
+
+        /* The header opts out of the shared 1200px container. Everywhere else
+           that cap is what keeps prose aligned down the page, but this bar is
+           an overlay on the photo, not body content -- inside a centred 1200px
+           box it stopped ~360px short of the edge on a 1920 screen and read as
+           floating in the middle rather than pinned to the corner.
+           20px matches .hamburger-menu's `left: 20px`, so the two corner
+           elements sit the same distance from their respective edges. Below
+           1240px this changes nothing: the container was never hitting its cap
+           there, so mobile keeps the exact spacing it already had. */
+        .header .container {
+            max-width: none;
+            padding: 0 20px;
         }
 
         .header-content {
@@ -1187,16 +1230,54 @@
         }
 
         /* Hero Section */
+        /* One full-bleed treatment at every width: the Sota photo as a cover
+           background behind centred copy.
+           Two things make this render correctly on a wide screen, and both are
+           easy to undo by accident:
+           1. `scroll`, never `fixed`. `fixed` sizes `cover` against the
+              VIEWPORT instead of this section. That is also what produces the
+              parallax: the photo holds still while the page scrolls over it.
+              It is kept here deliberately -- but it is the reason the hero
+              looked blown up before, so the two rules below exist to pay for
+              it, and removing either brings the bug back.
+           2. The 900 rung. `1829804-900.webp` (900x794) is the largest copy of
+              this photo on disk -- the 1829804-* set runs 240/360/450/576/720/
+              900, and turbochef-sota.jpg is the same frame at 720. The old
+              hero pointed at the 720, which `cover` then had to upscale 2.67x
+              across a 1920 viewport; the 900 brings that to 2.13x.
+           3. `min-height: 70vh` with `padding: 120px 0` and NO max-height.
+              This is the original hero geometry and it is load-bearing, not
+              styling. Commit e78b5ae (2026-03-21) swapped the hero photo AND
+              shortened the section in one go -- 70vh to 50vh, plus a new
+              max-height: 600px cap. A cover crop shows the fraction of the
+              image the band is tall enough to hold, so capping the band at
+              600px is what reduced the oven to a strip. Re-adding a
+              max-height here will bring that straight back.
+           4. `background-position: center 30%`. Under `fixed` this resolves
+              against the viewport, not the section, so the default `center`
+              drops the visible slice onto the cavity and counter -- the blank
+              middle of the frame. 30% lifts it onto the control panel and the
+              TurboChef badge, the part that reads as a speed oven.
+           What this hero was designed around, and no longer has: the original
+           image was coffee-1200.jpg, a 3:2 landscape frame with a ladder up to
+           5120px. A 1.50 photo fills a wide band with a gentle crop. The Sota
+           is 1.13 and tops out at 900px, so it will always crop harder and
+           upscale more here -- the tall band is what keeps that acceptable.
+           The 60% black overlay keeps it reading as atmosphere and keeps the
+           headline legible over it.
+           Mobile overrides `fixed` back to `scroll` in the 768px block below:
+           iOS Safari does not honour fixed backgrounds, and on the phone the
+           viewport is close enough to the photo's aspect ratio that the whole
+           oven fits anyway. */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('images/turbochef-sota.webp');
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/1829804-900.webp');
             background-size: cover;
-            background-position: center;
+            background-position: center 30%;
             background-attachment: fixed;
             color: white;
             text-align: center;
-            padding: 80px 0;
-            min-height: 50vh;
-            max-height: 600px;
+            padding: 120px 0;
+            min-height: 70vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -2286,20 +2367,36 @@
                 font-size: 13px;
             }
 
+            /* The bar stays right-aligned at every width. The centring here
+               was for the old three-item bar (email | phone | location); with
+               only the location left, centred type collided with the fixed
+               hamburger at top-left on narrow screens. Note this is a column
+               flex container, so it is align-items -- not justify-content --
+               that controls the horizontal edge. */
             .header-content {
                 flex-direction: column;
-                text-align: center;
+                align-items: flex-end;
+                text-align: right;
                 gap: 15px;
-                justify-content: center;
             }
 
             .contact-info {
-                justify-content: center;
+                justify-content: flex-end;
             }
 
+            /* Mobile hero. Same photo and same centred treatment as desktop --
+               only the framing changes. A phone viewport is close enough to
+               the photo's 1.13 aspect ratio that `cover` keeps most of the
+               oven, so the crop is centred here rather than nudged up the way
+               the wide desktop band needs.
+               Anything added here must go in THIS block, not the earlier
+               max-width:768px one: that block is declared above the base .hero
+               rule, and a media query carries no extra specificity, so its
+               overrides lose to the desktop rule outright. */
             .hero {
-                padding: 80px 0;
                 background-attachment: scroll;
+                background-position: center;
+                padding: 80px 0;
             }
 
             .hero-content h1 {
@@ -2527,10 +2624,11 @@
                 padding: 10px 0;
             }
 
+            /* Same at the 480px breakpoint -- keep it on the right edge. */
             .contact-info {
                 flex-direction: column;
                 gap: 8px;
-                align-items: center;
+                align-items: flex-end;
             }
 
             .contact-item {
@@ -2866,6 +2964,23 @@
         .mt-4 {
             margin-top: 2rem;
         }
+
+        /* Trust band under the hero. Ported from staging2. */
+        .trust-band {
+            background: #1a252f;
+            color: #fff;
+            padding: 20px 0;
+        }
+        .trust-band .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px 40px;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+        .trust-band .trust-item { display: flex; align-items: center; gap: 9px; }
+        .trust-band svg { width: 18px; height: 18px; flex: 0 0 18px; color: #60A5FA; }
     </style>
 </head>
 <body>
@@ -2873,22 +2988,12 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
+                <!-- Location only. The email and phone that used to sit up here
+                     were removed deliberately -- both are still reachable from
+                     the hero "Call for Service" button, the floating call
+                     button, the contact section and the footer, so nothing was
+                     lost but the clutter over the photo. -->
                 <div class="contact-info">
-                    <div class="contact-item">
-                        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                            <g fill="currentColor">
-                                <path d="M331.756 277.251l-42.881 43.026c-17.389 17.45-47.985 17.826-65.75 0l-42.883-43.026L26.226 431.767C31.959 434.418 38.28 436 45 436h422c6.72 0 13.039-1.58 18.77-4.232L331.756 277.251Z"/>
-                                <path d="M467 76H45c-6.72 0-13.041 1.582-18.772 4.233l164.577 165.123c.011.011.024.013.035.024 .011.011.013.026.013.026l53.513 53.69c5.684 5.684 17.586 5.684 23.27 0l53.502-53.681s.013-.024.024-.035c0 0 .024-.013.035-.024L485.77 80.232C480.039 77.58 473.72 76 467 76Z"/>
-                            </g>
-                        </svg>
-                        <a href="mailto:services@fixitexpresso.com?subject=Service Request&body=">services@fixitexpresso.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <svg viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="currentColor" d="M25.017 33.983c-5.536-5.536-6.786-11.072-7.068-13.29 -.0788-.6133.1322-1.2284.571-1.664L23 14.551c.659-.6587.7759-1.6851.282-2.475L16.149 1c-.5465-.8748-1.6686-1.1905-2.591-.729L2.107 5.664c-.746.3673-1.1847 1.1598-1.1 1.987 .6 5.7 3.085 19.712 16.855 33.483 13.77 13.771 27.78 16.255 33.483 16.855 .8271.0846 1.6196-.3541 1.987-1.1l5.393-11.451c.4597-.9205.1461-2.0396-.725-2.587L46.924 35.72c-.7896-.4945-1.8159-.3784-2.475.28l-4.478 4.48c-.4357.4387-1.0508.6497-1.664.571 -2.218-.282-7.754-1.532-13.29-7.068Z"/>
-                        </svg>
-                        <a href="tel:425-547-0200">425-547-0200</a>
-                    </div>
                     <div class="contact-item">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path fill="currentColor" d="M12 0C7.038 0 3 4.066 3 9.065c0 7.103 8.154 14.437 8.501 14.745 .143.127.321.19.499.19s.356-.063.499-.189C12.846 23.502 21 16.168 21 9.065 21 4.066 16.962 0 12 0Zm0 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5 -2.243 5-5 5Z"/>
@@ -2926,9 +3031,12 @@
                 <meta itemprop="name" content="TurboChef Oven Repair">
                 <h1>FixIt Expresso</h1>
                 <!-- Headline is the brand, so the subheading carries the search
-                     terms. "Authorized" leads it: that is the one claim the
-                     competitors ranking alongside us cannot make. -->
-                <h2 itemprop="description">Authorized TurboChef Oven Repair — Seattle &amp; the Puget Sound</h2>
+                     terms: the service first, then the geography. The
+                     "Authorized TurboChef Service Provider" claim still lives
+                     in the meta description and the structured data -- it was
+                     dropped from the visible subheading so it leads with what
+                     a customer is actually searching for. -->
+                <h2 itemprop="description">TurboChef Oven Repair — Seattle &amp; the Puget Sound</h2>
                 <div class="cta-buttons">
                     <a href="#services" class="btn btn-primary">Our Repair Services</a>
                     <a href="tel:425-547-0200" class="btn btn-secondary">Call for Service</a>
@@ -2937,14 +3045,25 @@
         </div>
     </section>
 
-    <!-- Trust Banner -->
-    <div style="background: #1a252f; padding: 18px 0; text-align: center;">
-        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 30px; flex-wrap: wrap; color: white; font-size: 0.95rem;">
-            <span style="opacity: 0.9;">Trusted by Customers</span>
-            <span style="opacity: 0.4;">|</span>
-            <span style="opacity: 0.9;">21+ Years Experience</span>
-            <span style="opacity: 0.4;">|</span>
-            <span style="opacity: 0.9;">Genuine OEM Parts</span>
+    <!-- Trust Banner. Ported from staging2: the pipe separators are replaced
+         with SVG marks (a "|" is announced as noise by screen readers, and it
+         carried no meaning), and the vague "Trusted by Customers" is replaced
+         with the one claim competitors cannot make. Icons are aria-hidden --
+         each sits beside its own label, so announcing them would double up. -->
+    <div class="trust-band">
+        <div class="container">
+            <span class="trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Authorized TurboChef Service Provider
+            </span>
+            <span class="trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                21+ Years Experience
+            </span>
+            <span class="trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Genuine OEM Parts
+            </span>
         </div>
     </div>
 
@@ -2957,7 +3076,7 @@
                     <!-- Company specialization in TurboChef speed oven repair -->
                     <h2 itemprop="name">Why Choose FixIt Expresso</h2>
                     <!-- TurboChef repair experience and service description -->
-                    <p itemprop="description">A TurboChef speed oven repair specialist backed by 21+ years of commercial kitchen equipment experience. We service all TurboChef models — Sota (NGO), Bullet, Encore, HhD, i3, i5, NGC, and more — with fast, professional repairs and genuine OEM parts.</p>
+                    <p itemprop="description">A TurboChef speed oven repair specialist backed by 21+ years of commercial kitchen equipment experience. We service every TurboChef model, from the Sota (NGO) and Bullet to the Encore, HhD, i3, i5 and NGC, with fast repairs and genuine OEM parts.</p>
                     <!-- Service area for TurboChef repair -->
                     <p itemprop="areaServed">Serving restaurants, hotels, hospitals, schools, and commercial kitchens across Seattle, Bellevue, Tacoma, and the greater Puget Sound area. On-site service within 80 miles, plus drop-off service for Sota (NGO) ovens to save on travel fees.</p>
                     <div class="expertise-highlights">
@@ -3021,7 +3140,7 @@
                     <!-- TurboChef oven repair service highlighting top models -->
                     <h3 itemprop="name">TurboChef Oven Repair — All Models</h3>
                     <!-- TurboChef Sota, Bullet, Encore, HhD repair description with drop-off service -->
-                    <p itemprop="description">Professional repair for all TurboChef speed ovens: Sota (NGO), Bullet, Encore, HhD Double Batch, i3, i5, NGC, and legacy models. Quick diagnosis, genuine OEM parts, same-day emergency service. <strong>Drop-off service available for Sota (NGO)</strong> — save on travel fees!</p>
+                    <p itemprop="description">Professional repair for all TurboChef speed ovens: Sota (NGO), Bullet, Encore, HhD Double Batch, i3, i5, NGC, and legacy models. Quick diagnosis, genuine OEM parts, same-day emergency service. <strong>Drop-off service available for Sota (NGO)</strong>, so you save on travel fees.</p>
                     <meta itemprop="serviceType" content="TurboChef Speed Oven Repair">
                     <meta itemprop="brand" content="TurboChef">
                 </div>
@@ -3250,7 +3369,7 @@
                         <span class="faq-toggle">+</span>
                     </h3>
                     <div class="faq-answer">
-                        <p>We specialize in TurboChef speed ovens — the most common models in the Seattle area. We also repair MerryChef speed ovens (eikon and conneX series) and other commercial kitchen equipment. Call us to discuss your specific needs.</p>
+                        <p>We specialize in TurboChef speed ovens, the most common models in the Seattle area. We also repair MerryChef speed ovens (eikon and conneX series) and other commercial kitchen equipment. Call us to discuss your specific needs.</p>
                     </div>
                 </div>
                 <div class="faq-item collapsed">
@@ -3258,7 +3377,7 @@
                         <span class="faq-toggle">+</span>
                     </h3>
                     <div class="faq-answer">
-                        <p>Yes. While TurboChef is our primary specialty, we also service MerryChef speed ovens in the Seattle area — including the eikon series (e1s, e2s, e3, e4, e6) and conneX series (11, 12, 16). Our technicians diagnose and repair MerryChef heating issues, magnetron failures, control board problems, door faults, and error codes. See our <a href="common-merrychef-problems.html">MerryChef common problems guide</a> for E101–E117 error code help, or call 425-547-0200 to discuss your repair.</p>
+                        <p>Yes. While TurboChef is our primary specialty, we also service MerryChef speed ovens in the Seattle area, including the eikon series (e1s, e2s, e3, e4, e6) and conneX series (11, 12, 16). Our technicians diagnose and repair MerryChef heating issues, magnetron failures, control board problems, door faults, and error codes. See our <a href="common-merrychef-problems.html">MerryChef common problems guide</a> for E101–E117 error code help, or call 425-547-0200 to discuss your repair.</p>
                     </div>
                 </div>
                 <div class="faq-item collapsed">
@@ -3344,8 +3463,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Hidden TurboChef service keywords for footer SEO -->
-                <span style="display: none;" itemprop="keywords">TurboChef repair Seattle, TurboChef service contact, TurboChef NGC NGO Sota repair, emergency TurboChef repair, TurboChef drop off service contact</span>
             </div>
             
             <div class="social-links">
