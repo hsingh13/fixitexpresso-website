@@ -1193,6 +1193,24 @@
             font-weight: 700;
         }
 
+        /* The reviews link in the About copy was falling back to the
+           browser default blue, which matches nothing else on the page.
+           #1f6aa5 is the link colour the rest of the site settled on and
+           clears AA on this section's #f8f9fa background.
+           Scoped to `p a` on purpose: the Request Service and TurboChef
+           Repair Services buttons are also anchors inside .about-text, and an
+           unscoped `.about-text a` outranks `.btn-primary` on specificity --
+           it recoloured and underlined both buttons. */
+        .about-text p a {
+            color: #1f6aa5;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .about-text p a:hover {
+            color: #17527f;
+        }
+
         .about-text p {
             font-size: 1.1rem;
             line-height: 1.8;
@@ -2084,9 +2102,13 @@
                 text-align: center;
             }
 
+            /* On one column the slideshow reads as decoration, so it
+               follows the copy rather than pushing the heading down the page.
+               The two-column desktop layout is untouched: there the image sits
+               to the right of the text, which is what the grid order gives. */
             .about-image {
-                order: -1;
-                margin-bottom: 20px;
+                order: 2;
+                margin-top: 20px;
             }
 
             .about-image img {
@@ -2300,11 +2322,11 @@
             }
 
             .about-text {
-                order: 2;
+                order: 1;
             }
 
             .about-image {
-                order: 1;
+                order: 2;
             }
 
             .services-grid {
