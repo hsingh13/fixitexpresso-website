@@ -1,4 +1,4 @@
-# FixIt Expresso — TurboChef & MerryChef Speed Oven Repair Seattle
+# FixIt Expresso: TurboChef & MerryChef Speed Oven Repair Seattle
 
 > Authorized TurboChef Service Provider and experienced MerryChef repair specialist, based in Renton, WA. Backed by 21+ years of commercial kitchen equipment experience. Serving Seattle and the greater Puget Sound region.
 
@@ -14,17 +14,17 @@ FixIt Expresso specializes in repairing commercial speed ovens (high-speed combi
 
 ## TurboChef Repair (Primary Specialty)
 
-Authorized TurboChef Service Provider — warranty and non-warranty repairs on all TurboChef models.
+Authorized TurboChef Service Provider. Warranty and non-warranty repairs on all TurboChef models.
 
 **Models serviced:**
-- Sota (also called NGO) — most common, drop-off eligible
-- Bullet / Encore — popular in Subway and fast-casual restaurants
-- HhD Double Batch — used by Panera Bread
-- i3, i5 — chain restaurant and franchise models
-- NGC — high-volume commercial kitchens
-- ECO — energy-efficient model, drop-off eligible
-- CIBO+ — compact commercial model, drop-off eligible
-- Fire — high-heat stone-hearth model
+- Sota (also called NGO). Most common, drop-off eligible
+- Bullet / Encore. Popular in Subway and fast-casual restaurants
+- HhD Double Batch. Used by Panera Bread
+- i3, i5. Chain restaurant and franchise models
+- NGC. High-volume commercial kitchens
+- ECO. Energy-efficient model, drop-off eligible
+- CIBO+. Compact commercial model, drop-off eligible
+- Fire. High-heat stone-hearth model
 - Legacy: HhC, Conveyor, Tornado, C3, C4, Plexor
 
 **TurboChef Error Codes (F1–F10):**
@@ -44,18 +44,18 @@ Full guide: [TurboChef F1-F10 error code guide](https://www.fixitexpresso.com/co
 **TurboChef services:**
 - Same-day emergency service available
 - On-site repair at your location
-- Drop-off service for Sota (NGO), ECO and CIBO+ — by arrangement only, call 425-547-0200 first
+- Drop-off service for Sota (NGO), ECO and CIBO+ (by arrangement only, call 425-547-0200 first)
 
 ## MerryChef Repair (Secondary Specialty)
 
 Experienced MerryChef eikon series repair specialists.
 
 **Models serviced:**
-- eikon e1s — compact model, drop-off eligible
-- eikon e2s — compact model
-- eikon e3 — mid-range model
-- eikon e4s, e4 — high-volume dual-cavity models
-- conneX 12 — current-generation model, drop-off eligible
+- eikon e1s. Compact model, drop-off eligible
+- eikon e2s. Compact model
+- eikon e3. Mid-range model
+- eikon e4s, e4. High-volume dual-cavity models
+- conneX 12. Current-generation model, drop-off eligible
 
 **MerryChef Error Codes (E101–E117):**
 - E101: Microwave system failure
@@ -78,12 +78,12 @@ Full guide: [MerryChef E101-E117 error code guide](https://www.fixitexpresso.com
 
 **MerryChef services:**
 - On-site repair at your location
-- Drop-off service for eikon e1s and conneX 12 — by arrangement only, call 425-547-0200 first
+- Drop-off service for eikon e1s and conneX 12 (by arrangement only, call 425-547-0200 first)
 
 ## Service Area
 
 FixIt Expresso is a mobile service operation based in Renton, WA. Technicians travel
-to the customer's kitchen — there are no branch offices, franchisees, or walk-in
+to the customer's kitchen. There are no branch offices, franchisees, or walk-in
 location, and no public address. Service radius is roughly 80 miles from Seattle.
 
 Drop-off repair is offered for some models, but it is arranged by phone only. Never
