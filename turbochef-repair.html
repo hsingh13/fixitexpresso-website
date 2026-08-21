@@ -67,11 +67,13 @@
         .problem-card h3 { margin: 0 0 6px; font-size: 1rem; color: #2c3e50; }
         .problem-card p { margin: 0; font-size: 0.92rem; color: #666; }
         .city-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 30px 0; }
-        .city-card { background: white; border: 1px solid #e0e8f0; border-radius: 10px; padding: 20px 22px; text-decoration: none; transition: box-shadow 0.2s; }
+        .city-card {
+            display: block;
+            color: inherit; background: white; border: 1px solid #e0e8f0; border-radius: 10px; padding: 20px 22px; text-decoration: none; transition: box-shadow 0.2s; }
         .city-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
         .city-card h3 { color: #2c3e50; font-size: 1.05rem; margin-bottom: 5px; margin-top: 0; }
         .city-card p { color: #666666; font-size: 0.9rem; margin: 0; }
-        .city-card .arrow { color: #3498db; font-weight: 700; font-size: 0.9rem; margin-top: 8px; display: block; }
+        .city-card .arrow { color: #1f6aa5; font-weight: 700; font-size: 0.9rem; margin-top: 8px; display: block; }
         .error-link { background: #fef9f0; border-left: 4px solid #e74c3c; border-radius: 6px; padding: 18px 22px; margin: 30px 0; }
         .error-link p { margin: 0; color: #444; }
         .error-link a { color: #c0392b; font-weight: 700; }
@@ -276,34 +278,41 @@
             <h2 style="font-size: 2rem; color: #2c3e50; margin-bottom: 10px; text-align: center;">TurboChef Repair Across the Puget Sound</h2>
             <p style="text-align: center; color: #666; max-width: 620px; margin: 0 auto 30px;">We're a mobile service operation based in Renton, and our technicians come to your kitchen anywhere within roughly 80 miles of Seattle. No branch offices, no franchisees: the same factory-trained techs cover every city below.</p>
             <div class="city-grid">
-                <div class="city-card">
+                <a class="city-card" href="turbochef-repair-seattle.html">
                     <h3>Seattle</h3>
                     <p>Downtown, Capitol Hill, South Lake Union, SoDo, Belltown, Ballard &amp; all neighborhoods</p>
-                </div>
-                <div class="city-card">
+                <span class="arrow">TurboChef repair in Seattle &rarr;</span>
+                </a>
+                <a class="city-card" href="turbochef-repair-bellevue.html">
                     <h3>Bellevue</h3>
                     <p>Downtown Bellevue, Eastgate, Crossroads, Factoria</p>
-                </div>
-                <div class="city-card">
+                <span class="arrow">TurboChef repair in Bellevue &rarr;</span>
+                </a>
+                <a class="city-card" href="turbochef-repair-tacoma.html">
                     <h3>Tacoma</h3>
                     <p>Downtown Tacoma, Stadium District, University Place, Lakewood</p>
-                </div>
-                <div class="city-card">
+                <span class="arrow">TurboChef repair in Tacoma &rarr;</span>
+                </a>
+                <a class="city-card" href="turbochef-repair-kirkland.html">
                     <h3>Kirkland</h3>
                     <p>Downtown Kirkland, Totem Lake, Juanita, Bridle Trails</p>
-                </div>
-                <div class="city-card">
+                <span class="arrow">TurboChef repair in Kirkland &rarr;</span>
+                </a>
+                <a class="city-card" href="turbochef-repair-redmond.html">
                     <h3>Redmond</h3>
                     <p>Redmond Town Center, Overlake, Education Hill, Bear Creek</p>
-                </div>
-                <div class="city-card">
+                <span class="arrow">TurboChef repair in Redmond &rarr;</span>
+                </a>
+                <a class="city-card" href="turbochef-repair-kent.html">
                     <h3>Kent</h3>
                     <p>Downtown Kent, East Hill, West Hill, Kent Valley</p>
-                </div>
-                <div class="city-card">
+                <span class="arrow">TurboChef repair in Kent &rarr;</span>
+                </a>
+                <a class="city-card" href="turbochef-repair-renton.html">
                     <h3>Renton</h3>
                     <p>The Landing, Renton Highlands, Benson Hill and the SeaTac area, our home base</p>
-                </div>
+                <span class="arrow">TurboChef repair in Renton &rarr;</span>
+                </a>
             </div>
             <p style="text-align: center; color: #666; max-width: 760px; margin: 26px auto 0; font-size: 0.97rem;">Also serving Everett, Auburn, Federal Way, Issaquah, Sammamish, Tukwila, Burien, Shoreline, Lynnwood, Edmonds, Mukilteo, Woodinville, Mercer Island, Puyallup, Sumner &amp; Gig Harbor. Not sure if you're in range? <a href="tel:425-547-0200" style="color:#c0392b;font-weight:700;">Call 425-547-0200</a> and we'll tell you straight.</p>
         </div>
