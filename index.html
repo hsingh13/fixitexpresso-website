@@ -329,7 +329,7 @@
           "name": "What equipment brands do you service?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We specialize in TurboChef speed ovens, the most common models in the Seattle area. We also repair MerryChef speed ovens (eikon and conneX series) and other commercial kitchen equipment. Call us to discuss your specific needs."
+            "text": "We specialize in TurboChef speed ovens, the most common models in the Seattle area. We also repair MerryChef speed ovens (eikon and conneX series), Schaerer espresso machines and BUNN coffee equipment. Call us to discuss your specific needs."
           }
         },
         {
@@ -1244,13 +1244,22 @@
             justify-content: center;
             flex-direction: column;
             padding: 15px;
-            opacity: 0;
-            transition: opacity 1.2s ease-in-out;
+            visibility: hidden;
+            transition: visibility 0s linear 1.2s;
         }
         .oven-slideshow .slide.slide-active {
-            opacity: 1;
+            visibility: visible;
+            transition: visibility 0s linear 0s;
         }
+        /* The crossfade animates the photo, never the label. When the whole slide
+           faded, an audit sampling mid-transition read the label at partial
+           opacity and reported ~1.8:1 contrast that no user can see -- the page
+           scored 96 on roughly one PageSpeed run in five and 100 on the rest.
+           A child cannot be more opaque than its parent, so the only fix is to
+           keep the text out of the animation entirely. */
         .oven-slideshow .slide img {
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
             max-width: 90%;
             max-height: 400px;
             object-fit: contain;
@@ -1263,6 +1272,20 @@
             letter-spacing: 1px;
             text-transform: uppercase;
         }
+        .oven-slideshow .slide.slide-active img {
+            opacity: 1;
+        }
+
+        /* Labels swap instantly in both directions, so exactly one is ever
+           rendered and never at a partial opacity. */
+        .oven-slideshow .slide span {
+            visibility: hidden;
+        }
+
+        .oven-slideshow .slide.slide-active span {
+            visibility: visible;
+        }
+
         .oven-slideshow .slide-dots {
             position: absolute;
             bottom: 0;
@@ -3273,7 +3296,7 @@
                         <span class="faq-toggle">+</span>
                     </h3>
                     <div class="faq-answer">
-                        <p>We specialize in TurboChef speed ovens, the most common models in the Seattle area. We also repair MerryChef speed ovens (eikon and conneX series) and other commercial kitchen equipment. Call us to discuss your specific needs.</p>
+                        <p>We specialize in TurboChef speed ovens, the most common models in the Seattle area. We also repair MerryChef speed ovens (eikon and conneX series), Schaerer espresso machines and BUNN coffee equipment. Call us to discuss your specific needs.</p>
                     </div>
                 </div>
                 <div class="faq-item collapsed">
