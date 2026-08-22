@@ -1,10 +1,15 @@
 # FixIt Expresso: TurboChef & MerryChef Speed Oven Repair Seattle
 
-> Authorized TurboChef Service Provider and experienced MerryChef repair specialist, based in Renton, WA. Backed by 21+ years of commercial kitchen equipment experience. Serving Seattle and the greater Puget Sound region.
+> Authorized TurboChef Service Provider, based in Renton, WA. Commercial speed oven repair for TurboChef and MerryChef, backed by 21+ years of commercial kitchen equipment experience. Serving Seattle and the greater Puget Sound region.
 
 ## About
 
-FixIt Expresso specializes in repairing commercial speed ovens (high-speed combination ovens) for restaurants, hotels, hospitals, schools, and commercial kitchens across the greater Seattle area.
+FixIt Expresso specializes in repairing commercial speed ovens (high-speed combination ovens)
+for restaurants, cafes, convenience stores, hotels, hospitals, schools, and commercial
+kitchens across the greater Seattle area.
+
+The owner and lead technician spent more than 21 years servicing commercial kitchen
+equipment in the Boston area, and founded FixIt Expresso after relocating to Seattle.
 
 - Phone: 425-547-0200
 - Email: services@fixitexpresso.com
@@ -79,6 +84,14 @@ Full guide: [MerryChef E101-E117 error code guide](https://www.fixitexpresso.com
 **MerryChef services:**
 - On-site repair at your location
 - Drop-off service for eikon e1s and conneX 12 (by arrangement only, call 425-547-0200 first)
+
+## Espresso and Coffee Equipment
+
+- Schaerer espresso machines
+- BUNN coffee equipment
+
+Serviced for existing customers, meaning kitchens FixIt Expresso already covers for speed
+oven repair. Speed ovens are the specialty; this is not marketed as a standalone service.
 
 ## Service Area
 
