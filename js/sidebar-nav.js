@@ -36,7 +36,7 @@
     document.head.appendChild(styleEl);
 
     var links = [
-        { href: 'index.html', label: 'Home' },
+        { href: '/', label: 'Home' },
         { href: 'common-turbochef-problems.html', label: 'Common TurboChef Problems' },
         { href: 'common-merrychef-problems.html', label: 'Common MerryChef Problems' },
         { href: 'reviews.html', label: 'Reviews' },
@@ -44,7 +44,8 @@
         { href: 'contact.html', label: 'Contact' }
     ];
 
-    var path = window.location.pathname.split('/').pop() || 'index.html';
+    var path = window.location.pathname.split('/').pop() || '/';
+    if (path === 'index.html') path = '/';
 
     var ul = document.createElement('ul');
     for (var i = 0; i < links.length; i++) {
