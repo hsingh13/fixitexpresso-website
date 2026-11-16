@@ -60,7 +60,6 @@ defaults:
 business:
   name: "FixIt Expresso"
   phone: "425-547-0200"
-  email: "services@fixitexpresso.com"
   address: "Greater Seattle Area, WA"
   services: 
     - "TurboChef NGC repair"
